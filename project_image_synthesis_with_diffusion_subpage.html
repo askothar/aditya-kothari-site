@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Image Synthesis with Diffusion — Aditya Kothari</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color:#0b1324; background:#f4f6fb; letter-spacing:.01em; }
+    .h-display{ font-family: "Playfair Display", ui-serif, Georgia, Times, serif; letter-spacing:-.01em; }
+    .container-w{ max-width:1120px; }
+    .card{ background:#fff; border-radius:16px; padding:1.5rem; box-shadow:0 10px 25px rgba(0,0,0,.08); }
+    .btn{ display:inline-flex; align-items:center; justify-content:center; border-radius:12px; padding:.75rem 1.25rem; font-weight:600; }
+    .btn-primary{ background:#2563eb; color:#fff; }
+    .btn-primary:hover{ background:#1d4ed8; }
+    .link-underline{ position:relative; text-decoration:none; }
+    .link-underline:after{ content:""; position:absolute; left:0; bottom:-2px; height:2px; width:100%; background: currentColor; opacity:.2; transform: scaleX(0); transform-origin:left; transition: transform .25s ease; }
+    .link-underline:hover:after{ transform: scaleX(1); }
+    .hero-img{ border-radius:16px; box-shadow:0 10px 25px rgba(0,0,0,.08); }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="bg-white border-b sticky top-0 z-50">
+    <div class="container-w mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center space-x-3">
+        <div class="w-2.5 h-2.5 rounded-full bg-blue-600"></div>
+        <span class="font-semibold tracking-wide">Aditya Kothari</span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-6 text-sm">
+        <a class="link-underline" href="/index.html#case-studies">Case Studies</a>
+        <a class="link-underline" href="/index.html#projects">Projects</a>
+        <a class="link-underline" href="/index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO / TITLE -->
+  <section class="bg-white">
+    <div class="container-w mx-auto px-6 py-12 md:py-16">
+      <div class="grid lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-8">
+          <p class="text-sm tracking-widest font-semibold text-blue-700 uppercase mb-3">Project</p>
+          <h1 class="h-display text-4xl md:text-5xl font-semibold leading-tight">Image Synthesis with Diffusion Models</h1>
+          <p class="mt-4 text-gray-600 text-base md:text-lg max-w-2xl">UNet‑based Denoising Diffusion Probabilistic Model (DDPM) trained on Fashion‑MNIST and Flowers‑102 under 4GB GPU constraints; sample quality, training curves, and ablations.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a class="btn btn-primary" href="./resources/project_image_synthesis_with_diffusion_models.pdf" target="_blank" rel="noopener">⬇ Read Full Report (PDF)</a>
+            <a class="btn" style="background:#eef2ff;color:#1d4ed8" href="index.html#projects">← Back to Projects</a>
+          </div>
+        </div>
+        <div class="lg:col-span-4">
+          <!-- Optional figure exported from the report -->
+          <img class="hero-img w-full" src="./images/ddpm-teaser.gif" alt="Grid of diffusion samples during training" />
+          <p class="text-xs text-gray-500 mt-2">Figure: Samples at different diffusion steps and epochs (exported).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABSTRACT -->
+  <section class="py-16" style="background:#f6f8fb">
+    <div class="container-w mx-auto px-6">
+      <div class="grid lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-4"><h2 class="h-display text-3xl font-semibold">Abstract</h2></div>
+        <div class="lg:col-span-8">
+          <div class="card">
+            <p class="text-gray-700 leading-relaxed">
+              We implement a UNet‑backed DDPM for unconditional image generation at 32×32 resolution. Training pipelines are
+              constructed for Fashion‑MNIST and Flowers‑102, with ablations over noise schedules and sampling steps. We analyze
+              FID‑style trends (proxy) and visual fidelity across checkpoints, noting resource‑aware tradeoffs and avenues for
+              improvement (e.g., classifier‑free guidance and lightweight text conditioning).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD (kept template heading as requested) -->
+  <section class="py-16">
+    <div class="container-w mx-auto px-6">
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-4"><h2 class="h-display text-3xl font-semibold">Adversarial Attack Method</h2></div>
+        <div class="lg:col-span-8">
+          <div class="card space-y-6">
+            <div>
+              <h3 class="font-semibold text-lg">Model & Noise Schedules</h3>
+              <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                <li>UNet with down/up blocks and skip connections; time‑step embeddings via sinusoidal encodings.</li>
+                <li>Linear vs cosine noise schedules; sampling via ancestral DDIM/DPMSolver‑like steps (conceptual comparison).</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg">Datasets & Preprocessing</h3>
+              <p class="text-gray-700 mt-2">Fashion‑MNIST (grayscale) and Flowers‑102 (RGB) resized to 32×32; normalization; class‑balanced shuffles; augmentation trials.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg">Training & Evaluation</h3>
+              <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                <li>Loss: mean‑squared error on noise prediction.</li>
+                <li>Tracking: sample grids every N steps; approximate FID trend; reconstruction sanity checks.</li>
+                <li>Constraints: 4GB GPU; tuned batch size and gradient accumulation.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="py-16" style="background:#f6f8fb">
+    <div class="container-w mx-auto px-6">
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-4"><h2 class="h-display text-3xl font-semibold">Results</h2></div>
+        <div class="lg:col-span-8">
+          <div class="card space-y-6">
+            <div>
+              <h3 class="font-semibold text-lg">Sample Quality</h3>
+              <p class="text-gray-700 mt-2">Progressive improvement in sample sharpness and diversity over epochs; cosine schedule slightly outperformed linear under constraints.</p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg">Qualitative Samples</h3>
+              <figure class="mt-3">
+                <img class="w-full hero-img" src="./images/generated-results-fashion.png" alt="Grid of generated images for Fashion‑MNIST and Flowers‑102" />
+                <figcaption class="text-xs text-gray-500 mt-2">Generated samples across training checkpoints for Fashion-MNIST.</figcaption>
+              </figure>
+              <figure class="mt-3">
+                <img class="w-full hero-img" src="./images/generated-results-flower.png" alt="Grid of generated images for Fashion‑MNIST and Flowers‑102" />
+                <figcaption class="text-xs text-gray-500 mt-2">Generated samples across training checkpoints for Flowers-102.</figcaption>
+              </figure>
+            </div>
+            <!-- <div>
+              <h3 class="font-semibold text-lg">Training Curves</h3>
+              <figure class="mt-3">
+                <img class="w-full hero-img" src="./images/ddpm-training-curves.png" alt="Training loss curves and proxy FID trend over epochs" />
+                <figcaption class="text-xs text-gray-500 mt-2">Noise‑prediction loss and proxy FID versus epochs (exported).</figcaption>
+              </figure>
+            </div> -->
+            <div class="pt-2">
+              <!-- <a class="btn btn-primary" href="../projects/aditya_kothari_cis_585_final_project_w23.pdf" target="_blank" rel="noopener">Open Full PDF</a> -->
+              <a class="btn" style="background:#eef2ff;color:#1d4ed8" href="/index.html#projects">Back to Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-white border-t">
+    <div class="container-w mx-auto px-6 py-8 text-sm text-gray-500 flex items-center justify-between">
+      <span>© 2025 Aditya Kothari</span>
+      <a class="text-blue-700 link-underline" href="/index.html">Return to Home</a>
+    </div>
+  </footer>
+</body>
+</html>
