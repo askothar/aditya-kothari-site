@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beyond Miles Per Disengagement: Signals That Predict Feature Abandonment — Aditya Kothari</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    :root{
+      --brand:#2563eb;
+      --ink:#0b1324;
+      --muted:#5b677d;
+      --paper:#ffffff;
+      --wash:#f6f8fb;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color:#0b1324; background:#f4f6fb; letter-spacing:.01em; }
+    .h-display{ font-family: "Playfair Display", ui-serif, Georgia, Times, serif; letter-spacing:-.01em; }
+    .container-w{ max-width:1120px; }
+    .card{ background:#fff; border-radius:16px; padding:1.5rem; box-shadow:0 10px 25px rgba(0,0,0,.08); }
+    .btn{ display:inline-flex; align-items:center; justify-content:center; border-radius:12px; padding:.75rem 1.25rem; font-weight:600; }
+    .btn-primary{ background:#2563eb; color:#fff; }
+    .btn-primary:hover{ background:#1d4ed8; }
+    .link-underline{ position:relative; text-decoration:none; }
+    .link-underline:after{ content:""; position:absolute; left:0; bottom:-2px; height:2px; width:100%; background: currentColor; opacity:.2; transform: scaleX(0); transform-origin:left; transition: transform .25s ease; }
+    .link-underline:hover:after{ transform: scaleX(1); }
+
+    /* Info/insight boxes */
+    .insight-box {
+      background: #eef2ff;
+      border-left: 4px solid #2563eb;
+      border-radius: 0 12px 12px 0;
+      padding: 1.1rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .insight-box .insight-label {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #2563eb;
+      margin-bottom: .35rem;
+    }
+    .insight-box p {
+      color: #1e3a8a;
+      font-size: .95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Key observation (amber/gold tint) */
+    .observation-box {
+      background: #fffbeb;
+      border-left: 4px solid #d97706;
+      border-radius: 0 12px 12px 0;
+      padding: 1.1rem 1.25rem;
+      margin: 1.25rem 0;
+    }
+    .observation-box .insight-label {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #b45309;
+      margin-bottom: .35rem;
+    }
+    .observation-box p {
+      color: #78350f;
+      font-size: .95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Article body typography */
+    .article-body h2 { font-family:"Playfair Display",ui-serif,Georgia,Times,serif; font-size:1.65rem; font-weight:600; color:#0b1324; margin-top:2.25rem; margin-bottom:.75rem; }
+    .article-body h3 { font-size:1.1rem; font-weight:600; color:#0b1324; margin-top:1.5rem; margin-bottom:.5rem; }
+    .article-body p { color:#374151; line-height:1.8; margin-bottom:1rem; }
+    .article-body ul { list-style:disc; padding-left:1.4rem; margin-bottom:1rem; }
+    .article-body ul li { color:#374151; line-height:1.75; margin-bottom:.35rem; }
+    .article-body ol { list-style:decimal; padding-left:1.4rem; margin-bottom:1rem; }
+    .article-body ol li { color:#374151; line-height:1.75; margin-bottom:.35rem; }
+    .article-body strong { color:#0b1324; }
+
+    /* Formula display */
+    .formula-block {
+      background: #f1f5f9;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      font-family: 'Courier New', monospace;
+      font-size: 1rem;
+      color: #1e3a8a;
+      text-align: center;
+      font-weight: 600;
+      margin: 1rem 0;
+      letter-spacing: .02em;
+    }
+
+    /* Comparison Table */
+    .data-table-wrap {
+      margin: 1.5rem 0;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(37,99,235,.10), 0 1px 4px rgba(0,0,0,.06);
+      border: 1px solid #e0e7ff;
+    }
+    .data-table-header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      padding: 1rem 1.25rem .85rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .data-table-header .tbl-title {
+      font-family: "Playfair Display", ui-serif, Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: -.01em;
+    }
+    .data-table-header .tbl-sub {
+      font-size: .72rem;
+      color: #bfdbfe;
+      font-weight: 500;
+      letter-spacing: .04em;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .83rem;
+      background: #fff;
+    }
+    .data-table thead tr {
+      background: #f0f5ff;
+    }
+    .data-table thead th {
+      padding: .65rem .9rem;
+      text-align: left;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: #4b5563;
+      border-bottom: 2px solid #e0e7ff;
+    }
+    .data-table thead th:first-child { padding-left: 1.1rem; }
+    .data-table tbody tr {
+      border-bottom: 1px solid #f1f5f9;
+      transition: background .15s;
+    }
+    .data-table tbody tr:last-child { border-bottom: none; }
+    .data-table tbody tr:hover { background: #f8faff; }
+    .data-table tbody td {
+      padding: .7rem .9rem;
+      color: #374151;
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .data-table tbody td:first-child {
+      padding-left: 1.1rem;
+      font-weight: 600;
+      color: #0b1324;
+      white-space: nowrap;
+    }
+    .data-table-footer {
+      background: #f8faff;
+      border-top: 1px solid #e0e7ff;
+      padding: .6rem 1.1rem;
+      font-size: .7rem;
+      color: #9ca3af;
+      font-style: italic;
+    }
+
+    /* Dashboard tier table */
+    .tier-badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 20px;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      padding: .22rem .65rem;
+      white-space: nowrap;
+    }
+    .tier-safety { background: #fee2e2; color: #991b1b; }
+    .tier-trust  { background: #dcfce7; color: #166534; }
+    .tier-lead   { background: #fef9c3; color: #854d0e; }
+    .tier-biz    { background: #e0e7ff; color: #3730a3; }
+
+    /* Disclaimer box */
+    .disclaimer-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: .85rem 1.1rem;
+      margin-top: 1.25rem;
+    }
+    .disclaimer-box p {
+      color: #64748b !important;
+      font-size: .85rem !important;
+      margin: 0 !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="bg-white border-b sticky top-0 z-50">
+    <div class="container-w mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center space-x-3">
+        <div class="w-2.5 h-2.5 rounded-full bg-blue-600"></div>
+        <span class="font-semibold tracking-wide">Aditya Kothari</span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-6 text-sm">
+        <a class="link-underline text-gray-700 hover:text-blue-700" href="../index.html#articles">Articles</a>
+        <a class="link-underline text-gray-700 hover:text-blue-700" href="../index.html#projects">Projects</a>
+        <a class="link-underline text-gray-700 hover:text-blue-700" href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO / TITLE -->
+  <section class="bg-white">
+    <div class="container-w mx-auto px-6 py-12 md:py-16">
+      <div class="max-w-3xl">
+        <p class="text-sm tracking-widest font-semibold text-blue-700 uppercase mb-3">Article · Product Strategy</p>
+        <h1 class="h-display text-4xl md:text-5xl font-semibold leading-tight">Beyond Miles Per Disengagement: Signals That Predict Feature Abandonment</h1>
+        <p class="mt-4 text-gray-600 text-base md:text-lg">Why the industry's headline ADAS metric misses the failure mode that actually destroys business cases - and which signals to measure instead.</p>
+
+        <!-- Authorship / AI disclaimer -->
+        <div class="mt-5 inline-flex items-center gap-2 px-4 py-2 rounded-full" style="background:#f1f5f9; border:1px solid #e2e8f0;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          <span style="font-size:.75rem; color:#64748b; font-weight:500; letter-spacing:.01em;">Researched &amp; written by Aditya Kothari &nbsp;·&nbsp; AI-assisted editing for better readibility</span>
+        </div>
+
+        <div class="mt-5">
+          <a class="btn" style="background:#eef2ff;color:#1d4ed8" href="../index.html#articles">← Back to Articles</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE BODY -->
+  <section class="py-16" style="background:#f6f8fb">
+    <div class="container-w mx-auto px-6">
+      <div class="grid lg:grid-cols-12 gap-10">
+
+        <!-- Main content -->
+        <div class="lg:col-span-8">
+
+          <!-- Introduction -->
+          <div class="card article-body mb-8">
+            <h2 id="section-intro" style="margin-top:0">Introduction</h2>
+            <p>OEMs and Tier 1 suppliers spend hundreds of millions developing highly automated driving systems, and they track progress using one headline metric: miles per disengagement. The assumption is simple - more miles without a human intervention means the system is improving.</p>
+            <p>That assumption is incomplete, and it is costing companies users.</p>
+            <p>Miles per disengagement captures operational reliability in controlled conditions. It says almost nothing about whether a driver will still have the feature switched on three months after delivery. A system can handle a Nevada highway flawlessly and still feel brittle or annoying enough in daily urban use that a driver quietly stops enabling it. This is behavioral disengagement, and it is the failure mode that destroys business cases.</p>
+            <p>This article identifies the leading signals that predict feature abandonment before it happens, and frames them in a metric structure that product and engineering teams can instrument, dashboard, and act on.</p>
+            <div class="disclaimer-box">
+              <p><strong>Disclaimer:</strong> These are my personal perspectives, grounded in general industry methodologies and my experience across ADAS product lifecycles. Your mileage may vary based on your organization's capabilities, market position, and risk tolerance.</p>
+            </div>
+          </div>
+
+          <!-- Disengagement Risk -->
+          <div class="card article-body mb-8">
+            <h2 id="section-risk" style="margin-top:0">Disengagement Risk Is Not One Thing</h2>
+            <p>Before measuring disengagement, it is worth being precise about what it means. The industry conflates three distinct phenomena under one term.</p>
+
+            <h3>Operational Disengagement</h3>
+            <p>A human taking over - a driver applying torque on an L2 system, or a safety driver intervening in ADS testing. The disengagement reports capture a version of this, but they mix routes, testing goals, and intervention policies in ways that make cross-company comparison nearly meaningless.</p>
+
+            <h3>System Disengagement</h3>
+            <p>The stack bailing out - a minimal risk maneuver, a fallback request, or an ODD exit. These are logged in safety telemetry but rarely surfaced to product teams in useful form.</p>
+
+            <h3>Behavioral Disengagement</h3>
+            <p>The driver stopping using the feature. They turn it off, avoid enabling it, or do not renew the subscription. This is the failure mode that conventional ADAS metrics are worst at predicting.</p>
+
+            <div class="insight-box">
+              <div class="insight-label">Key Insight</div>
+              <p>Operational and system events feed into behavioral disengagement, but do not fully explain it. A driver can tolerate an occasional takeover request. What erodes trust is a pattern: the system behaves unpredictably, demands constant supervision, or fails in scenarios the driver encounters every day. Everything that follows focuses on that third type.</p>
+            </div>
+          </div>
+
+          <!-- Predictive Metrics -->
+          <div class="card article-body mb-8">
+            <h2 id="section-metrics" style="margin-top:0">Predictive Metrics That Correlate With Trust Loss and Churn</h2>
+            <p>The following metrics move before the driver opts out - sometimes weeks before. They require scenario normalization, but the signals themselves are measurable today with standard CAN and telemetry data.</p>
+
+            <h3>Driver Workload Tax</h3>
+            <p>These metrics capture the cognitive cost the system imposes on the driver, even when everything is technically working. They are the earliest leading indicators of behavioral disengagement.</p>
+            <ul>
+              <li><strong>Nag rate (alerts per hour):</strong> Frequency of hands-on requests, attention prompts, and mode confirmations during routine driving. A rate above approximately 3 prompts per hour in low-complexity scenarios is a warning threshold. High nag rates are the single strongest predictor of early L2 disengagement.</li>
+              <li><strong>Supervision overhead fraction:</strong> The proportion of drive time spent responding to system uncertainty - monitoring prompts, intervention requests, confirmation dialogs. A driver spending 20% of their drive managing the system is not experiencing assisted driving. They are doing the system's job.</li>
+              <li><strong>Mode confirmation rate:</strong> How often the driver must actively confirm or re-engage after system-initiated exits. Each confirmation is a micro-transaction that depletes trust.</li>
+            </ul>
+
+            <div class="observation-box">
+              <div class="insight-label">Key Observation</div>
+              <p>High nag rates are the single strongest predictor of early L2 disengagement. A driver spending 20% of their drive managing the system is not experiencing assisted driving - they are doing the system's job.</p>
+            </div>
+
+            <h3>Comfort and Confidence Signals</h3>
+            <p>These capture how a driver's body responds to system behavior before they consciously decide to disengage. They are subtler than nag rate but more predictive of churn.</p>
+            <ul>
+              <li><strong>Micro-takeover rate:</strong> Brief driver torque or brake inputs that do not trigger a full disengage. This is the most sensitive early indicator of comfort erosion - it catches distrust that never appears in official disengagement logs.</li>
+              <li><strong>Cancel-and-reenable loops:</strong> The driver disengages and re-enables the feature within approximately 90 seconds. This pattern signals dissatisfaction with a specific behavior, not a rejection of the feature overall. Clusters of this pattern on specific road segment types almost always point to a localized algorithm or map artifact.</li>
+              <li><strong>Jerk and acceleration outliers in mundane scenarios:</strong> Unexpected longitudinal or lateral jerk during stop-and-go traffic or lane changes in clear conditions - scenarios where the system should be most comfortable. Outliers here indicate brittleness in the highest-frequency use cases.</li>
+            </ul>
+
+            <h3>Capability Consistency</h3>
+            <p>Drivers abandon features when they cannot predict when the feature will work. Inconsistency is more damaging than consistent limitation - a driver will adapt to a known constraint, but they will not adapt to a system that surprises them.</p>
+            <ul>
+              <li><strong>Autonomy availability in actual ODD:</strong> The percentage of miles and scenarios the driver actually encounters where the feature is available and functional. A system that works 95% of the time on test routes but 70% of the time on a driver's real commute has an availability gap that will drive abandonment.</li>
+              <li><strong>Surprise rate:</strong> Unexpected system behaviors that trigger a driver correction - phantom braking, late lane selection, sudden slowdowns without apparent cause. Drivers tolerate conservative behavior. They do not tolerate unpredictable behavior.</li>
+              <li><strong>Scenario coverage gaps:</strong> Which scenario classes - unprotected turns, uncontrolled intersections, construction zones, VRU-dense environments - show disproportionate disengagement rates? These are the highest-signal inputs to backlog prioritization.</li>
+            </ul>
+
+            <div class="insight-box">
+              <div class="insight-label">Key Insight</div>
+              <p>Inconsistency is more damaging than consistent limitation. A driver will adapt to a known constraint, but will not adapt to a system that surprises them.</p>
+            </div>
+          </div>
+
+          <!-- Intervention Taxonomy -->
+          <div class="card article-body mb-8">
+            <h2 id="section-taxonomy" style="margin-top:0">Intervention Taxonomy: Why Classification Matters</h2>
+            <p>Not all interventions carry the same meaning, and treating them as equivalent is one of the most common instrumentation errors in ADAS product development. A driver braking to avoid a genuine collision is not the same event as a driver braking because the system decelerated uncomfortably. The reporting ecosystem illustrates both the value and the ambiguity of public intervention metrics - the headline rate is easy to game and hard to compare.</p>
+
+            <!-- Intervention Type Table -->
+            <div class="data-table-wrap">
+              <div class="data-table-header">
+                <span class="tbl-title">Intervention Classification Framework</span>
+                <span class="tbl-sub">Type · Motivation · Trust Impact · Product Action</span>
+              </div>
+              <div style="overflow-x:auto;">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Type</th>
+                      <th>Driver Motivation</th>
+                      <th>Trust Impact</th>
+                      <th>Product Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Critical Safety</td>
+                      <td>Genuine hazard or system failure</td>
+                      <td>High, but expected if rare</td>
+                      <td>Incident review, safety validation</td>
+                    </tr>
+                    <tr>
+                      <td>Performance</td>
+                      <td>Technically correct but suboptimal</td>
+                      <td>Medium - erodes confidence over time</td>
+                      <td>Algorithm tuning, scenario retraining</td>
+                    </tr>
+                    <tr>
+                      <td>Comfort</td>
+                      <td>Uncomfortable, jarring, or surprising</td>
+                      <td>High - most strongly predicts churn</td>
+                      <td>Jerk optimization, comfort tuning</td>
+                    </tr>
+                    <tr>
+                      <td>Availability</td>
+                      <td>Feature unavailable in expected scenario</td>
+                      <td>High - unmet expectation</td>
+                      <td>ODD expansion, map freshness</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="observation-box">
+              <div class="insight-label">Key Observation</div>
+              <p>Comfort interventions are the type most strongly predictive of churn - yet they are the most likely to be missed or misclassified in standard telemetry pipelines that focus on safety-critical events.</p>
+            </div>
+          </div>
+
+          <!-- Web vs Automotive -->
+          <div class="card article-body mb-8">
+            <h2 id="section-web-auto" style="margin-top:0">Difference Between Automotive and Web Metrics</h2>
+            <p>Classifying interventions correctly matters - but only if the broader measurement framework is built for automotive realities. Product managers transitioning from consumer software often apply web analytics frameworks directly to ADAS. The underlying assumptions do not transfer, and the result is misleading dashboards and wrong priorities.</p>
+
+            <h3>Stakes and Feedback Loops</h3>
+            <p>The worst web outcome is conversion loss. The worst automotive outcome is injury, litigation, or regulatory action. Web teams iterate in days. ADAS teams iterate in months, and many signals are indirect - drivers do not submit a bug report when they stop using a feature.</p>
+
+            <h3>Data Distribution</h3>
+            <p>Web events are high frequency and approximately independent. Driving data has heavy tails: rare edge cases dominate risk, and the average user drive hides the scenarios that break trust. A fleet average of 1 disengagement per 1,000 miles can mask a 1-per-50-miles rate in a specific scenario class - exactly the one a subset of urban commuters encounters daily.</p>
+
+            <h3>Session Duration</h3>
+            <p>Ten minutes of stop-and-go urban driving with four traffic lights and a construction zone is not the same as ten minutes of straight highway. Normalizing by time or miles without controlling for scenario complexity produces false equivalence - high engagement in ADAS often means the system is failing, not succeeding.</p>
+
+            <div class="insight-box">
+              <div class="insight-label">Key Insight</div>
+              <p>High engagement in ADAS often means the system is failing, not succeeding. A driver spending significant time actively managing the system is not a product success - it is a product problem.</p>
+            </div>
+
+            <!-- Web vs Auto Comparison Table -->
+            <div class="data-table-wrap">
+              <div class="data-table-header">
+                <span class="tbl-title">Web Analytics vs. ADAS Metrics</span>
+                <span class="tbl-sub">Mapping common web metrics to their automotive equivalents</span>
+              </div>
+              <div style="overflow-x:auto;">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Web Metric</th>
+                      <th>Automotive Equivalent</th>
+                      <th>Key Difference</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Average Session Duration</td>
+                      <td>Autonomy-engaged time / total drive time</td>
+                      <td>Must be scenario-normalized</td>
+                    </tr>
+                    <tr>
+                      <td>DAU / MAU</td>
+                      <td>Feature activation rate per driver per week</td>
+                      <td>Confounded by ODD availability and weather</td>
+                    </tr>
+                    <tr>
+                      <td>NPS / CSAT</td>
+                      <td>Trust calibration score (survey + behavioral)</td>
+                      <td>Behavioral signals more reliable than survey alone</td>
+                    </tr>
+                    <tr>
+                      <td>Engagement Rate</td>
+                      <td>Supervision overhead rate (inverse)</td>
+                      <td>High engagement = bad; driver should not be 'working'</td>
+                    </tr>
+                    <tr>
+                      <td>Churn Rate</td>
+                      <td>Non-renewal + feature opt-out rate</td>
+                      <td>Lead time is months; requires earlier signals</td>
+                    </tr>
+                    <tr>
+                      <td>Error Rate</td>
+                      <td>Intervention taxonomy rate</td>
+                      <td>Comfort vs. safety interventions are opposite signals</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Guardrails -->
+          <div class="card article-body mb-8">
+            <h2 id="section-guardrails" style="margin-top:0">Non-Negotiable Guardrails</h2>
+            <p>Reframing the metric vocabulary is important - but it does not change what sits beneath it. The predictive metrics above are product health signals. They run alongside safety metrics, never in place of them. No product optimization overrides these floors:</p>
+            <ul>
+              <li><strong>Crash and incident rates,</strong> aligned to NHTSA SGO reporting requirements and internal safety standards.</li>
+              <li><strong>High-severity near-miss proxies:</strong> hard braking with low time-to-collision, collision warning activations, emergency avoidance maneuvers.</li>
+              <li><strong>ODD compliance violations:</strong> feature usage outside the vehicle's validated operational design domain. A usage rate that improves because drivers are using the feature in unvalidated conditions is not a product success.</li>
+              <li><strong>Trust calibration balance:</strong> monitoring for over-trust (driver not monitoring when they should) alongside under-trust. A product metric that improves usage by encouraging over-reliance is not a win.</li>
+            </ul>
+
+            <div class="observation-box">
+              <div class="insight-label">Important Note</div>
+              <p>Predictive metrics are product health signals. They run alongside safety metrics, never in place of them. No product optimization overrides the safety floors listed above.</p>
+            </div>
+          </div>
+
+          <!-- North Star -->
+          <div class="card article-body mb-8">
+            <h2 id="section-northstar" style="margin-top:0">Proposed North Star: Trusted Autonomy Utilization</h2>
+            <p>With the right signals identified, the right guardrails in place, and a clear-eyed view of what automotive metrics actually measure, the question becomes: What should teams optimize for? Miles per disengagement fails as a product north star for three reasons:
+              <br> it is gameable (a system that avoids hard scenarios scores better than one that handles them), 
+              <br> it is lagging (it captures outcomes, not the friction and surprise that precede disengagement), and
+              <br> it conflates failure modes (a critical safety intervention and a comfort takeover look identical in the numerator).</p>
+            <p>A better north star rewards the three things drivers actually need: the feature is available when they want it, it does not demand constant supervision, and it behaves predictably.</p>
+
+            <h3>The TAU Formula</h3>
+            <div class="formula-block">Trusted Autonomy Utilization (TAU) = (Autonomy Time in Intended ODD) × (1 − Supervision Overhead Rate) × (1 − Surprise Rate)</div>
+
+            <ul>
+              <li><strong>Autonomy Time in Intended ODD:</strong> Percentage of total driving time where the feature is available and engaged, measured only in conditions the feature was designed for. A driver who cannot use the feature on their real commute has a low TAU regardless of the system's disengagement rate on a test route.</li>
+              <li><strong>Supervision Overhead Rate:</strong> Nag rate + mode confirmations + attention interventions, normalized to a 0–1 scale against a fleet baseline. This component captures the friction that makes drivers stop enabling the feature.</li>
+              <li><strong>Surprise Rate:</strong> Unexpected system behaviors that trigger a driver correction (brake tap, torque override, cancel-reenable) per hour. This is the component most predictive of churn, because a single high-surprise event can set a negative behavioral pattern that persists long after the system corrects the root cause.</li>
+            </ul>
+
+            <div class="insight-box">
+              <div class="insight-label">Why TAU Is Harder to Game</div>
+              <p>A system that improves TAU must simultaneously be available in the driver's real ODD, impose low cognitive overhead, and behave predictably. Avoidance strategies that inflate miles-per-disengagement (restricting engagement to easy scenarios) reduce the first TAU component. Over-alerting strategies that suppress interventions inflate the supervision overhead component. TAU rewards the right behaviors across all three dimensions at once.</p>
+            </div>
+
+            <h3>Alternative North Star Definitions</h3>
+            <p><strong>Driver Trust Index (DTI)</strong> is a composite of micro-takeover rate, cancel-reenable frequency, and NPS over a rolling 30-day window. It is more accessible to non-technical stakeholders but harder to attribute to specific system components, making engineering prioritization less direct.</p>
+            <p><strong>Scenario Coverage × Comfort Matrix</strong> plots each scenario class on a 2×2 grid: ODD availability on one axis, friction-free usage rate on the other. Scenarios in the bottom-left quadrant are the product team's highest backlog priority. This is most useful as an engineering diagnostic beneath TAU, not as a headline metric.</p>
+
+            <div class="observation-box">
+              <div class="insight-label">Practical Recommendation</div>
+              <p>Use TAU as the headline north star for product reviews. Use the Scenario Matrix as the engineering diagnostic layer beneath it. Run DTI as the customer-facing trust narrative. All three read from the same underlying telemetry.</p>
+            </div>
+          </div>
+
+          <!-- Dashboard Implementation -->
+          <div class="card article-body mb-8">
+            <h2 id="section-dashboard" style="margin-top:0">Dashboard Implementation</h2>
+            <p>TAU works as a north star only when the data feeding it is structured correctly. The framework below organizes metrics into four tiers by cadence and audience, ensuring each team sees the signals most relevant to their decisions.</p>
+
+            <!-- Dashboard Tier Table -->
+            <div class="data-table-wrap">
+              <div class="data-table-header">
+                <span class="tbl-title">Metric Dashboard Structure</span>
+                <span class="tbl-sub">Tier · Metrics · Frequency · Audience</span>
+              </div>
+              <div style="overflow-x:auto;">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Tier</th>
+                      <th>Metrics</th>
+                      <th>Frequency</th>
+                      <th>Audience</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span class="tier-badge tier-safety">Safety Floor</span></td>
+                      <td>Crash rate, near-miss rate, ODD compliance</td>
+                      <td>Real-time / daily</td>
+                      <td>Safety, Legal</td>
+                    </tr>
+                    <tr>
+                      <td><span class="tier-badge tier-trust">Trust Health (TAU)</span></td>
+                      <td>TAU score, component breakdown by scenario</td>
+                      <td>Weekly</td>
+                      <td>Product, Engineering</td>
+                    </tr>
+                    <tr>
+                      <td><span class="tier-badge tier-lead">Leading Indicators</span></td>
+                      <td>Nag rate, micro-takeover rate, surprise rate</td>
+                      <td>Daily</td>
+                      <td>Dev Teams</td>
+                    </tr>
+                    <tr>
+                      <td><span class="tier-badge tier-biz">Business Signals</span></td>
+                      <td>Feature opt-out rate, NPS, renewal rate</td>
+                      <td>Monthly</td>
+                      <td>Product, Business</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <h3>Instrumentation Requirements</h3>
+            <p>Three instrumentation requirements make this framework honest:</p>
+            <ol>
+              <li>Every telemetry event must carry a <strong>scenario class label</strong> (highway, urban, merge, VRU encounter).</li>
+              <li>Every intervention must be <strong>classified by type at collection time</strong> - retroactive classification is unreliable.</li>
+              <li>Every event must log whether the vehicle was <strong>inside or outside its validated ODD</strong> at that moment. The ODD flag is the denominator that gives all other metrics their meaning.</li>
+            </ol>
+
+            <div class="insight-box">
+              <div class="insight-label">Key Insight</div>
+              <p>The ODD flag is the denominator that gives all other metrics their meaning. Without it, disengagement rates, TAU scores, and surprise rates are all computed against an ambiguous baseline - making them impossible to act on with confidence.</p>
+            </div>
+          </div>
+
+          <!-- Conclusion -->
+          <div class="card article-body mb-8">
+            <h2 id="section-conclusion" style="margin-top:0">Conclusion</h2>
+            <p>The ADAS industry has built sophisticated tools for measuring operational reliability. It has underinvested in measuring user trust.</p>
+            <p>Miles per disengagement is a useful engineering signal. It should not be the product north star. The metrics that predict feature abandonment - nag rate, micro-takeover rate, cancel-reenable patterns, surprise rate, and autonomy availability in the driver's real ODD - are measurable today. They require intentional instrumentation and a willingness to look at what drivers are doing, not just what the system logs.</p>
+            <p>Trusted Autonomy Utilization brings these signals into a single metric that is harder to game, more predictive of churn, and more actionable for product teams. In a market where ADAS feature subscriptions are an increasingly significant revenue stream, that signal is not optional.</p>
+
+            <div class="observation-box">
+              <div class="insight-label">Final Thought</div>
+              <p>In a market where ADAS feature subscriptions are an increasingly significant revenue stream, measuring user trust is not optional. It is the product.</p>
+            </div>
+
+            <div class="mt-6">
+              <a class="btn" style="background:#eef2ff;color:#1d4ed8" href="../index.html#articles">← Back to Articles</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-4">
+          <div class="sticky top-20 space-y-6">
+
+            <!-- Article meta -->
+            <div class="card">
+              <p class="text-xs tracking-widest font-semibold text-blue-700 uppercase mb-3">About This Article</p>
+              <p class="text-sm text-gray-600 leading-relaxed">Identifies the leading signals that predict ADAS feature abandonment before it happens, and frames them in a metric structure that product and engineering teams can instrument, dashboard, and act on.</p>
+              <div class="mt-4 pt-4 border-t border-gray-100">
+                <p class="text-xs text-gray-500 uppercase tracking-wide font-semibold mb-2">Topics Covered</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="text-xs font-medium px-2 py-1 rounded-full" style="background:#eef2ff;color:#1d4ed8">ADAS Strategy</span>
+                  <span class="text-xs font-medium px-2 py-1 rounded-full" style="background:#eef2ff;color:#1d4ed8">Product Metrics</span>
+                  <span class="text-xs font-medium px-2 py-1 rounded-full" style="background:#eef2ff;color:#1d4ed8">User Trust</span>
+                  <span class="text-xs font-medium px-2 py-1 rounded-full" style="background:#eef2ff;color:#1d4ed8">Telemetry</span>
+                  <span class="text-xs font-medium px-2 py-1 rounded-full" style="background:#eef2ff;color:#1d4ed8">Autonomous Driving</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick nav -->
+            <div class="card">
+              <p class="text-xs tracking-widest font-semibold text-blue-700 uppercase mb-3">In This Article</p>
+              <nav class="space-y-2 text-sm">
+                <a href="#section-intro" class="block text-gray-600 hover:text-blue-700 link-underline">Introduction</a>
+                <a href="#section-risk" class="block text-gray-600 hover:text-blue-700 link-underline">Disengagement Risk Is Not One Thing</a>
+                <a href="#section-metrics" class="block text-gray-600 hover:text-blue-700 link-underline">Predictive Metrics</a>
+                <a href="#section-taxonomy" class="block text-gray-600 hover:text-blue-700 link-underline">Intervention Taxonomy</a>
+                <a href="#section-web-auto" class="block text-gray-600 hover:text-blue-700 link-underline">Automotive vs. Web Metrics</a>
+                <a href="#section-guardrails" class="block text-gray-600 hover:text-blue-700 link-underline">Non-Negotiable Guardrails</a>
+                <a href="#section-northstar" class="block text-gray-600 hover:text-blue-700 link-underline">Trusted Autonomy Utilization</a>
+                <a href="#section-dashboard" class="block text-gray-600 hover:text-blue-700 link-underline">Dashboard Implementation</a>
+                <a href="#section-conclusion" class="block text-gray-600 hover:text-blue-700 link-underline">Conclusion</a>
+              </nav>
+            </div>
+
+            <!-- TAU quick reference -->
+            <div class="card">
+              <p class="text-xs tracking-widest font-semibold text-blue-700 uppercase mb-3">TAU Quick Reference</p>
+              <div class="space-y-3 text-sm">
+                <div>
+                  <p class="font-semibold text-gray-800">Autonomy Time in ODD</p>
+                  <p class="text-gray-500 text-xs">% of driving time with feature available &amp; engaged, in validated conditions</p>
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-800">Supervision Overhead Rate</p>
+                  <p class="text-gray-500 text-xs">Nag rate + mode confirmations + attention interventions, normalized 0–1</p>
+                </div>
+                <div>
+                  <p class="font-semibold text-gray-800">Surprise Rate</p>
+                  <p class="text-gray-500 text-xs">Unexpected behaviors triggering driver correction per hour</p>
+                </div>
+                <div class="pt-2 border-t border-gray-100">
+                  <div class="formula-block text-xs" style="font-size:.75rem;padding:.65rem 1rem;">TAU = ODD% × (1−SOR) × (1−SR)</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Key signals reference -->
+            <div class="card">
+              <p class="text-xs tracking-widest font-semibold text-blue-700 uppercase mb-3">Leading Abandonment Signals</p>
+              <div class="space-y-2 text-sm">
+                <div class="flex items-start gap-2">
+                  <div class="w-2 h-2 rounded-full bg-red-400 flex-shrink-0 mt-1.5"></div>
+                  <div>
+                    <p class="font-semibold text-gray-800">Nag Rate</p>
+                    <p class="text-gray-500 text-xs">Alerts per hour &gt;3 in low-complexity scenarios</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-2">
+                  <div class="w-2 h-2 rounded-full flex-shrink-0 mt-1.5" style="background:#fb923c"></div>
+                  <div>
+                    <p class="font-semibold text-gray-800">Micro-takeover Rate</p>
+                    <p class="text-gray-500 text-xs">Most sensitive early indicator of comfort erosion</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-2">
+                  <div class="w-2 h-2 rounded-full bg-yellow-400 flex-shrink-0 mt-1.5"></div>
+                  <div>
+                    <p class="font-semibold text-gray-800">Cancel-Reenable Loops</p>
+                    <p class="text-gray-500 text-xs">Re-enable within ~90s signals localized dissatisfaction</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-2">
+                  <div class="w-2 h-2 rounded-full bg-blue-400 flex-shrink-0 mt-1.5"></div>
+                  <div>
+                    <p class="font-semibold text-gray-800">Surprise Rate</p>
+                    <p class="text-gray-500 text-xs">Most predictive of long-term churn</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-2">
+                  <div class="w-2 h-2 rounded-full bg-purple-400 flex-shrink-0 mt-1.5"></div>
+                  <div>
+                    <p class="font-semibold text-gray-800">ODD Availability Gap</p>
+                    <p class="text-gray-500 text-xs">Test-route vs. real-commute availability delta</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t">
+    <div class="container-w mx-auto px-6 py-8 text-sm text-gray-500 flex items-center justify-between">
+      <span>© 2025 Aditya Kothari</span>
+      <a class="text-blue-700 link-underline" href="../index.html">Return to Home</a>
+    </div>
+  </footer>
+</body>
+</html>
