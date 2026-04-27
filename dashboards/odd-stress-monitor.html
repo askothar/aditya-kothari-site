@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ODD Stress Monitor - Aditya Kothari</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <style>
+    :root{
+      --brand:#2563eb;
+      --ink:#0b1324;
+      --muted:#5b677d;
+      --paper:#ffffff;
+      --wash:#f6f8fb;
+    }
+    html { scroll-behavior: smooth; }
+    body{
+      color:var(--ink);
+      background: #f4f6fb;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      letter-spacing: 0.01em;
+    }
+    .h-display{
+      font-family: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      letter-spacing: -0.01em;
+    }
+    .container-w{ max-width: 1120px; }
+    .elev{ box-shadow: 0 10px 30px rgba(16,24,40,.06), 0 4px 6px rgba(16,24,40,.04); }
+    .link-underline{ position:relative; text-decoration:none; }
+    .link-underline:after{
+      content:""; position:absolute; left:0; bottom:-2px; height:2px; width:100%;
+      background: currentColor; opacity:.15; transform: scaleX(0); transform-origin:left;
+      transition: transform .25s ease;
+    }
+    .link-underline:hover:after{ transform: scaleX(1); }
+
+    .card{
+      background: var(--paper);
+      border-radius: 16px;
+      padding: 1.25rem;
+    }
+    @media (min-width: 768px){ .card{ padding: 1.5rem; } }
+    @media (min-width: 1024px){ .card{ padding: 1.75rem; } }
+
+    .btn-primary{
+      display:inline-flex; align-items:center; justify-content:center;
+      border-radius: 12px; font-weight: 600;
+      padding: .75rem 1.25rem;
+      background: var(--brand); color:#fff;
+      transition: background .2s ease;
+    }
+    .btn-primary:hover{ background:#1d4ed8; }
+    .btn-outline{
+      display:inline-flex; align-items:center; justify-content:center;
+      border-radius: 12px; font-weight: 600;
+      padding: .75rem 1.25rem;
+      background: #eef2ff; color: #1d4ed8;
+      transition: background .2s ease;
+    }
+    .btn-outline:hover{ background:#e0e7ff; }
+
+    .eyebrow{
+      font-size: .75rem; letter-spacing: .14em; text-transform: uppercase;
+      font-weight: 600; color: var(--brand);
+    }
+
+    .callout{
+      background: #eff6ff;
+      border-left: 3px solid var(--brand);
+      border-radius: 0 10px 10px 0;
+      padding: 1rem 1.25rem;
+    }
+
+    /* Weight bars */
+    .weight-row{
+      display: grid;
+      grid-template-columns: 1fr 2fr 60px;
+      align-items: center;
+      gap: 1rem;
+      padding: .55rem 0;
+      border-bottom: 1px solid #eef0f4;
+      font-size: .9rem;
+    }
+    .weight-row:last-child{ border-bottom: none; }
+    .weight-bar-track{
+      height: 6px; background: #eef0f4; border-radius: 3px; overflow: hidden;
+    }
+    .weight-bar-fill{
+      height: 100%; background: var(--brand); border-radius: 3px;
+    }
+    .weight-pct{
+      font-variant-numeric: tabular-nums;
+      text-align: right; color: var(--muted); font-weight: 600;
+    }
+
+    .formula-block{
+      background: #0b1324; color: #cbd5e1;
+      border-radius: 10px; padding: 1rem 1.1rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .82rem; line-height: 1.7;
+      overflow-x: auto;
+    }
+    .formula-block .accent{ color: #93c5fd; }
+    .formula-block .muted{ color: #64748b; }
+
+    /* Source rows */
+    .source-row{
+      display: grid;
+      grid-template-columns: 160px 1fr auto;
+      align-items: start;
+      gap: 1.25rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid #eef0f4;
+      font-size: .92rem;
+    }
+    .source-row:last-child{ border-bottom: none; }
+    .source-name{ font-weight: 600; color: var(--ink); }
+    .source-desc{ color: #475569; line-height: 1.6; }
+    .source-badge{
+      font-size: .68rem; letter-spacing: .08em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 9999px; font-weight: 600;
+      white-space: nowrap;
+    }
+    .badge-live{ background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+    .badge-static{ background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; }
+
+    /* Decisions */
+    .decision{
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 1rem;
+    }
+    .decision + .decision{ margin-top: 1.25rem; }
+    .decision-num{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: var(--brand); font-weight: 700;
+      padding-top: 2px;
+    }
+    .decision-title{ font-weight: 600; margin-bottom: .25rem; }
+    .decision-detail{ color: #475569; line-height: 1.65; }
+    .decision-detail code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .82rem;
+      background: #eef2ff; color: #1d4ed8;
+      padding: 1px 6px; border-radius: 4px;
+    }
+
+    /* Limitations */
+    .limit-icon{
+      width: 32px; height: 32px; border-radius: 8px;
+      display: inline-flex; align-items: center; justify-content: center;
+      margin-bottom: .65rem;
+    }
+    .limit-icon.amber{ background: #fef3c7; color: #b45309; }
+    .limit-icon.red{ background: #fee2e2; color: #b91c1c; }
+
+    @media (max-width: 700px){
+      .source-row{ grid-template-columns: 1fr; }
+      .source-row > div:last-child{ justify-self: start; }
+      .weight-row{ grid-template-columns: 1fr 1.6fr 50px; }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50">
+  <!-- NAV -->
+  <header class="bg-white border-b sticky top-0 z-50">
+    <div class="container-w mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center space-x-3">
+        <div class="w-2.5 h-2.5 rounded-full bg-blue-600"></div>
+        <span class="font-semibold tracking-wide">Aditya Kothari</span>
+      </a>
+      <nav class="hidden md:flex items-center space-x-6 text-sm">
+        <a class="link-underline text-gray-700 hover:text-blue-700" href="../index.html#about">About</a>
+        <a class="link-underline text-gray-700 hover:text-blue-700" href="../portfolio.html">Portfolio</a>
+        <a class="link-underline text-gray-700 hover:text-blue-700" href="../resume.html">Resume</a>
+        <a class="link-underline text-gray-700 hover:text-blue-700" href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-white border-b border-gray-100">
+    <div class="container-w mx-auto px-5 md:px-6 lg:px-8">
+      <div class="py-16 md:py-20">
+        <p class="eyebrow mb-4">Dashboard · Methodology</p>
+        <h1 class="h-display text-4xl md:text-5xl font-semibold leading-tight">
+          How hostile is this road for an <em class="italic" style="color:var(--brand)">ADAS/AV System</em>?
+        </h1>
+        <p class="mt-5 text-base md:text-lg leading-relaxed text-gray-600 max-w-3xl">
+          A living map of Operational Design Domain stress across San Francisco limits -
+          built to quantify the conditions that push ADAS/AV systems toward their operational limits.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3">
+          <a href="./odd-stress-monitor_dashboard.html" class="btn-primary" target="_blank">View Live Dashboard →</a>
+          <a href="../portfolio.html#dashboards" class="btn-outline">← Back to Portfolio</a>
+        </div>
+        <!-- <div class="mt-6">
+          <a href="#problem" class="link-underline text-sm text-gray-500 hover:text-blue-700">Read the methodology ↓</a>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 PROBLEM -->
+  <section id="problem" class="py-16 md:py-20" style="background:var(--wash)">
+    <div class="container-w mx-auto px-5 md:px-6 lg:px-8">
+      <p class="eyebrow mb-3">01 · The problem</p>
+      <h2 class="h-display text-2xl md:text-3xl font-semibold leading-tight">ODD boundaries are invisible until it’s too late</h2>
+
+      <div class="mt-6 max-w-3xl space-y-4 text-gray-700 leading-relaxed">
+        <p>
+          Every ADAS system and autonomous vehicle operates within an Operational Design Domain - speed limits, weather, road markings, intersection type. When real-world conditions drift outside that envelope, the system either degrades silently or disengages.
+        </p>
+        <div class="callout">
+          <p>
+            <strong>The gap:</strong> engineers know their ODD on paper, but there is no live signal telling them how stressed any given zone is <em>right now</em> , how close it is to the edge of what the system can handle.
+          </p>
+        </div>
+        <p>
+          This dashboard fills that gap. It aggregates live incident data, work-zone geometry, weather observations, road-level congestion, and static intersection complexity into a single per-hexagon stress score - updated every hour, covering the full city grid.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 KPIs -->
+  <section id="kpis" class="py-16 md:py-20">
+    <div class="container-w mx-auto px-5 md:px-6 lg:px-8">
+      <p class="eyebrow mb-3">02 · KPIs</p>
+      <h2 class="h-display text-2xl md:text-3xl font-semibold leading-tight">What is measured and why</h2>
+      <p class="mt-4 text-gray-600 max-w-3xl">
+        Each metric was chosen because it directly narrows or widens the margin between current conditions and a system’s validated ODD boundary.
+      </p>
+
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+        <div class="card elev">
+          <div class="text-2xl font-semibold text-blue-700 h-display">0-10</div>
+          <div class="mt-2 font-semibold">ODD Stress Index</div>
+          <p class="mt-1 text-sm text-gray-600 leading-relaxed">Composite score per hex cell. 0 = nominal conditions, 10 = operating at or beyond validated envelope.</p>
+        </div>
+        <div class="card elev">
+          <div class="text-2xl font-semibold text-blue-700 h-display">0-10</div>
+          <div class="mt-2 font-semibold">Congestion</div>
+          <p class="mt-1 text-sm text-gray-600 leading-relaxed">HERE real-time flow data. Averaged per hex across all road segments. 0 = free flow, 10 = standstill.</p>
+        </div>
+        <div class="card elev">
+          <div class="text-2xl font-semibold text-blue-700 h-display">m²</div>
+          <div class="mt-2 font-semibold">Work Zone Burden</div>
+          <p class="mt-1 text-sm text-gray-600 leading-relaxed">Active WZDx work zones weighted by lane impact and affected length within each hex.</p>
+        </div>
+        <div class="card elev">
+          <div class="text-2xl font-semibold text-blue-700 h-display">n</div>
+          <div class="mt-2 font-semibold">Active Incidents</div>
+          <p class="mt-1 text-sm text-gray-600 leading-relaxed">511 SF Bay events classified as incidents, accidents, and hazards - severity-weighted count per hex.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 SCORE MODEL -->
+  <section id="score" class="py-16 md:py-20" style="background:var(--wash)">
+    <div class="container-w mx-auto px-5 md:px-6 lg:px-8">
+      <p class="eyebrow mb-3">03 · Stress score model</p>
+      <h2 class="h-display text-2xl md:text-3xl font-semibold leading-tight">A weighted sum, normalized to a human scale</h2>
+      <p class="mt-4 text-gray-600 max-w-3xl">
+        Each sub-score is independently normalized to [0, 1] before weighting, so no single source can dominate purely because of its units. The weighted sum is then scaled to [0, 10].
+      </p>
+
+      <div class="mt-8 grid lg:grid-cols-2 gap-6 md:gap-8 items-start">
+        <div class="card elev">
+          <p class="text-xs tracking-widest font-semibold uppercase text-gray-500 mb-3">Formula</p>
+          <div class="formula-block">
+            stress <span class="muted">= (</span><br>
+            &nbsp;&nbsp;<span class="accent">0.25</span> × congestion <span class="muted">+</span><br>
+            &nbsp;&nbsp;<span class="accent">0.21</span> × work_zone <span class="muted">+</span><br>
+            &nbsp;&nbsp;<span class="accent">0.12</span> × incidents <span class="muted">+</span><br>
+            &nbsp;&nbsp;<span class="accent">0.12</span> × weather <span class="muted">+</span><br>
+            &nbsp;&nbsp;<span class="accent">0.25</span> × intersection <span class="muted">+</span><br>
+            &nbsp;&nbsp;<span class="accent">0.05</span> × planned_event<br>
+            <span class="muted">) ×</span> <span class="accent">10</span>
+          </div>
+        </div>
+
+        <div class="card elev">
+          <p class="text-xs tracking-widest font-semibold uppercase text-gray-500 mb-3">Weights</p>
+          <div class="weight-row">
+            <div>Traffic congestion</div>
+            <div class="weight-bar-track"><div class="weight-bar-fill" style="width:100%"></div></div>
+            <div class="weight-pct">25%</div>
+          </div>
+          <div class="weight-row">
+            <div>Intersection complexity</div>
+            <div class="weight-bar-track"><div class="weight-bar-fill" style="width:100%"></div></div>
+            <div class="weight-pct">25%</div>
+          </div>
+          <div class="weight-row">
+            <div>Work zone burden</div>
+            <div class="weight-bar-track"><div class="weight-bar-fill" style="width:84%"></div></div>
+            <div class="weight-pct">21%</div>
+          </div>
+          <div class="weight-row">
+            <div>Active incidents</div>
+            <div class="weight-bar-track"><div class="weight-bar-fill" style="width:48%"></div></div>
+            <div class="weight-pct">12%</div>
+          </div>
+          <div class="weight-row">
+            <div>Weather severity</div>
+            <div class="weight-bar-track"><div class="weight-bar-fill" style="width:48%"></div></div>
+            <div class="weight-pct">12%</div>
+          </div>
+          <div class="weight-row">
+            <div>Planned event</div>
+            <div class="weight-bar-track"><div class="weight-bar-fill" style="width:20%"></div></div>
+            <div class="weight-pct">5%</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-6 text-gray-600 max-w-3xl leading-relaxed">
+        Traffic congestion and intersection complexity are weighted equally as the two largest contributors - congestion is the most dynamic, spatially dense signal for ADAS operational margin, while intersection complexity captures the static structural difficulty that defines a hex’s baseline stress floor. Planned events carry the smallest weight, reflecting their relatively predictable and bounded impact compared to the other sources.
+      </p>
+    </div>
+  </section>
+
+  <!-- 04 SOURCES -->
+  <section id="sources" class="py-16 md:py-20">
+    <div class="container-w mx-auto px-5 md:px-6 lg:px-8">
+      <p class="eyebrow mb-3">04 · Data sources</p>
+      <h2 class="h-display text-2xl md:text-3xl font-semibold leading-tight">Where the numbers come from</h2>
+
+      <div class="mt-8 card elev">
+        <div class="source-row">
+          <div class="source-name">HERE Traffic API</div>
+          <div class="source-desc">
+            Real-time flow data queried by city bounding box. <code style="font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;background:#eef2ff;color:#1d4ed8;padding:1px 6px;border-radius:4px;">jamFactor</code> per road segment is averaged to the H3 hex cell. Covers freeways and major urban roads.
+          </div>
+          <div><span class="source-badge badge-live">hourly</span></div>
+        </div>
+        <div class="source-row">
+          <div class="source-name">511 SF Bay</div>
+          <div class="source-desc">
+            Single <code style="font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;background:#eef2ff;color:#1d4ed8;padding:1px 6px;border-radius:4px;">/traffic/events</code> endpoint. Response is split internally by <code style="font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;background:#eef2ff;color:#1d4ed8;padding:1px 6px;border-radius:4px;">event_type</code> into incidents vs. planned events. No separate incidents endpoint exists.
+          </div>
+          <div><span class="source-badge badge-live">hourly</span></div>
+        </div>
+        <div class="source-row">
+          <div class="source-name">Caltrans WZDx</div>
+          <div class="source-desc">
+            Work zone feed for Bay Area District 4. Geometry midpoint determines hex attribution. Work zone burden weights by lane impact and affected road length.
+          </div>
+          <div><span class="source-badge badge-live">hourly</span></div>
+        </div>
+        <div class="source-row">
+          <div class="source-name">NOAA / NWS</div>
+          <div class="source-desc">
+            Hourly forecast from the MTR gridpoint. Condition text is mapped to a severity score - dense fog, heavy rain, and snow carry the highest weights. Applied uniformly across all hex cells (city-wide signal).
+          </div>
+          <div><span class="source-badge badge-live">hourly</span></div>
+        </div>
+        <div class="source-row">
+          <div class="source-name">OpenStreetMap</div>
+          <div class="source-desc">
+            Signal count and pedestrian crossing density per hex, queried once via Overpass API and stored as a static lookup file. Refreshed manually when the road network changes.
+          </div>
+          <div><span class="source-badge badge-static">static</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 DECISIONS -->
+  <section id="decisions" class="py-16 md:py-20" style="background:var(--wash)">
+    <div class="container-w mx-auto px-5 md:px-6 lg:px-8">
+      <p class="eyebrow mb-3">05 · Product decisions</p>
+      <h2 class="h-display text-2xl md:text-3xl font-semibold leading-tight">Why it was built this way</h2>
+
+      <div class="mt-8 card elev">
+        <div class="decision">
+          <div class="decision-num">01</div>
+          <div>
+            <div class="decision-title">H3 hexagons, not named corridors</div>
+            <p class="decision-detail">
+              Named corridors require manual curation and don’t scale to city coverage. H3 cells tile the city uniformly, enable heatmap rendering, and allow corridor-level analysis by grouping adjacent cells without any hardcoded list.
+            </p>
+          </div>
+        </div>
+        <div class="decision">
+          <div class="decision-num">02</div>
+          <div>
+            <div class="decision-title">Static site generation, no live server</div>
+            <p class="decision-detail">
+              The pipeline runs hourly on GitHub Actions, writes pre-computed JSON to the frontend repo, and the dashboard reads static files. Zero hosting cost, zero server maintenance, and sub-millisecond page loads since there are no API calls at render time.
+            </p>
+          </div>
+        </div>
+        <div class="decision">
+          <div class="decision-num">03</div>
+          <div>
+            <div class="decision-title">Jam factor, not raw speed</div>
+            <p class="decision-detail">
+              Raw speed varies by road type , 25 mph is free-flow on a residential street and severe congestion on a freeway. <code>jamFactor</code> is already normalized by HERE against each segment’s historical free-flow baseline, making it road-type-agnostic and directly averageable across a hex cell.
+            </p>
+          </div>
+        </div>
+        <div class="decision">
+          <div class="decision-num">04</div>
+          <div>
+            <div class="decision-title">OSM intersection data baked in, not live</div>
+            <p class="decision-detail">
+              Querying Overpass on every hourly run is slow and adds a fragile dependency. Signal and crossing counts change only when the road network changes , so they are pre-computed once, stored as a lookup file in the repo, and loaded by the pipeline at runtime without any network call.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 LIMITATIONS -->
+  <section id="limitations" class="py-16 md:py-20">
+    <div class="container-w mx-auto px-5 md:px-6 lg:px-8">
+      <p class="eyebrow mb-3">06 · Known limitations</p>
+      <h2 class="h-display text-2xl md:text-3xl font-semibold leading-tight">What this monitor does not capture</h2>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-5">
+        <div class="card elev">
+          <div class="limit-icon amber">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M8 4.5v4M8 11v.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="font-semibold">Weather is city-wide</div>
+          <p class="mt-1 text-sm text-gray-600 leading-relaxed">NWS gridpoint data applies a single weather condition to all hex cells. Microclimatic variation , fog in the valley vs. clear on the ridge , is not captured.</p>
+        </div>
+        <div class="card elev">
+          <div class="limit-icon amber">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M8 4.5v4M8 11v.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="font-semibold">HERE coverage gaps</div>
+          <p class="mt-1 text-sm text-gray-600 leading-relaxed">Traffic flow data is dense on arterials and freeways but sparse on residential streets. Hex cells with no segments return no congestion score and fall back to zero.</p>
+        </div>
+        <div class="card elev">
+          <div class="limit-icon red">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M8 4.5v4M8 11v.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="font-semibold">Hourly granularity only</div>
+          <p class="mt-1 text-sm text-gray-600 leading-relaxed">The pipeline refreshes once per hour. Sudden incidents that open and close within the same hour will not appear in the stress score history.</p>
+        </div>
+        <div class="card elev">
+          <div class="limit-icon red">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M8 4.5v4M8 11v.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="font-semibold">No sensor or camera data</div>
+          <p class="mt-1 text-sm text-gray-600 leading-relaxed">Pedestrian density, cyclist volume, and non-motorized road users are not measured. These are significant ODD stress factors for urban AV deployment that API sources do not cover.</p>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-wrap gap-3">
+        <a href="./odd-stress-monitor_dashboard.html" class="btn-primary">View Live Dashboard →</a>
+        <a href="../portfolio.html#dashboards" class="btn-outline">← Back to Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-gray-100">
+    <div class="container-w mx-auto px-5 md:px-6 lg:px-8">
+      <div class="py-8 md:py-10 text-sm text-gray-500 md:flex md:items-center md:justify-between gap-4">
+        <p>
+          Traffic data: <a href="https://511.org" target="_blank" rel="noopener" class="text-blue-700 link-underline">511 SF Bay</a> ·
+          Congestion: <a href="https://developer.here.com" target="_blank" rel="noopener" class="text-blue-700 link-underline">HERE</a> ·
+          Weather: <a href="https://www.weather.gov" target="_blank" rel="noopener" class="text-blue-700 link-underline">NOAA / NWS</a> ·
+          Work zones: <a href="https://wzdx.dot.ca.gov/" target="_blank" rel="noopener" class="text-blue-700 link-underline">Caltrans WZDx</a> ·
+          Road geometry: <a href="https://www.openstreetmap.org" target="_blank" rel="noopener" class="text-blue-700 link-underline">OpenStreetMap</a>
+        </p>
+        <p class="mt-2 md:mt-0 text-xs text-gray-400 whitespace-nowrap">Personal research project , not for navigation.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

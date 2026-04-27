@@ -72,6 +72,23 @@
     .chev{ transition: transform .2s ease; }
     details[open] .chev{ transform: rotate(90deg); }
     .role-body{ padding: .5rem 1.1rem 1rem 1.1rem; }
+
+    .btn-primary{
+      display:inline-flex; align-items:center; justify-content:center;
+      border-radius: 12px; font-weight: 600;
+      padding: .75rem 1.25rem;
+      background: var(--brand); color:#fff;
+      transition: background .2s ease;
+    }
+    .btn-primary:hover{ background:#1d4ed8; }
+    .btn-outline{
+      display:inline-flex; align-items:center; justify-content:center;
+      border-radius: 12px; font-weight: 600;
+      padding: .75rem 1.25rem;
+      background: #eef2ff; color: #1d4ed8;
+      transition: background .2s ease;
+    }
+    .btn-outline:hover{ background:#e0e7ff; }
   </style>
 </head>
 
@@ -86,10 +103,8 @@
         </a>
         <nav class="hidden md:flex items-center space-x-8 text-sm text-gray-700">
           <a href="#about" class="link-underline hover:text-blue-700">About</a>
-          <a href="#experience" class="link-underline hover:text-blue-700">Experience</a>
-          <a href="#education" class="link-underline hover:text-blue-700">Education</a>
-          <a href="#articles" class="link-underline hover:text-blue-700">Articles</a>
-          <a href="#projects" class="link-underline hover:text-blue-700">Projects</a>
+          <a href="./portfolio.html" class="link-underline hover:text-blue-700">Portfolio</a>
+          <a href="./resume.html" class="link-underline hover:text-blue-700">Resume</a>
           <a href="#contact" class="link-underline hover:text-blue-700">Contact</a>
         </nav>
         <div class="md:hidden">
@@ -151,218 +166,37 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience" class="py-20 md:py-24">
+  <!-- FEATURED PORTFOLIO -->
+  <section id="featured-portfolio" class="py-20 md:py-24">
     <div class="container-w mx-auto px-5 md:px-6 lg:px-8">
       <div class="mb-10 md:mb-12">
-        <h2 class="h-display text-3xl md:text-4xl font-semibold">Experience</h2>
+        <h2 class="h-display text-3xl md:text-4xl font-semibold">Featured Portfolio</h2>
+        <p class="mt-2 text-gray-600">A selected article and dashboard from my broader portfolio of work.</p>
       </div>
 
-      <div class="space-y-8">
-        <!-- Company: Audi of America -->
-        <div class="card elev">
-          <div class="md:flex md:items-start md:justify-between">
-            <div>
-              <h3 class="font-semibold text-xl">Audi of America</h3>
-              <p class="text-sm text-gray-500 mt-1">San Jose, California</p>
-            </div>
-          </div>
+      <div class="grid md:grid-cols-2 gap-6 md:gap-8">
+        <article class="card elev">
+          <p class="text-xs tracking-widest font-semibold text-blue-700 uppercase mb-2">Article</p>
+          <h3 class="font-semibold text-lg">Building Smart, Not Big: An MVP Framework for Urban Hands-Free Systems</h3>
+          <p class="mt-2 text-gray-600">A strategic framework for launching competitive ADAS products in a market that already has "complete" solutions.</p>
+          <a href="./articles/article_mvp_urban_handsfree.html" class="mt-4 inline-block text-blue-700 link-underline">Read</a>
+        </article>
 
-          <details class="role mt-4" open>
-            <summary class="role-head">
-              <div>
-                <p class="font-semibold">Principal Product Engineer</p>
-                <p class="text-sm text-gray-500">Feb 2026 – Present</p>
-              </div>
-              <span class="chev inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white flex-shrink-0">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                    <path d="M7.05 3.55a.75.75 0 0 1 1.06 0l5.34 5.34a1.5 1.5 0 0 1 0 2.12l-5.34 5.34a.75.75 0 1 1-1.06-1.06L11.94 10 7.05 5.61a.75.75 0 0 1 0-1.06z"/>
-                </svg></span>
-            </summary>
-            <div class="role-body">
-              <ul class="text-gray-700 space-y-2 list-disc list-inside">
-                <li>Own product strategy and roadmap definition for L2++ driver assistance portfolio for NAR market.</li>
-                <li>Aligning engineering execution with business goals, regulatory constraints, and customer expectations.</li>
-                <li>Lead cross-functional planning across HW, SW, validation, safety and legal to define feature scope and rollout strategy.</li>
-                <li>Drive competitor benchmarking, customer feedback synthesis, and cost-benefit trade studies for feature prioritization.</li>
-                <li>Represent NAR Market in Top-Management reviews and external stakeholder engagements.</li>
-              </ul>
-            </div>
-          </details>
+        <article class="card elev">
+          <p class="text-xs tracking-widest font-semibold text-blue-700 uppercase mb-2">Dashboard</p>
+          <h3 class="font-semibold text-lg">ODD Stress Monitor</h3>
+          <p class="mt-2 text-gray-600">Tracks weather, traffic, incidents, and road complexity to estimate current ADAS/AV operating difficulty.</p>
+          <a href="./dashboards/odd-stress-monitor.html" class="mt-4 inline-block text-blue-700 link-underline">View Dashboard</a>
+        </article>
+      </div>
 
-          <details class="role mt-4">
-            <summary class="role-head">
-              <div>
-                <p class="font-semibold">Sr. Product Development Engineer</p>
-                <p class="text-sm text-gray-500">Jun 2023 – Present</p>
-              </div>
-              <span class="chev inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white flex-shrink-0">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                    <path d="M7.05 3.55a.75.75 0 0 1 1.06 0l5.34 5.34a1.5 1.5 0 0 1 0 2.12l-5.34 5.34a.75.75 0 1 1-1.06-1.06L11.94 10 7.05 5.61a.75.75 0 0 1 0-1.06z"/>
-                </svg></span>
-            </summary>
-            <div class="role-body">
-              <ul class="text-gray-700 space-y-2 list-disc list-inside">
-                <li>Led cross-functional HW &amp; SW teams to deliver L2 functions, now in 7 vehicle models with 60k+ units sold.</li>
-                <li>Negotiated staged US rollout for advanced L2++ features, accelerating time-to-market and aligning with customer needs.</li>
-                <li>Increased the productivity for defect management by 40% by introducing AI-based triage workflows.</li>
-                <li>Cut testing cost by 12% by establishing validation strategies and toolchains for iterative, data-driven development.</li>
-                <li>Engaged with customers and regulators, to resolve launch issues and improve the metrics for future releases.</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="role">
-            <summary class="role-head">
-              <div>
-                <p class="font-semibold">Product Development Engineer</p>
-                <p class="text-sm text-gray-500">May 2022 – Jun 2023</p>
-              </div>
-              <span class="chev inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white flex-shrink-0">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                    <path d="M7.05 3.55a.75.75 0 0 1 1.06 0l5.34 5.34a1.5 1.5 0 0 1 0 2.12l-5.34 5.34a.75.75 0 1 1-1.06-1.06L11.94 10 7.05 5.61a.75.75 0 0 1 0-1.06z"/>
-                </svg></span>
-            </summary>
-            <div class="role-body">
-              <ul class="text-gray-700 space-y-2 list-disc list-inside">
-                <li>Defined Safety &amp; Systems requirements for L2/L3 functions, ensuring compliance and customer alignment.</li>
-                <li>Owned system design and end-to-end validation for Emergency Assist and Active Lane Departure Warning.</li>
-                <li>Built application processes, test plans, and validation pipelines across bench, simulation, and vehicle environments.</li>
-                <li>Conducted competitor benchmarking to inform and recommend feature improvements for the product roadmap.</li>
-              </ul>
-            </div>
-          </details>
-        </div>
-
-        <!-- Company: Aptiv -->
-        <div class="card elev">
-          <div class="md:flex md:items-start md:justify-between">
-            <div>
-              <h3 class="font-semibold text-xl">Aptiv</h3>
-              <p class="text-sm text-gray-500 mt-1">Troy, Michigan</p>
-            </div>
-          </div>
-
-          <details class="role mt-4">
-            <summary class="role-head">
-              <div>
-                <p class="font-semibold">Product Owner — Behavior &amp; Motion Planning</p>
-                <p class="text-sm text-gray-500">Dec 2021 – May 2022</p>
-              </div>
-              <span class="chev inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white flex-shrink-0">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                    <path d="M7.05 3.55a.75.75 0 0 1 1.06 0l5.34 5.34a1.5 1.5 0 0 1 0 2.12l-5.34 5.34a.75.75 0 1 1-1.06-1.06L11.94 10 7.05 5.61a.75.75 0 0 1 0-1.06z"/>
-                </svg></span>
-            </summary>
-            <div class="role-body">
-              <ul class="text-gray-700 space-y-2 list-disc list-inside">
-                <li>Owned product backlog and roadmap for L2 Hands-Free Driving, balancing technical feasibility and customer needs.</li>
-                <li>Translated customer input into technical requirements and user stories for engineering teams.</li>
-                <li>Partnered with HW/SW teams to define system architecture and performance targets within compute constraints.</li>
-                <li>Led sprint reviews and KPI assessments, reporting to internal leadership and external customers.</li>
-              </ul>
-            </div>
-          </details>
-
-          <details class="role">
-            <summary class="role-head">
-              <div>
-                <p class="font-semibold">Algorithm Engineer — Behavior &amp; Motion Planning</p>
-                <p class="text-sm text-gray-500">Feb 2019 – Dec 2021</p>
-              </div>
-              <span class="chev inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white flex-shrink-0">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                    <path d="M7.05 3.55a.75.75 0 0 1 1.06 0l5.34 5.34a1.5 1.5 0 0 1 0 2.12l-5.34 5.34a.75.75 0 1 1-1.06-1.06L11.94 10 7.05 5.61a.75.75 0 0 1 0-1.06z"/>
-                </svg></span>
-            </summary>
-            <div class="role-body">
-              <ul class="text-gray-700 space-y-2 list-disc list-inside">
-                <li>Developed lane change and fail-safe trajectory algorithms optimized for edge compute (ASIL D level).</li>
-                <li>Designed decision logic for merge/diverge scenarios under nominal and fail-safe conditions.</li>
-                <li>Validated algorithms in simulation, proving grounds, and public road testing.</li>
-                <li>Defined system-level requirements and integration plans with Perception, Localization, and Controls teams.</li>
-                <li>Supported formal ISO 26262 and SOTIF safety analyses for hands-free driving features.</li>
-              </ul>
-            </div>
-          </details>
-        </div>
-
-        <!-- Company: Siemens -->
-        <div class="card elev">
-          <div class="md:flex md:items-start md:justify-between">
-            <div>
-              <h3 class="font-semibold text-xl">Siemens</h3>
-              <p class="text-sm text-gray-500 mt-1">Livonia, Michigan</p>
-            </div>
-          </div>
-
-          <details class="role mt-4">
-            <summary class="role-head">
-              <div>
-                <p class="font-semibold">Application Support Engineer</p>
-                <p class="text-sm text-gray-500">May 2018 – Feb 2019</p>
-              </div>
-              <span class="chev inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white flex-shrink-0">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                    <path d="M7.05 3.55a.75.75 0 0 1 1.06 0l5.34 5.34a1.5 1.5 0 0 1 0 2.12l-5.34 5.34a.75.75 0 1 1-1.06-1.06L11.94 10 7.05 5.61a.75.75 0 0 1 0-1.06z"/>
-                </svg></span>
-            </summary>
-            <div class="role-body">
-              <ul class="text-gray-700 space-y-2 list-disc list-inside">
-                <li>Implemented trajectory planner (Hybrid A*) for Automated Parking, Evasive Maneuver, and Off-Road Driving.</li>
-                <li>Created a pedestrian detection algorithm using an SVM on LiDAR point clouds.</li>
-                <li>Developed deterministic &amp; random parameter variation framework for AV virtual testing.</li>
-                <li>Worked on driving policy via macro traffic simulation and accident reconstruction (GIDAS &amp; CIDAS).</li>
-                <li>Supported OEMs/suppliers on Simcenter Prescan; assisted Business Development in demos and consultations.</li>
-              </ul>
-            </div>
-          </details>
-        </div>
+      <div class="mt-10 md:mt-12">
+        <a href="./portfolio.html" class="btn-primary">View More</a>
       </div>
     </div>
   </section>
 
-  <!-- Education -->
-  <section id="education" class="py-20" style="background:var(--wash)">
-    <div class="container-w mx-auto px-6">
-      <h2 class="h-display text-3xl font-semibold mb-10">Education & Certifications</h2>
-      <div class="space-y-6">
-        <div class="card">
-          <h3 class="font-semibold">M.S. Engineering, Robotics</h3>
-          <p class="text-gray-600">University of Michigan, Dearborn (2022–2024) — CGPA 3.90</p>
-          <p class="text-sm text-gray-500">Courses: Trustworthy AI, Advanced AI, Mobile Robots, Robot Vision</p>
-        </div>
-        <div class="card">
-          <h3 class="font-semibold">M.S. Automotive Systems</h3>
-          <p class="text-gray-600">University of Michigan, Dearborn (2016–2018) — CGPA 3.78</p>
-          <p class="text-sm text-gray-500">Courses: Vehicle Stability & Control, Automotive Modeling, Systems Engineering</p>
-        </div>
-        <div class="card">
-          <h3 class="font-semibold">AI Product Management Bootcamp</h3>
-          <p class="text-gray-600">AI Product Academy, Maven (2025)</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="py-20 bg-gray-50">
-    <div class="container-w mx-auto px-6">
-      <h2 class="h-display text-3xl font-semibold mb-10">Skills</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="card">
-          <h3 class="font-semibold">Product &amp; Process</h3>
-          <p class="text-gray-700">Requirements Management (Codebeamer, Polarion), Functional Safety (ISO 26262), Agile (Scrum/Kanban), KPIs &amp; Metrics</p>
-        </div>
-        <div class="card">
-          <h3 class="font-semibold">Tech &amp; Tools</h3>
-          <p class="text-gray-700">C++, Python, Matlab, ROS, AV Simulation (Prescan, CarMaker, Carsim), Vector CANoe, dSPACE MicroAutoBox</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<!-- ARTICLES -->
+  <!-- FEATURED ARTICLES -->
   <section id="articles" class="py-20 md:py-24" style="background:var(--wash)">
     <div class="container-w mx-auto px-5 md:px-6 lg:px-8">
       <div class="mb-10 md:mb-12">
@@ -371,12 +205,6 @@
       </div>
 
       <div class="grid md:grid-cols-2 gap-6 md:gap-8">
-        <article class="card elev">
-          <h3 class="font-semibold text-lg">Building Smart, Not Big: An MVP Framework for Urban Hands-Free Systems</h3>
-          <p class="mt-2 text-gray-600">A strategic framework for launching competitive ADAS products in a market that already has "complete" solutions.</p>
-          <a href="./articles/article_mvp_urban_handsfree.html" class="mt-4 inline-block text-blue-700 link-underline">Read</a>
-        </article>
-
         <article class="card elev">
           <h3 class="font-semibold text-lg">Beyond Miles Per Disengagement: Signals That Predict Feature Abandonment</h3>
           <p class="mt-2 text-gray-600">Why the industry's headline ADAS metric misses the failure mode that actually destroys business cases - and which signals to measure instead.</p>
@@ -388,57 +216,60 @@
           <p class="mt-2 text-gray-600">How deliberate constraints - what you will not build, where you will not launch, what you will sacrifice - create sustainable revenue in safety-critical products.</p>
           <a href="./articles/article_strategy_of_no.html" class="mt-4 inline-block text-blue-700 link-underline">Read</a>
         </article>
+      </div>
 
-        <!-- <article class="card elev">
-          <h3 class="font-semibold text-lg">Safety-Critical Launch Playbook</h3>
-          <p class="mt-2 text-gray-600">Go/no-go framework from shadow mode to staged rollout with hazard analysis and rollback criteria.</p>
-          <a href="#" class="mt-4 inline-block text-blue-700 link-underline">View Report</a>
-        </article> -->
-
-        <!-- <article class="card elev">
-          <h3 class="font-semibold text-lg">Latency & Cost Under Constraints</h3>
-          <p class="mt-2 text-gray-600">Reduced inference latency/cost while holding quality via batching, caching, and observability.</p>
-          <a href="#" class="mt-4 inline-block text-blue-700 link-underline">View Report</a>
-        </article> -->
+      <div class="mt-10 md:mt-12">
+        <a href="./portfolio.html" class="btn-primary">View More</a>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="py-20 md:py-24" style="background:var(--wash)">
+  <!-- EXPERIENCE (current role only) -->
+  <section id="experience" class="py-20 md:py-24">
     <div class="container-w mx-auto px-5 md:px-6 lg:px-8">
       <div class="mb-10 md:mb-12">
-        <h2 class="h-display text-3xl md:text-4xl font-semibold">Projects</h2>
-        <p class="mt-2 text-gray-600">Research &amp; academic work with hands-on implementations.</p>
+        <h2 class="h-display text-3xl md:text-4xl font-semibold">Experience</h2>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6 md:gap-8">
-        <article class="card elev">
-          <h3 class="font-semibold text-lg">Adversarial Attacks on Road Signs</h3>
-          <p class="mt-2 text-gray-600">RP2 physical patch attack on CNN/ResNet18; defenses via augmentation &amp; adversarial training.</p>
-          <a class="mt-4 inline-block text-blue-700 link-underline" href=".\projects\project_adversarial_attack_on_road_sign_subpage.html" target="_self" rel="noopener">Read Article</a>
-        </article>
-        <article class="card elev">
-          <h3 class="font-semibold text-lg">Image Synthesis with Diffusion Models</h3>
-          <p class="mt-2 text-gray-600">UNet-based DDPM on Fashion-MNIST &amp; Flowers-102 under 4GB GPU; 32×32 samples and training curves.</p>
-          <a class="mt-4 inline-block text-blue-700 link-underline" href=".\projects\project_image_synthesis_with_diffusion_subpage.html" target="_self" rel="noopener">Read Article</a>
-        </article>
-        <article class="card elev">
-          <h3 class="font-semibold text-lg">Deep Learning Weather Forecasting</h3>
-          <p class="mt-2 text-gray-600">Compared ConvLSTM vs U-Net for nowcasting on SEVIR; documented collapse modes and remedies.</p>
-          <a class="mt-4 inline-block text-blue-700 link-underline" href=".\projects\project_deep_learning_weather_forecasting_subpage.html" target="_self" rel="noopener">Read Article</a>
-        </article>
-        <article class="card elev">
-          <h3 class="font-semibold text-lg">Collision Avoidance with Fuzzy Logic</h3>
-          <p class="mt-2 text-gray-600">Mamdani Type-1 FLC integrated in Matlab/Simulink/Gazebo; evaluated across 7 scenarios.</p>
-          <a class="mt-4 inline-block text-blue-700 link-underline" href=".\projects\project_collision_avoidance_with_fuzzy_logic_subpage.html" target="_self" rel="noopener">Read Article</a>
-        </article>
+      <div class="card elev">
+        <div class="md:flex md:items-start md:justify-between">
+          <div>
+            <h3 class="font-semibold text-xl">Audi of America</h3>
+            <p class="text-sm text-gray-500 mt-1">San Jose, California</p>
+          </div>
+        </div>
+
+        <details class="role mt-4" open>
+          <summary class="role-head">
+            <div>
+              <p class="font-semibold">Principal Product Engineer</p>
+              <p class="text-sm text-gray-500">Feb 2026 – Present</p>
+            </div>
+            <span class="chev inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white flex-shrink-0">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M7.05 3.55a.75.75 0 0 1 1.06 0l5.34 5.34a1.5 1.5 0 0 1 0 2.12l-5.34 5.34a.75.75 0 1 1-1.06-1.06L11.94 10 7.05 5.61a.75.75 0 0 1 0-1.06z"/>
+              </svg></span>
+          </summary>
+          <div class="role-body">
+            <ul class="text-gray-700 space-y-2 list-disc list-inside">
+              <li>Own product strategy and roadmap definition for L2++ driver assistance portfolio for NAR market.</li>
+              <li>Aligning engineering execution with business goals, regulatory constraints, and customer expectations.</li>
+              <li>Lead cross-functional planning across HW, SW, validation, safety and legal to define feature scope and rollout strategy.</li>
+              <li>Drive competitor benchmarking, customer feedback synthesis, and cost-benefit trade studies for feature prioritization.</li>
+              <li>Represent NAR Market in Top-Management reviews and external stakeholder engagements.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <div class="mt-10 md:mt-12">
+        <a href="./resume.html" class="btn-primary">View Resume</a>
       </div>
     </div>
   </section>
 
   <!-- CONTACT (no card, matches section style) -->
-  <section id="contact" class="py-20 md:py-24">
+  <section id="contact" class="py-20 md:py-24" style="background:var(--wash)">
     <div class="container-w mx-auto px-5 md:px-6 lg:px-8">
       <div class="mb-10 md:mb-12">
         <h2 class="h-display text-3xl md:text-4xl font-semibold">Contact</h2>

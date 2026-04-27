@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live ODD Stress Monitor</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #0f1117; color: #e2e8f0;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto auto;
+      grid-template-areas:
+        "topbar"
+        "kpi"
+        "middle"
+        "bottom"
+        "footer";
+      min-height: 100vh;
+    }
+
+    #footer {
+      grid-area: footer;
+      padding: 0.85rem 1.5rem 1rem;
+      border-top: 1px solid #1e2535;
+      font-size: 0.7rem;
+      color: #64748b;
+      text-align: center;
+      line-height: 1.6;
+    }
+    #footer a { color: #94a3b8; text-decoration: none; }
+    #footer a:hover { color: #cbd5e1; text-decoration: underline; }
+
+    /* ── Info icon + modal ────────────────────────────────────────── */
+    .info-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 14px; height: 14px; margin-left: 6px;
+      border-radius: 50%; border: 1px solid #475569;
+      background: transparent; color: #94a3b8;
+      font-size: 0.62rem; font-weight: 700; line-height: 1;
+      cursor: pointer; padding: 0; vertical-align: middle;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    .info-icon:hover { color: #e2e8f0; border-color: #94a3b8; }
+
+    .modal-backdrop {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0, 0, 0, 0.6);
+      display: none; align-items: center; justify-content: center;
+      padding: 1rem;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal {
+      background: #1a1f2e; border: 1px solid #1e2535; border-radius: 10px;
+      max-width: 480px; width: 100%;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+    }
+    .modal-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 1.1rem;
+      border-bottom: 1px solid #1e2535;
+    }
+    .modal-title { font-size: 0.95rem; font-weight: 600; color: #e2e8f0; }
+    .modal-close {
+      background: transparent; border: 1px solid #1e2535; color: #94a3b8;
+      width: 24px; height: 24px; border-radius: 50%;
+      font-size: 14px; line-height: 1; cursor: pointer; padding: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .modal-close:hover { border-color: #334155; color: #e2e8f0; }
+    .modal-body { padding: 1rem 1.1rem 1.15rem; }
+
+    .weight-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+    .weight-table th, .weight-table td {
+      padding: 0.5rem 0.6rem;
+      border-bottom: 1px solid #1e2535;
+      text-align: left;
+    }
+    .weight-table th {
+      font-size: 0.65rem; font-weight: 700; color: #64748b;
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .weight-table td { color: #e2e8f0; }
+    .weight-table td:last-child, .weight-table th:last-child { text-align: right; color: #94a3b8; }
+    .weight-table tr:last-child td { border-bottom: none; }
+
+    .formula {
+      margin-top: 0.9rem;
+      padding: 0.7rem 0.8rem;
+      background: #0f1117; border: 1px solid #1e2535; border-radius: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.72rem; color: #cbd5e1; line-height: 1.5;
+    }
+
+    a { color: inherit; }
+
+    /* ── A. Top bar ──────────────────────────────────────────────── */
+    #topbar {
+      grid-area: topbar;
+      padding: 0.9rem 1.5rem;
+      border-bottom: 1px solid #1e2535;
+      display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+      background: #0f1117;
+    }
+    #topbar h1 { font-size: 1.05rem; font-weight: 600; letter-spacing: 0.01em; }
+    #topbar .subheader { font-size: 0.78rem; color: #64748b; }
+    #topbar .controls { margin-left: auto; display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; }
+    .chip {
+      background: #1a1f2e; border: 1px solid #1e2535; border-radius: 6px;
+      padding: 0.3rem 0.65rem; font-size: 0.75rem; color: #94a3b8; cursor: pointer;
+    }
+    .chip:hover { border-color: #334155; }
+    #last-updated { font-size: 0.75rem; color: #64748b; }
+
+    /* ── B. KPI row ─────────────────────────────────────────────── */
+    #kpi {
+      grid-area: kpi;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+      padding: 1rem 1.5rem;
+    }
+    .kpi-card {
+      background: #1a1f2e; border: 1px solid #1e2535; border-radius: 10px;
+      padding: 1rem 1.25rem; min-height: 92px;
+    }
+    .kpi-label { font-size: 0.7rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.08em; }
+    .kpi-value { font-size: 1.9rem; font-weight: 700; line-height: 1.1; margin-top: 0.35rem; }
+    .kpi-sub   { font-size: 0.75rem; color: #94a3b8; margin-top: 0.35rem; }
+    .delta-up   { color: #f87171; }
+    .delta-down { color: #4ade80; }
+    .delta-flat { color: #64748b; }
+
+    /* ── Middle: C map + hex detail + D right panel ────────────── */
+    #middle {
+      grid-area: middle;
+      display: grid; grid-template-columns: 1fr 330px 320px; gap: 1rem;
+      padding: 0 1.5rem 1rem; min-height: 520px;
+    }
+    #hex-panel {
+      background: #1a1f2e; border: 1px solid #1e2535; border-radius: 10px;
+      padding: 1rem 1.1rem; overflow: hidden;
+    }
+    #hex-panel .hp-empty { color: #64748b; font-size: 0.8rem; }
+    #hex-panel-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 0.8rem;
+    }
+    #hex-panel-header .panel-title { margin-bottom: 0; }
+    #hex-panel-close {
+      background: transparent; border: 1px solid #1e2535; color: #94a3b8;
+      width: 22px; height: 22px; border-radius: 50%;
+      font-size: 14px; line-height: 1; cursor: pointer; padding: 0;
+      display: none; align-items: center; justify-content: center;
+    }
+    #hex-panel-close:hover { border-color: #334155; color: #e2e8f0; }
+    @media (max-width: 1400px) {
+      #middle { grid-template-columns: 1fr 330px; }
+      #right-panel { grid-column: 1 / -1; }
+    }
+    #map-wrap {
+      position: relative;
+      background: #1a1f2e; border: 1px solid #1e2535; border-radius: 10px;
+      overflow: hidden;
+    }
+    #map { height: 100%; min-height: 520px; background: #0b0e14; }
+    #map-legend {
+      position: absolute; bottom: 10px; left: 10px; z-index: 500;
+      background: rgba(15, 17, 23, 0.85); border: 1px solid #1e2535; border-radius: 6px;
+      padding: 0.5rem 0.7rem; font-size: 0.7rem; color: #94a3b8;
+    }
+    .legend-row { display: flex; align-items: center; gap: 0.4rem; margin-top: 0.2rem; }
+    .legend-swatch { width: 12px; height: 12px; border-radius: 2px; }
+
+    #map-reset {
+      position: absolute; top: 10px; right: 10px; z-index: 500;
+      background: rgba(15, 17, 23, 0.9); border: 1px solid #1e2535; border-radius: 6px;
+      padding: 0.4rem 0.75rem; font-size: 0.72rem; color: #cbd5e1; cursor: pointer;
+      display: flex; align-items: center; gap: 0.35rem;
+    }
+    #map-reset:hover { border-color: #334155; color: #e2e8f0; }
+
+    #right-panel {
+      background: #1a1f2e; border: 1px solid #1e2535; border-radius: 10px;
+      padding: 1rem 1.1rem; overflow-y: auto; max-height: 640px;
+    }
+
+    /* ── Bottom: E, F, G ─────────────────────────────────────────── */
+    #bottom {
+      grid-area: bottom;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem;
+      padding: 0 1.5rem 1.5rem;
+    }
+    .panel {
+      background: #1a1f2e; border: 1px solid #1e2535; border-radius: 10px;
+      padding: 1rem 1.1rem; min-height: 220px;
+    }
+    .panel-title {
+      font-size: 0.72rem; font-weight: 600; color: #64748b;
+      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.8rem;
+    }
+    .panel-subtitle { font-size: 0.72rem; color: #94a3b8; margin-bottom: 0.6rem; }
+
+    /* ── Breakdown tabs ──────────────────────────────────────────── */
+    .tabs { display: flex; gap: 4px; margin-bottom: 0.7rem; border-bottom: 1px solid #1e2535; }
+    .tab {
+      padding: 0.4rem 0.75rem; font-size: 0.72rem; font-weight: 600;
+      color: #64748b; background: transparent; border: none; cursor: pointer;
+      border-bottom: 2px solid transparent; letter-spacing: 0.03em;
+    }
+    .tab:hover:not(:disabled) { color: #cbd5e1; }
+    .tab.active { color: #e2e8f0; border-bottom-color: #3b82f6; }
+    .tab:disabled { color: #334155; cursor: not-allowed; }
+
+    .stack-row { margin-bottom: 0.7rem; }
+    .stack-label { display: flex; justify-content: space-between; font-size: 0.75rem; color: #94a3b8; margin-bottom: 0.25rem; }
+    .stack-bar { display: flex; height: 10px; border-radius: 5px; overflow: hidden; background: #0f1117; }
+    .stack-seg { height: 100%; }
+
+    .tier-row { display: flex; justify-content: space-between; align-items: center; padding: 0.55rem 0; border-bottom: 1px solid #1e2535; }
+    .tier-row:last-child { border-bottom: none; }
+    .tier-label { font-size: 0.82rem; }
+    .tier-count { font-size: 1.15rem; font-weight: 700; }
+    .unlock-section { margin-top: 0.9rem; padding-top: 0.7rem; border-top: 1px solid #1e2535; }
+    .unlock-row { font-size: 0.75rem; color: #94a3b8; margin-top: 0.4rem; }
+    .unlock-row b { color: #e2e8f0; font-weight: 600; }
+
+    .rank-row {
+      display: grid; grid-template-columns: 1fr auto; gap: 0.5rem;
+      padding: 0.55rem 0; border-bottom: 1px solid #1e2535;
+      font-size: 0.78rem; cursor: pointer;
+    }
+    .rank-row:last-child { border-bottom: none; }
+    .rank-row:hover { background: #1e2535; }
+    .rank-name { color: #e2e8f0; }
+    .rank-meta { color: #64748b; font-size: 0.7rem; margin-top: 0.15rem; }
+    .rank-score { font-weight: 700; }
+
+    .feed-section-title {
+      font-size: 0.68rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.08em;
+      margin-top: 0.9rem; margin-bottom: 0.4rem;
+    }
+    .feed-section-title:first-child { margin-top: 0; }
+    .feed-row {
+      padding: 0.45rem 0; border-bottom: 1px solid #1e2535;
+      font-size: 0.78rem; cursor: pointer;
+    }
+    .feed-row:last-child { border-bottom: none; }
+    .feed-row:hover { background: #1e2535; }
+    .feed-headline { color: #e2e8f0; }
+    .feed-meta { color: #64748b; font-size: 0.7rem; margin-top: 0.15rem; }
+
+    .error {
+      color: #f87171; font-size: 0.8rem; padding: 0.8rem 1rem;
+      background: #1f1015; border: 1px solid #3f1d23; border-radius: 8px;
+      margin: 0.5rem 1.5rem;
+    }
+    .loading { color: #64748b; font-size: 0.8rem; }
+
+    /* ── Animated live-status dot ─────────────────────────────────── */
+    .status-dot {
+      display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+      margin-right: 6px; vertical-align: middle;
+      box-shadow: 0 0 0 0 currentColor;
+      animation: pulse 2s infinite;
+    }
+    .status-fresh { color: #22c55e; background: #22c55e; }
+    .status-stale { color: #f59e0b; background: #f59e0b; }
+    .status-dead  { color: #ef4444; background: #ef4444; animation: none; }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
+      70%  { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    /* ── KPI high-stress badge row ────────────────────────────────── */
+    .badge-row { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-top: 0.1rem; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 2px 8px; border-radius: 9999px;
+      font-size: 0.7rem; font-weight: 600;
+    }
+    .badge-red    { background: rgba(239,68,68,0.15);  color: #ef4444; }
+    .badge-yellow { background: rgba(245,158,11,0.15); color: #f59e0b; }
+    .badge-green  { background: rgba(34,197,94,0.15);  color: #22c55e; }
+
+    /* ── Leaflet hex popup ────────────────────────────────────────── */
+    .leaflet-popup-content-wrapper {
+      background: #1a1f2e; border: 1px solid #1e2535; border-radius: 10px;
+      color: #e2e8f0; padding: 0;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    }
+    .leaflet-popup-tip { background: #1a1f2e; border: 1px solid #1e2535; }
+    .leaflet-popup-content { margin: 0; width: 280px !important; }
+    .leaflet-popup-close-button { color: #64748b !important; font-size: 18px !important; padding: 6px 8px 0 0 !important; }
+    .popup-inner { padding: 0.9rem 1rem; }
+    .popup-title { font-size: 0.8rem; font-weight: 700; margin-bottom: 2px; }
+    .popup-sub { font-size: 0.7rem; color: #64748b; margin-bottom: 0.6rem; }
+    .popup-score-row { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.75rem; }
+    .popup-score-num { font-size: 1.9rem; font-weight: 700; line-height: 1; }
+    .popup-score-label { font-size: 0.7rem; color: #94a3b8; }
+    .pb-row { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+    .pb-label { font-size: 0.68rem; color: #94a3b8; width: 78px; flex-shrink: 0; }
+    .pb-track { flex: 1; height: 4px; background: #0f1117; border-radius: 2px; overflow: hidden; }
+    .pb-fill  { height: 100%; border-radius: 2px; }
+    .pb-val   { font-size: 0.68rem; color: #94a3b8; width: 28px; text-align: right; flex-shrink: 0; }
+    .popup-sparkline-label {
+      font-size: 0.65rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.06em;
+      margin: 0.6rem 0 4px;
+    }
+    .popup-sparkline canvas { display: block; border-radius: 4px; }
+    .popup-action {
+      margin-top: 0.7rem; padding: 0.55rem 0.7rem;
+      background: rgba(59,130,246,0.08);
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: 6px; font-size: 0.72rem; color: #93c5fd; line-height: 1.45;
+    }
+    .popup-action strong {
+      display: block; color: #3b82f6; margin-bottom: 2px;
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.06em;
+    }
+
+    /* ── Intersections table ──────────────────────────────────────── */
+    .int-table { width: 100%; border-collapse: collapse; font-size: 0.72rem; }
+    .int-table th {
+      text-align: left; font-size: 0.62rem; font-weight: 700;
+      color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;
+      padding: 0 0.3rem 0.4rem 0; border-bottom: 1px solid #1e2535;
+    }
+    .int-table td {
+      padding: 0.4rem 0.3rem 0.4rem 0;
+      border-bottom: 1px solid rgba(30,37,53,0.5);
+      vertical-align: middle;
+    }
+    .int-table tr:last-child td { border-bottom: none; }
+    .int-table tr { cursor: pointer; }
+    .int-table tr:hover td { background: rgba(30,37,53,0.5); }
+    .int-name  { color: #e2e8f0; font-weight: 500; }
+    .int-coord { font-size: 0.6rem; color: #475569; }
+    .int-bar-track {
+      width: 44px; height: 4px; background: #1e2535;
+      border-radius: 2px; overflow: hidden; display: inline-block;
+      vertical-align: middle; margin-right: 4px;
+    }
+    .int-bar-fill { display: block; height: 100%; border-radius: 2px; }
+
+    @media (max-width: 1100px) {
+      #middle { grid-template-columns: 1fr; }
+      #bottom { grid-template-columns: 1fr; }
+      #kpi    { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- A. Top bar -->
+<header id="topbar">
+  <div>
+    <h1>Live ODD Stress Monitor</h1>
+    <div class="subheader">Real-time operability view for Urban Hands-Free / ADAS corridors</div>
+  </div>
+  <div class="controls">
+    <span class="chip">Geography: SF</span>
+    <span class="chip">Window: now</span>
+    <span class="chip">Road class: all</span>
+    <span class="chip">Source: all</span>
+    <span id="last-updated">
+      <span class="status-dot status-dead" id="status-dot"></span>
+      <span id="last-updated-text">Loading…</span>
+    </span>
+  </div>
+</header>
+
+<div id="error-banner" class="error" style="display:none"></div>
+
+<!-- B. KPI row -->
+<section id="kpi">
+  <div class="kpi-card">
+    <div class="kpi-label">ODD Stress Index<button id="info-stress-index" class="info-icon" type="button" title="How is this calculated?" aria-label="How is the ODD Stress Index calculated?">i</button></div>
+    <div class="kpi-value" id="kpi-index">—</div>
+    <div class="kpi-sub" id="kpi-index-delta">vs 1h ago —</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">ODD-Eligible Hexes</div>
+    <div class="kpi-value" id="kpi-eligible">—</div>
+    <div class="kpi-sub" id="kpi-eligible-sub">low-stress cells</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">High-Stress Hexes</div>
+    <div class="kpi-value" id="kpi-highstress">—</div>
+    <div class="kpi-sub" id="kpi-highstress-sub">red / yellow</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Top Stress Source</div>
+    <div class="kpi-value" id="kpi-topsource" style="font-size:1.25rem">—</div>
+    <div class="kpi-sub" id="kpi-topsource-share">— of total burden</div>
+  </div>
+</section>
+
+<!-- C map + D right panel -->
+<section id="middle">
+  <div id="map-wrap">
+    <div id="map"></div>
+    <button id="map-reset" title="Reset map view" aria-label="Reset map view">⟲ Reset view</button>
+    <div id="map-legend">
+      <div style="color:#e2e8f0; font-weight:600; margin-bottom:0.25rem;">Hex stress</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#22c55e"></span>Low (&lt;4)</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#f59e0b"></span>Moderate (4–7)</div>
+      <div class="legend-row"><span class="legend-swatch" style="background:#ef4444"></span>High (≥7)</div>
+    </div>
+  </div>
+
+  <!-- Hex detail panel (fills the role of the old floating popup) -->
+  <aside id="hex-panel">
+    <div id="hex-panel-header">
+      <div class="panel-title">Hex Detail</div>
+      <button id="hex-panel-close" title="Clear selection" aria-label="Clear hex selection">×</button>
+    </div>
+    <div id="hex-panel-body"><div class="hp-empty">Click a hex on the map to see its score, source breakdown, 24h trend, and recommended action.</div></div>
+  </aside>
+
+  <!-- D. What changed? -->
+  <aside id="right-panel">
+    <div class="panel-title">What Changed?</div>
+    <div id="feed"><div class="loading">Loading feed…</div></div>
+  </aside>
+</section>
+
+<!-- E / F / G -->
+<section id="bottom">
+  <div class="panel">
+    <div class="panel-title">Stress Source Breakdown</div>
+    <div class="tabs" id="breakdown-tabs">
+      <button class="tab active" data-tab="metro">Metro-wide</button>
+      <button class="tab" data-tab="hex" disabled>Selected hex</button>
+    </div>
+    <div class="panel-subtitle" id="breakdown-subtitle">Metro-wide weighted contribution</div>
+    <div id="breakdown"><div class="loading">Loading…</div></div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Product Recommendation Engine</div>
+    <div class="panel-subtitle">For selected geography: San Francisco</div>
+    <div id="recommendation"><div class="loading">Loading…</div></div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Top Risky Intersections</div>
+    <div class="panel-subtitle">Hexes ranked by OSM intersection burden</div>
+    <div id="risky-intersections"><div class="loading">Loading…</div></div>
+  </div>
+</section>
+
+<!-- Info modal: ODD Stress Index methodology -->
+<div id="stress-index-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="stress-index-modal-title">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="stress-index-modal-title">ODD Stress Index — methodology</div>
+      <button class="modal-close" type="button" data-close-modal aria-label="Close">×</button>
+    </div>
+    <div class="modal-body">
+      <table class="weight-table">
+        <thead>
+          <tr><th>Factor</th><th>Weight</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Traffic Congestion</td><td>25%</td></tr>
+          <tr><td>Work Zone Burden</td><td>21%</td></tr>
+          <tr><td>Active Incidents</td><td>12%</td></tr>
+          <tr><td>Weather Severity</td><td>12%</td></tr>
+          <tr><td>Intersection Complexity</td><td>25%</td></tr>
+          <tr><td>Planned Event</td><td>5%</td></tr>
+        </tbody>
+      </table>
+      <div class="formula">
+        Stress Index = Σ (weight × normalized sub-score) × 10, where each sub-score ∈ [0, 1]
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Data source attribution -->
+<footer id="footer">
+  Traffic data provided by <a href="https://511.org/" target="_blank" rel="noopener">511 SF Bay</a>
+  &middot; Weather data provided by <a href="https://www.weather.gov/" target="_blank" rel="noopener">NOAA/NWS</a>
+  &middot; Work zones data provided by <a href="https://wzdx.dot.ca.gov/" target="_blank" rel="noopener">Caltrans WZDx</a>
+  &middot; Live traffic congestion using <a href="https://www.here.com/" target="_blank" rel="noopener">HERE</a>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/h3-js@4.1.0/dist/h3-js.umd.js"></script>
+
+<script>
+// ── Config ─────────────────────────────────────────────────────────────────
+const DATA_BASE = "../data/";
+const SF_CENTER = [37.7749, -122.4194];
+
+// ── Helpers ────────────────────────────────────────────────────────────────
+async function loadJSON(filename) {
+  const r = await fetch(DATA_BASE + filename + "?_=" + Date.now());
+  if (!r.ok) throw new Error(`${filename}: ${r.status}`);
+  return r.json();
+}
+async function loadJSONOrNull(filename) {
+  try { return await loadJSON(filename); } catch { return null; }
+}
+
+function scoreColor(s) {
+  if (s >= 7) return "#ef4444";
+  if (s >= 4) return "#f59e0b";
+  return "#22c55e";
+}
+
+const SOURCE_COLORS = {
+  work_zone_score:     "#3b82f6",
+  incident_score:      "#ef4444",
+  congestion_score:    "#ec4899",
+  weather_score:       "#8b5cf6",
+  intersection_score:  "#f59e0b",
+  planned_event_score: "#14b8a6",
+};
+const SOURCE_LABELS = {
+  work_zone_score:     "Work zones",
+  incident_score:      "Incidents",
+  congestion_score:    "Traffic congestion",
+  weather_score:       "Weather",
+  intersection_score:  "Intersections",
+  planned_event_score: "Planned events",
+};
+// Must match pipeline.py W weights
+const SOURCE_WEIGHTS = {
+  work_zone_score:     0.21,
+  incident_score:      0.12,
+  congestion_score:    0.25,
+  weather_score:       0.12,
+  intersection_score:  0.25,
+  planned_event_score: 0.05,
+};
+
+// History & hex lookups (shared across renderers, populated in init)
+let hexHistory = null;
+let hexById = {};
+
+// ── Map ────────────────────────────────────────────────────────────────────
+let map, hexLayer, selectedHexId = null, hexPolyByHexId = {};
+
+// Suppress tooltips while any mouse button is held (dragging, clicking, etc.)
+let tooltipSuppressed = false;
+let initialBounds = null;
+function closeAllHexTooltips() {
+  if (!hexLayer) return;
+  hexLayer.eachLayer(l => l.closeTooltip && l.closeTooltip());
+}
+
+function initMap() {
+  map = L.map("map", { zoomControl: true, attributionControl: false })
+         .setView(SF_CENTER, 12);
+  L.tileLayer(
+    "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png",
+    { maxZoom: 19, subdomains: "abcd" }
+  ).addTo(map);
+  L.tileLayer(
+    "https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png",
+    { maxZoom: 19, subdomains: "abcd", pane: "shadowPane" }
+  ).addTo(map);
+  hexLayer = L.layerGroup().addTo(map);
+
+  // Tooltip policy: show only while hovering with no mouse button pressed.
+  // On any mousedown (map or page), hide all tooltips and block new ones
+  // until mouseup. Movestart/zoomstart also hide, for good measure.
+  const mapEl = map.getContainer();
+  mapEl.addEventListener("mousedown", () => {
+    tooltipSuppressed = true;
+    closeAllHexTooltips();
+  });
+  window.addEventListener("mouseup", () => { tooltipSuppressed = false; });
+  map.on("movestart zoomstart", closeAllHexTooltips);
+}
+
+function renderHexes(hexagons) {
+  hexLayer.clearLayers();
+  hexPolyByHexId = {};
+
+  hexagons.forEach(h => {
+    // h3-js cellToBoundary returns [[lat, lng], ...] — Leaflet-ready.
+    const boundary = h3.cellToBoundary(h.hex_id);
+    const color = scoreColor(h.stress_score);
+
+    const poly = L.polygon(boundary, {
+      stroke: false,          // filled heatmap only, no edge highlight
+      weight: 0,
+      fillColor: color,
+      fillOpacity: 0.55,
+    }).addTo(hexLayer);
+
+    poly.bindTooltip(
+      `<b>Stress ${h.stress_score.toFixed(1)}/10</b><br>` +
+      `incident ${h.counts.active_incidents}<br>work zone ${h.counts.active_work_zones}<br> planned events ${h.counts.active_planned_events}<br>` +
+      `congestion ${((h.breakdown.congestion_score || 0) * 10).toFixed(1)}/10`,
+      { sticky: false }
+    );
+
+    poly.on("click", () => selectHex(h));
+    // If a tooltip tries to open while a mouse button is held, close it immediately.
+    poly.on("tooltipopen", () => {
+      if (tooltipSuppressed) poly.closeTooltip();
+    });
+    hexPolyByHexId[h.hex_id] = { poly, data: h };
+  });
+}
+
+function selectHex(h) {
+  if (selectedHexId && hexPolyByHexId[selectedHexId]) {
+    hexPolyByHexId[selectedHexId].poly.setStyle({ stroke: false, weight: 0, fillOpacity: 0.55 });
+  }
+  selectedHexId = h.hex_id;
+  hexPolyByHexId[h.hex_id].poly.setStyle({
+    stroke: true, color: "#e2e8f0", weight: 2, fillOpacity: 0.75,
+  });
+  renderBreakdownForHex(h);
+
+  // Render the hex detail into the fixed side panel instead of a floating popup
+  document.getElementById("hex-panel-body").innerHTML = buildHexPopupHTML(h);
+  document.getElementById("hex-panel-close").style.display = "flex";
+  drawHexSparkline(h.hex_id);
+}
+
+function clearHexSelection() {
+  if (selectedHexId && hexPolyByHexId[selectedHexId]) {
+    hexPolyByHexId[selectedHexId].poly.setStyle({ stroke: false, weight: 0, fillOpacity: 0.55 });
+  }
+  selectedHexId = null;
+  document.getElementById("hex-panel-body").innerHTML =
+    `<div class="hp-empty">Click a hex on the map to see its score, source breakdown, 24h trend, and recommended action.</div>`;
+  document.getElementById("hex-panel-close").style.display = "none";
+  breakdownHex = null;
+  const hexTabBtn = document.querySelector('#breakdown-tabs .tab[data-tab="hex"]');
+  if (hexTabBtn) hexTabBtn.disabled = true;
+  setBreakdownTab("metro");
+}
+
+function buildHexPopupHTML(h) {
+  const color = scoreColor(h.stress_score);
+  const label = h.stress_score >= 7 ? "High stress"
+             : h.stress_score >= 4 ? "Moderate"
+             : "Low stress";
+
+  const rows = Object.keys(SOURCE_WEIGHTS).map(k => {
+    const v = h.breakdown[k] || 0;
+    const pct = Math.min(v * 100, 100);
+    return `<div class="pb-row">
+      <div class="pb-label">${SOURCE_LABELS[k]}</div>
+      <div class="pb-track"><div class="pb-fill" style="width:${pct}%;background:${SOURCE_COLORS[k]}"></div></div>
+      <div class="pb-val">${(v * 10).toFixed(1)}</div>
+    </div>`;
+  }).join("");
+
+  const action = recommendAction(h);
+
+  return `<div class="popup-inner">
+    <div class="popup-title" style="word-break:break-all">Hex ${h.hex_id}</div>
+    <div class="popup-sub">${h.center.lat.toFixed(4)}, ${h.center.lon.toFixed(4)} · ${(h.weather_condition||"—").replace(/_/g," ")}</div>
+    <div class="popup-score-row">
+      <div class="popup-score-num" style="color:${color}">${h.stress_score.toFixed(1)}</div>
+      <div>
+        <div style="font-size:0.72rem;font-weight:600;color:${color}">${label}</div>
+        <div class="popup-score-label">stress / 10</div>
+      </div>
+    </div>
+    ${rows}
+    <div class="popup-sparkline-label">24h stress trend</div>
+    <div class="popup-sparkline"><canvas id="pop-spark-${h.hex_id}" width="256" height="56"></canvas></div>
+    <div class="popup-action"><strong>Recommended action</strong>${action}</div>
+  </div>`;
+}
+
+function recommendAction(h) {
+  const b = h.breakdown;
+  const ranked = Object.entries(b).sort((a, b) => b[1] - a[1]);
+  const dom = ranked[0][0];
+  const score = h.stress_score;
+
+  const prefix = score >= 7
+    ? "Temporary restriction recommended — "
+    : score >= 4
+    ? "Degraded confidence mode — "
+    : "Fully enabled — ";
+
+  const actions = {
+    work_zone_score:     "work-zone load is dominant; route-around advisory would unlock most capacity here.",
+    incident_score:      "active incident load is driving stress; monitor for clearance to restore full ODD eligibility.",
+    congestion_score:    "traffic congestion is dominant; defer hands-free activation until jam factor eases or prefer alternate corridors.",
+    weather_score:       "weather burden is the limiting factor; enable weather-robustness module or wait for conditions to clear.",
+    intersection_score:  "static intersection complexity is the key unlock; urban-intersection handling improvement required.",
+    planned_event_score: "planned-event load elevated; coordinate with city calendar for time-of-day restrictions.",
+  };
+  return prefix + (actions[dom] || "monitor for changes.");
+}
+
+function drawHexSparkline(hexId) {
+  const canvas = document.getElementById(`pop-spark-${hexId}`);
+  if (!canvas) return;
+  const history = (hexHistory && hexHistory[hexId]) || [];
+  const ctx = canvas.getContext("2d");
+  const W = canvas.width, H = canvas.height;
+  ctx.clearRect(0, 0, W, H);
+
+  if (history.length < 2) {
+    ctx.fillStyle = "#334155";
+    ctx.font = "11px system-ui";
+    ctx.textAlign = "center";
+    ctx.fillText("No history yet", W / 2, H / 2 + 4);
+    return;
+  }
+  const pad = { t: 4, r: 4, b: 14, l: 22 };
+  const cW = W - pad.l - pad.r, cH = H - pad.t - pad.b;
+
+  ctx.strokeStyle = "#1e2535"; ctx.lineWidth = 1;
+  [0, 5, 10].forEach(v => {
+    const y = pad.t + cH - (v / 10) * cH;
+    ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(pad.l + cW, y); ctx.stroke();
+    ctx.fillStyle = "#475569"; ctx.font = "8px system-ui"; ctx.textAlign = "right";
+    ctx.fillText(v, pad.l - 3, y + 3);
+  });
+
+  const xs = history.map((_, i) => pad.l + (i / Math.max(history.length - 1, 1)) * cW);
+  const ys = history.map(p => pad.t + cH - (p.stress_score / 10) * cH);
+
+  ctx.beginPath();
+  xs.forEach((x, i) => i === 0 ? ctx.moveTo(x, ys[i]) : ctx.lineTo(x, ys[i]));
+  ctx.lineTo(xs[xs.length - 1], pad.t + cH); ctx.lineTo(xs[0], pad.t + cH); ctx.closePath();
+  ctx.fillStyle = "rgba(59,130,246,0.12)"; ctx.fill();
+
+  ctx.beginPath();
+  xs.forEach((x, i) => i === 0 ? ctx.moveTo(x, ys[i]) : ctx.lineTo(x, ys[i]));
+  ctx.strokeStyle = "#3b82f6"; ctx.lineWidth = 1.5; ctx.stroke();
+
+  ctx.fillStyle = "#475569"; ctx.font = "8px system-ui";
+  ctx.textAlign = "left";
+  ctx.fillText(history[0].ts.slice(5, 10), pad.l, H - 2);
+  ctx.textAlign = "right";
+  ctx.fillText(history[history.length - 1].ts.slice(5, 10), pad.l + cW, H - 2);
+}
+
+// ── KPIs ───────────────────────────────────────────────────────────────────
+function computeSourceContribution(hexagons) {
+  const totals = {};
+  Object.keys(SOURCE_WEIGHTS).forEach(k => totals[k] = 0);
+  hexagons.forEach(h => {
+    Object.keys(SOURCE_WEIGHTS).forEach(k => {
+      totals[k] += (h.breakdown[k] || 0) * SOURCE_WEIGHTS[k];
+    });
+  });
+  return totals;
+}
+
+function computeMetroDelta(history, hexagons, hoursAgo) {
+  if (!history) return null;
+  const targetMs = Date.now() - hoursAgo * 3600 * 1000;
+  let countable = 0, sumPast = 0;
+  hexagons.forEach(h => {
+    const entries = history[h.hex_id];
+    if (!entries || entries.length === 0) return;
+    let best = null, bestDelta = Infinity;
+    for (const e of entries) {
+      const t = Date.parse(e.ts);
+      const d = Math.abs(t - targetMs);
+      if (d < bestDelta) { bestDelta = d; best = e; }
+    }
+    if (best && bestDelta < 6 * 3600 * 1000) {
+      sumPast += best.stress_score;
+      countable++;
+    }
+  });
+  if (countable === 0) return null;
+  const pastMetro = sumPast / countable;
+  const curMetro  = hexagons.reduce((a, h) => a + h.stress_score, 0) / hexagons.length;
+  return curMetro - pastMetro;
+}
+
+function renderKPIs(summary, hexagons, history) {
+  const metro = summary.metro_stress ?? 0;
+  document.getElementById("kpi-index").textContent = metro.toFixed(1);
+  document.getElementById("kpi-index").style.color = scoreColor(metro);
+
+  const delta1h = computeMetroDelta(history, hexagons, 1);
+  const deltaEl = document.getElementById("kpi-index-delta");
+  if (delta1h === null) {
+    deltaEl.textContent = "vs 1h ago —";
+    deltaEl.className = "kpi-sub delta-flat";
+  } else {
+    const sign = delta1h > 0 ? "▲" : delta1h < 0 ? "▼" : "■";
+    const cls  = delta1h > 0 ? "delta-up" : delta1h < 0 ? "delta-down" : "delta-flat";
+    deltaEl.textContent = `${sign} ${Math.abs(delta1h).toFixed(2)} vs 1h ago`;
+    deltaEl.className = "kpi-sub " + cls;
+  }
+
+  const eligible = hexagons.filter(h => h.stress_score < 4).length;
+  document.getElementById("kpi-eligible").textContent = eligible;
+  document.getElementById("kpi-eligible-sub").textContent =
+    `of ${hexagons.length} monitored cells`;
+
+  const red    = hexagons.filter(h => h.stress_score >= 7).length;
+  const yellow = hexagons.filter(h => h.stress_score >= 4 && h.stress_score < 7).length;
+  const green  = hexagons.filter(h => h.stress_score < 4).length;
+  document.getElementById("kpi-highstress").innerHTML = (red + yellow);
+  document.getElementById("kpi-highstress").style.color =
+    red > 0 ? "#ef4444" : yellow > 0 ? "#f59e0b" : "#22c55e";
+  document.getElementById("kpi-highstress-sub").innerHTML =
+    `<span class="badge-row">
+       <span class="badge badge-red">● ${red} red</span>
+       <span class="badge badge-yellow">● ${yellow} yellow</span>
+       <span class="badge badge-green">● ${green} green</span>
+     </span>`;
+
+  const contrib = computeSourceContribution(hexagons);
+  const ranked = Object.entries(contrib).sort((a, b) => b[1] - a[1]);
+  const topSrc = ranked[0];
+  const total  = Object.values(contrib).reduce((a, b) => a + b, 0) || 1;
+  document.getElementById("kpi-topsource").textContent = SOURCE_LABELS[topSrc[0]];
+  document.getElementById("kpi-topsource").style.color = SOURCE_COLORS[topSrc[0]];
+  document.getElementById("kpi-topsource-share").textContent =
+    `${Math.round(topSrc[1] / total * 100)}% of total burden`;
+}
+
+// ── E. Stress Source Breakdown ─────────────────────────────────────────────
+let breakdownTab = "metro";        // "metro" | "hex"
+let breakdownHex = null;           // last-selected hex, kept so the hex tab remains navigable
+
+function setBreakdownTab(tab) {
+  if (tab === "hex" && !breakdownHex) return;
+  breakdownTab = tab;
+  document.querySelectorAll("#breakdown-tabs .tab").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.tab === tab);
+  });
+  renderBreakdown();
+}
+
+function renderBreakdown() {
+  const subtitle = document.getElementById("breakdown-subtitle");
+  if (breakdownTab === "hex" && breakdownHex) {
+    const h = breakdownHex;
+    subtitle.textContent = `Hex ${h.hex_id}  ·  ${h.stress_score.toFixed(1)}/10`;
+    const contrib = {};
+    Object.keys(SOURCE_WEIGHTS).forEach(k => {
+      contrib[k] = (h.breakdown[k] || 0) * SOURCE_WEIGHTS[k];
+    });
+    drawStack(contrib);
+  } else {
+    subtitle.textContent = "Metro-wide weighted contribution";
+    drawStack(computeSourceContribution(Object.values(hexById)));
+  }
+}
+
+function renderBreakdownAverage(hexagons) {
+  hexById = hexById && Object.keys(hexById).length
+    ? hexById
+    : Object.fromEntries((hexagons || []).map(h => [h.hex_id, h]));
+  renderBreakdown();
+}
+
+function renderBreakdownForHex(h) {
+  breakdownHex = h;
+  const hexTabBtn = document.querySelector('#breakdown-tabs .tab[data-tab="hex"]');
+  if (hexTabBtn) hexTabBtn.disabled = false;
+  setBreakdownTab("hex");
+}
+
+function drawStack(contrib) {
+  const total = Object.values(contrib).reduce((a, b) => a + b, 0) || 1;
+  const container = document.getElementById("breakdown");
+  container.innerHTML = "";
+
+  const bar = document.createElement("div");
+  bar.className = "stack-bar";
+  bar.style.marginBottom = "0.9rem";
+  Object.entries(contrib).forEach(([k, v]) => {
+    if (v <= 0) return;
+    const seg = document.createElement("div");
+    seg.className = "stack-seg";
+    seg.style.width = (v / total * 100) + "%";
+    seg.style.background = SOURCE_COLORS[k];
+    bar.appendChild(seg);
+  });
+  container.appendChild(bar);
+
+  Object.entries(contrib)
+    .sort((a, b) => b[1] - a[1])
+    .forEach(([k, v]) => {
+      const row = document.createElement("div");
+      row.className = "stack-row";
+      const pct = total > 0 ? (v / total * 100) : 0;
+      row.innerHTML =
+        `<div class="stack-label">
+           <span><span style="display:inline-block;width:8px;height:8px;background:${SOURCE_COLORS[k]};border-radius:2px;margin-right:6px"></span>${SOURCE_LABELS[k]}</span>
+           <span>${pct.toFixed(0)}%</span>
+         </div>
+         <div class="stack-bar">
+           <div class="stack-seg" style="width:${pct}%;background:${SOURCE_COLORS[k]}"></div>
+         </div>`;
+      container.appendChild(row);
+    });
+}
+
+// ── F. Product Recommendation Engine ───────────────────────────────────────
+function renderRecommendation(hexagons) {
+  const enabled    = hexagons.filter(h => h.stress_score < 4).length;
+  const degraded   = hexagons.filter(h => h.stress_score >= 4 && h.stress_score < 7).length;
+  const restricted = hexagons.filter(h => h.stress_score >= 7).length;
+
+  // Count hexes that would move down a tier if a given source's contribution
+  // were eliminated. Simulates the "biggest unlock if X improves" question.
+  function unlockCount(sourceKey) {
+    let unlocked = 0;
+    hexagons.forEach(h => {
+      const cur = h.stress_score / 10;
+      const drop = (h.breakdown[sourceKey] || 0) * SOURCE_WEIGHTS[sourceKey];
+      const sim  = Math.max(0, cur - drop) * 10;
+      if (h.stress_score >= 7 && sim < 7) unlocked++;
+      else if (h.stress_score >= 4 && h.stress_score < 7 && sim < 4) unlocked++;
+    });
+    return unlocked;
+  }
+
+  const unlocks = {
+    weather:      unlockCount("weather_score"),
+    work_zone:    unlockCount("work_zone_score"),
+    congestion:   unlockCount("congestion_score"),
+    intersection: unlockCount("intersection_score"),
+  };
+
+  document.getElementById("recommendation").innerHTML =
+    `<div class="tier-row">
+       <span class="tier-label" style="color:#4ade80">Fully enabled</span>
+       <span class="tier-count" style="color:#4ade80">${enabled}</span>
+     </div>
+     <div class="tier-row">
+       <span class="tier-label" style="color:#f59e0b">Degraded confidence</span>
+       <span class="tier-count" style="color:#f59e0b">${degraded}</span>
+     </div>
+     <div class="tier-row">
+       <span class="tier-label" style="color:#ef4444">Temporary restriction</span>
+       <span class="tier-count" style="color:#ef4444">${restricted}</span>
+     </div>
+     <div class="unlock-section">
+       <div class="panel-subtitle" style="margin-bottom:0.4rem">Biggest unlocks</div>
+       <div class="unlock-row">Weather robustness → <b>${unlocks.weather}</b> hexes move up a tier</div>
+       <div class="unlock-row">Work-zone handling → <b>${unlocks.work_zone}</b> hexes move up a tier</div>
+       <div class="unlock-row">Traffic congestion tolerance → <b>${unlocks.congestion}</b> hexes move up a tier</div>
+       <div class="unlock-row">Intersection handling → <b>${unlocks.intersection}</b> hexes move up a tier</div>
+     </div>`;
+}
+
+// ── G. Top Risky Intersections ─────────────────────────────────────────────
+function renderRiskyIntersections(hexagons) {
+  const container = document.getElementById("risky-intersections");
+
+  const top = [...hexagons]
+    .sort((a, b) => b.breakdown.intersection_score - a.breakdown.intersection_score)
+    .slice(0, 8);
+
+  if (top.length === 0 || top[0].breakdown.intersection_score === 0) {
+    container.innerHTML =
+      `<div class="loading">No OSM intersection data yet. Run <code>prebake_osm.py</code> to populate it.</div>`;
+    return;
+  }
+
+  // Surprise opportunity density = complexity × (1 + dynamic-event density) × (1 + weather burden)
+  // Rewards hexes where static complexity combines with live dynamic churn —
+  // the kind of places that produce scenario-level surprises.
+  const rows = top.map(h => {
+    const complexity = h.breakdown.intersection_score || 0;
+    const dynEvents  = h.counts.active_incidents + h.counts.active_work_zones;
+    const weather    = h.breakdown.weather_score || 0;
+    const surprise   = complexity * (1 + dynEvents * 0.1) * (1 + weather) * 10;
+    return { h, complexity, dynEvents, weather, surprise };
+  });
+
+  const table = document.createElement("table");
+  table.className = "int-table";
+  table.innerHTML = `
+    <thead>
+      <tr>
+        <th>Node</th>
+        <th>Complexity</th>
+        <th>Dyn&nbsp;events</th>
+        <th>Weather</th>
+        <th>Surprise</th>
+      </tr>
+    </thead>
+    <tbody></tbody>`;
+  const tbody = table.querySelector("tbody");
+
+  // Scale bar width against the leader in the visible set — raw intersection
+  // scores are typically small (0.05–0.20), so absolute % would make every bar
+  // look like a sliver. Relative scaling keeps them comparable and readable.
+  const maxComplexity = Math.max(...rows.map(r => r.complexity), 0.0001);
+
+  rows.forEach(({ h, complexity, dynEvents, weather, surprise }) => {
+    const cxPct = Math.max(6, Math.min((complexity / maxComplexity) * 100, 100)).toFixed(0);
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>
+        <div class="int-name">${h.hex_id.slice(0, 10)}…</div>
+        <div class="int-coord">${h.center.lat.toFixed(4)}, ${h.center.lon.toFixed(4)}</div>
+      </td>
+      <td>
+        <span class="int-bar-track"><span class="int-bar-fill" style="width:${cxPct}%;background:#f59e0b"></span></span>
+        <span style="color:#94a3b8">${(complexity * 10).toFixed(1)}</span>
+      </td>
+      <td style="color:${dynEvents > 0 ? '#3b82f6' : '#475569'}">${dynEvents}</td>
+      <td style="color:#8b5cf6">${(weather * 10).toFixed(1)}</td>
+      <td style="color:${scoreColor(h.stress_score)};font-weight:700">${surprise.toFixed(1)}</td>`;
+    tr.addEventListener("click", () => {
+      map.flyTo([h.center.lat, h.center.lon], 14, { duration: 0.7 });
+      selectHex(h);
+    });
+    tbody.appendChild(tr);
+  });
+
+  container.innerHTML = "";
+  container.appendChild(table);
+}
+
+// ── D. What Changed? feed ──────────────────────────────────────────────────
+function renderFeed(hexagons, history) {
+  const container = document.getElementById("feed");
+  container.innerHTML = "";
+
+  // Compute 1-hour-ago snapshots per hex
+  const targetMs = Date.now() - 3600 * 1000;
+  const pastByHex = {};
+  if (history) {
+    hexagons.forEach(h => {
+      const entries = history[h.hex_id] || [];
+      let best = null, bestDelta = Infinity;
+      for (const e of entries) {
+        const t = Date.parse(e.ts);
+        const d = Math.abs(t - targetMs);
+        if (d < bestDelta && t < Date.now()) { bestDelta = d; best = e; }
+      }
+      if (best && bestDelta < 6 * 3600 * 1000) pastByHex[h.hex_id] = best;
+    });
+  }
+
+  // 1) Newly degraded hexes — were <4 an hour ago, now >=4
+  const newlyDegraded = hexagons
+    .filter(h => {
+      const past = pastByHex[h.hex_id];
+      return past && past.stress_score < 4 && h.stress_score >= 4;
+    })
+    .sort((a, b) => b.stress_score - a.stress_score);
+
+  // 2) Largest stress increase (last hour)
+  const gains = [];
+  hexagons.forEach(h => {
+    const past = pastByHex[h.hex_id];
+    if (!past) return;
+    const diff = h.stress_score - past.stress_score;
+    if (diff > 0.3) gains.push({ h, diff });
+  });
+  gains.sort((a, b) => b.diff - a.diff);
+
+  // 3) Fresh work-zone intrusions — work zones present AND either new-this-hour
+  //    or work_zone_score climbed
+  const workzones = hexagons
+    .filter(h => {
+      if (h.counts.active_work_zones === 0) return false;
+      const past = pastByHex[h.hex_id];
+      if (!past) return true; // no prior snapshot, treat as fresh
+      return (h.breakdown.work_zone_score || 0) > (past.work_zone_score || 0) + 0.05
+          || (past.work_zone_score || 0) === 0;
+    })
+    .sort((a, b) => b.counts.active_work_zones - a.counts.active_work_zones)
+    .slice(0, 5);
+
+  // 4) Weather-triggered thresholds — weather_score climbed into meaningful range
+  const weatherHits = hexagons
+    .filter(h => (h.breakdown.weather_score || 0) >= 0.3)
+    .sort((a, b) => b.breakdown.weather_score - a.breakdown.weather_score)
+    .slice(0, 5);
+
+  const sections = [];
+
+  // ── Newly degraded
+  sections.push(`<div class="feed-section-title">Newly degraded hexes</div>`);
+  if (newlyDegraded.length === 0) {
+    sections.push(`<div class="feed-row" style="cursor:default"><div class="feed-meta">None in the last hour.</div></div>`);
+  } else {
+    newlyDegraded.slice(0, 4).forEach(h => {
+      const past = pastByHex[h.hex_id];
+      sections.push(
+        `<div class="feed-row" data-hex="${h.hex_id}">
+           <div class="feed-headline">
+             <span style="color:${scoreColor(h.stress_score)}">●</span>
+             Hex ${h.hex_id.slice(0, 10)}… crossed into ${h.stress_score >= 7 ? "high" : "moderate"} stress
+           </div>
+           <div class="feed-meta">${past.stress_score.toFixed(1)} → ${h.stress_score.toFixed(1)}/10</div>
+         </div>`
+      );
+    });
+  }
+
+  // ── Largest increase
+  sections.push(`<div class="feed-section-title">Largest stress increase (last hour)</div>`);
+  if (gains.length === 0) {
+    sections.push(`<div class="feed-row" style="cursor:default"><div class="feed-meta">No significant increases.</div></div>`);
+  } else {
+    gains.slice(0, 4).forEach(({ h, diff }) => {
+      sections.push(
+        `<div class="feed-row" data-hex="${h.hex_id}">
+           <div class="feed-headline">
+             <span style="color:#f87171">▲ +${diff.toFixed(1)}</span>&nbsp;hex ${h.hex_id.slice(0, 10)}…
+           </div>
+           <div class="feed-meta">now ${h.stress_score.toFixed(1)}/10</div>
+         </div>`
+      );
+    });
+  }
+
+  // ── Fresh work-zone intrusions
+  sections.push(`<div class="feed-section-title">Fresh work-zone intrusions</div>`);
+  if (workzones.length === 0) {
+    sections.push(`<div class="feed-row" style="cursor:default"><div class="feed-meta">No fresh work-zone activity.</div></div>`);
+  } else {
+    workzones.forEach(h => {
+      sections.push(
+        `<div class="feed-row" data-hex="${h.hex_id}">
+           <div class="feed-headline">
+             <span style="color:#3b82f6">🚧</span> ${h.counts.active_work_zones} work zone(s) in hex ${h.hex_id.slice(0, 10)}…
+           </div>
+           <div class="feed-meta">wz-score ${(h.breakdown.work_zone_score * 10).toFixed(1)} · stress ${h.stress_score.toFixed(1)}/10</div>
+         </div>`
+      );
+    });
+  }
+
+  // ── Weather-triggered thresholds
+  sections.push(`<div class="feed-section-title">Weather-triggered thresholds</div>`);
+  if (weatherHits.length === 0) {
+    sections.push(`<div class="feed-row" style="cursor:default"><div class="feed-meta">Weather below threshold across monitored hexes.</div></div>`);
+  } else {
+    weatherHits.forEach(h => {
+      sections.push(
+        `<div class="feed-row" data-hex="${h.hex_id}">
+           <div class="feed-headline">
+             <span style="color:#8b5cf6">☁</span> ${(h.weather_condition || "weather").replace(/_/g, " ")} burden in hex ${h.hex_id.slice(0, 10)}…
+           </div>
+           <div class="feed-meta">weather-score ${(h.breakdown.weather_score * 10).toFixed(1)}/10</div>
+         </div>`
+      );
+    });
+  }
+
+  container.innerHTML = sections.join("");
+
+  // Click handler: fly map to hex and open popup
+  container.querySelectorAll("[data-hex]").forEach(row => {
+    row.addEventListener("click", () => {
+      const hid = row.dataset.hex;
+      const entry = hexPolyByHexId[hid];
+      if (entry) {
+        map.flyTo([entry.data.center.lat, entry.data.center.lon], 14, { duration: 0.7 });
+        selectHex(entry.data);
+      }
+    });
+  });
+}
+
+// ── Bootstrap ──────────────────────────────────────────────────────────────
+async function init() {
+  initMap();
+  document.getElementById("hex-panel-close").addEventListener("click", clearHexSelection);
+  document.getElementById("map-reset").addEventListener("click", () => {
+    if (initialBounds) map.flyToBounds(initialBounds, { duration: 0.6 });
+    else map.flyTo(SF_CENTER, 12, { duration: 0.6 });
+  });
+  document.querySelectorAll("#breakdown-tabs .tab").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (!btn.disabled) setBreakdownTab(btn.dataset.tab);
+    });
+  });
+
+  // Stress Index info modal
+  const stressModal = document.getElementById("stress-index-modal");
+  document.getElementById("info-stress-index").addEventListener("click", () => {
+    stressModal.classList.add("open");
+  });
+  stressModal.addEventListener("click", (e) => {
+    if (e.target === stressModal || e.target.hasAttribute("data-close-modal")) {
+      stressModal.classList.remove("open");
+    }
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") stressModal.classList.remove("open");
+  });
+  try {
+    const [summary, hexagons, history] = await Promise.all([
+      loadJSON("summary.json"),
+      loadJSON("hexagons.json"),
+      loadJSONOrNull("hex_history.json"),
+    ]);
+
+    // Share history + hex lookup across renderers
+    hexHistory = history;
+    hexById = Object.fromEntries(hexagons.map(h => [h.hex_id, h]));
+
+    // Animated live timestamp: green <1h, yellow <6h, red otherwise
+    const ts = new Date(summary.computed_at);
+    const ageH = (Date.now() - ts.getTime()) / 3600000;
+    const dot = document.getElementById("status-dot");
+    dot.className = "status-dot " +
+      (ageH < 1 ? "status-fresh" : ageH < 6 ? "status-stale" : "status-dead");
+    document.getElementById("last-updated-text").textContent =
+      "Updated " + ts.toLocaleString();
+
+    renderHexes(hexagons);
+
+    if (hexagons.length > 0) {
+      const lats = hexagons.map(h => h.center.lat);
+      const lons = hexagons.map(h => h.center.lon);
+      initialBounds = [
+        [Math.min(...lats), Math.min(...lons)],
+        [Math.max(...lats), Math.max(...lons)],
+      ];
+      map.fitBounds(initialBounds);
+    }
+
+    renderKPIs(summary, hexagons, history);
+    renderBreakdownAverage(hexagons);
+    renderRecommendation(hexagons);
+    renderRiskyIntersections(hexagons);
+    renderFeed(hexagons, history);
+  } catch (e) {
+    const banner = document.getElementById("error-banner");
+    banner.style.display = "block";
+    banner.textContent = `Could not load data: ${e.message}. Run pipeline.py first, or check data/ files.`;
+    console.error(e);
+  }
+}
+
+init();
+</script>
+
+</body>
+</html>
