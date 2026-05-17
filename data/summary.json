@@ -1,67 +1,17 @@
 {
-  "metro_stress": 1.05,
-  "metro_congestion": 0.1713,
+  "metro_stress": 1.06,
+  "metro_congestion": 0.178,
   "weather_condition": "clear",
   "weather_score": 0.0,
-  "active_alerts": 31,
+  "active_alerts": 33,
   "top_stressed_hexes": [
-    {
-      "hex_id": "882830829dfffff",
-      "center": {
-        "lat": 37.776959,
-        "lon": -122.436035
-      },
-      "stress_score": 5.66,
-      "active_incidents": 0,
-      "active_work_zones": 15
-    },
     {
       "hex_id": "8828308299fffff",
       "center": {
         "lat": 37.774562,
         "lon": -122.446428
       },
-      "stress_score": 5.53,
-      "active_incidents": 0,
-      "active_work_zones": 6
-    },
-    {
-      "hex_id": "88283082a1fffff",
-      "center": {
-        "lat": 37.786539,
-        "lon": -122.394451
-      },
-      "stress_score": 5.22,
-      "active_incidents": 0,
-      "active_work_zones": 12
-    },
-    {
-      "hex_id": "8828308281fffff",
-      "center": {
-        "lat": 37.773515,
-        "lon": -122.418271
-      },
-      "stress_score": 5.15,
-      "active_incidents": 0,
-      "active_work_zones": 15
-    },
-    {
-      "hex_id": "88283082a3fffff",
-      "center": {
-        "lat": 37.792379,
-        "lon": -122.401821
-      },
-      "stress_score": 5.15,
-      "active_incidents": 0,
-      "active_work_zones": 10
-    },
-    {
-      "hex_id": "8828308283fffff",
-      "center": {
-        "lat": 37.779355,
-        "lon": -122.42564
-      },
-      "stress_score": 5.14,
+      "stress_score": 5.67,
       "active_incidents": 0,
       "active_work_zones": 6
     },
@@ -71,9 +21,49 @@
         "lat": 37.77112,
         "lon": -122.428665
       },
-      "stress_score": 5.08,
+      "stress_score": 5.16,
       "active_incidents": 0,
       "active_work_zones": 3
+    },
+    {
+      "hex_id": "882830829dfffff",
+      "center": {
+        "lat": 37.776959,
+        "lon": -122.436035
+      },
+      "stress_score": 5.14,
+      "active_incidents": 0,
+      "active_work_zones": 2
+    },
+    {
+      "hex_id": "88283082a3fffff",
+      "center": {
+        "lat": 37.792379,
+        "lon": -122.401821
+      },
+      "stress_score": 5.11,
+      "active_incidents": 0,
+      "active_work_zones": 10
+    },
+    {
+      "hex_id": "8828308281fffff",
+      "center": {
+        "lat": 37.773515,
+        "lon": -122.418271
+      },
+      "stress_score": 5.02,
+      "active_incidents": 0,
+      "active_work_zones": 12
+    },
+    {
+      "hex_id": "88283082a1fffff",
+      "center": {
+        "lat": 37.786539,
+        "lon": -122.394451
+      },
+      "stress_score": 5.02,
+      "active_incidents": 0,
+      "active_work_zones": 12
     },
     {
       "hex_id": "88283082abfffff",
@@ -81,19 +71,9 @@
         "lat": 37.784145,
         "lon": -122.404849
       },
-      "stress_score": 4.99,
-      "active_incidents": 0,
-      "active_work_zones": 3
-    },
-    {
-      "hex_id": "8828308287fffff",
-      "center": {
-        "lat": 37.78175,
-        "lon": -122.415245
-      },
       "stress_score": 4.83,
       "active_incidents": 0,
-      "active_work_zones": 2
+      "active_work_zones": 3
     },
     {
       "hex_id": "88283095a5fffff",
@@ -101,39 +81,9 @@
         "lat": 37.772164,
         "lon": -122.456819
       },
-      "stress_score": 4.77,
+      "stress_score": 4.59,
       "active_incidents": 0,
       "active_work_zones": 4
-    },
-    {
-      "hex_id": "88283082b9fffff",
-      "center": {
-        "lat": 37.78759,
-        "lon": -122.422615
-      },
-      "stress_score": 4.18,
-      "active_incidents": 0,
-      "active_work_zones": 1
-    },
-    {
-      "hex_id": "88283082d1fffff",
-      "center": {
-        "lat": 37.760487,
-        "lon": -122.442081
-      },
-      "stress_score": 4.13,
-      "active_incidents": 0,
-      "active_work_zones": 2
-    },
-    {
-      "hex_id": "8828308295fffff",
-      "center": {
-        "lat": 37.785194,
-        "lon": -122.43301
-      },
-      "stress_score": 4.12,
-      "active_incidents": 0,
-      "active_work_zones": 1
     },
     {
       "hex_id": "88283082edfffff",
@@ -141,9 +91,49 @@
         "lat": 37.758382,
         "lon": -122.38577
       },
-      "stress_score": 4.1,
+      "stress_score": 4.46,
       "active_incidents": 0,
       "active_work_zones": 4
+    },
+    {
+      "hex_id": "8828308287fffff",
+      "center": {
+        "lat": 37.78175,
+        "lon": -122.415245
+      },
+      "stress_score": 4.36,
+      "active_incidents": 0,
+      "active_work_zones": 1
+    },
+    {
+      "hex_id": "8828308295fffff",
+      "center": {
+        "lat": 37.785194,
+        "lon": -122.43301
+      },
+      "stress_score": 4.35,
+      "active_incidents": 0,
+      "active_work_zones": 1
+    },
+    {
+      "hex_id": "8828308283fffff",
+      "center": {
+        "lat": 37.779355,
+        "lon": -122.42564
+      },
+      "stress_score": 4.24,
+      "active_incidents": 0,
+      "active_work_zones": 1
+    },
+    {
+      "hex_id": "88283082b9fffff",
+      "center": {
+        "lat": 37.78759,
+        "lon": -122.422615
+      },
+      "stress_score": 4.22,
+      "active_incidents": 0,
+      "active_work_zones": 1
     },
     {
       "hex_id": "88283082b5fffff",
@@ -156,12 +146,32 @@
       "active_work_zones": 2
     },
     {
+      "hex_id": "8828309503fffff",
+      "center": {
+        "lat": 37.721699,
+        "lon": -122.446803
+      },
+      "stress_score": 3.96,
+      "active_incidents": 0,
+      "active_work_zones": 2
+    },
+    {
+      "hex_id": "88283082d1fffff",
+      "center": {
+        "lat": 37.760487,
+        "lon": -122.442081
+      },
+      "stress_score": 3.92,
+      "active_incidents": 0,
+      "active_work_zones": 2
+    },
+    {
       "hex_id": "8828308217fffff",
       "center": {
         "lat": 37.750146,
         "lon": -122.388798
       },
-      "stress_score": 3.9,
+      "stress_score": 3.89,
       "active_incidents": 0,
       "active_work_zones": 1
     },
@@ -171,19 +181,9 @@
         "lat": 37.712408,
         "lon": -122.421684
       },
-      "stress_score": 3.89,
+      "stress_score": 3.83,
       "active_incidents": 0,
       "active_work_zones": 4
-    },
-    {
-      "hex_id": "8828309503fffff",
-      "center": {
-        "lat": 37.721699,
-        "lon": -122.446803
-      },
-      "stress_score": 3.84,
-      "active_incidents": 0,
-      "active_work_zones": 2
     },
     {
       "hex_id": "8828309589fffff",
@@ -191,24 +191,24 @@
         "lat": 37.748494,
         "lon": -122.494023
       },
-      "stress_score": 3.76,
+      "stress_score": 3.74,
       "active_incidents": 0,
       "active_work_zones": 3
     },
     {
-      "hex_id": "882830821dfffff",
+      "hex_id": "882830874dfffff",
       "center": {
-        "lat": 37.736064,
-        "lon": -122.384459
+        "lat": 37.786236,
+        "lon": -122.461167
       },
-      "stress_score": 3.67,
+      "stress_score": 3.6,
       "active_incidents": 0,
-      "active_work_zones": 1
+      "active_work_zones": 3
     }
   ],
   "total_active_incidents": 1,
-  "total_active_work_zones": 115,
-  "total_traffic_segments": 2460,
+  "total_active_work_zones": 93,
+  "total_traffic_segments": 2461,
   "hex_count": 318,
   "resolution": 8,
   "bbox": [
@@ -217,5 +217,5 @@
     -122.35,
     37.83
   ],
-  "computed_at": "2026-05-17T18:52:25.341610+00:00"
+  "computed_at": "2026-05-17T19:59:38.429867+00:00"
 }
