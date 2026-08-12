@@ -5,11 +5,11 @@
       "lat": 37.77591,
       "lon": -122.407876
     },
-    "stress_score": 4.8,
+    "stress_score": 4.87,
     "breakdown": {
       "work_zone_score": 1.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0544,
+      "congestion_score": 0.082,
       "weather_score": 0.05,
       "intersection_score": 1.0,
       "planned_event_score": 0.0
@@ -21,79 +21,7 @@
       "traffic_segments": 50
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182599+00:00"
-  },
-  {
-    "hex_id": "8828308281fffff",
-    "center": {
-      "lat": 37.773515,
-      "lon": -122.418271
-    },
-    "stress_score": 4.79,
-    "breakdown": {
-      "work_zone_score": 1.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0505,
-      "weather_score": 0.05,
-      "intersection_score": 1.0,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 11,
-      "active_planned_events": 0,
-      "traffic_segments": 84
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182509+00:00"
-  },
-  {
-    "hex_id": "88283082b9fffff",
-    "center": {
-      "lat": 37.78759,
-      "lon": -122.422615
-    },
-    "stress_score": 4.72,
-    "breakdown": {
-      "work_zone_score": 1.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0252,
-      "weather_score": 0.05,
-      "intersection_score": 1.0,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 3,
-      "active_planned_events": 0,
-      "traffic_segments": 50
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182938+00:00"
-  },
-  {
-    "hex_id": "8828308283fffff",
-    "center": {
-      "lat": 37.779355,
-      "lon": -122.42564
-    },
-    "stress_score": 4.7,
-    "breakdown": {
-      "work_zone_score": 1.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0144,
-      "weather_score": 0.05,
-      "intersection_score": 1.0,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 4,
-      "active_planned_events": 0,
-      "traffic_segments": 32
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182543+00:00"
+    "computed_at": "2026-08-12T11:37:36.354903+00:00"
   },
   {
     "hex_id": "88283082a3fffff",
@@ -101,11 +29,11 @@
       "lat": 37.792379,
       "lon": -122.401821
     },
-    "stress_score": 4.69,
+    "stress_score": 4.72,
     "breakdown": {
       "work_zone_score": 1.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0132,
+      "congestion_score": 0.0232,
       "weather_score": 0.05,
       "intersection_score": 1.0,
       "planned_event_score": 0.0
@@ -117,7 +45,79 @@
       "traffic_segments": 56
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182801+00:00"
+    "computed_at": "2026-08-12T11:37:36.355052+00:00"
+  },
+  {
+    "hex_id": "8828308283fffff",
+    "center": {
+      "lat": 37.779355,
+      "lon": -122.42564
+    },
+    "stress_score": 4.71,
+    "breakdown": {
+      "work_zone_score": 1.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0187,
+      "weather_score": 0.05,
+      "intersection_score": 1.0,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 4,
+      "active_planned_events": 0,
+      "traffic_segments": 32
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.354858+00:00"
+  },
+  {
+    "hex_id": "88283082b9fffff",
+    "center": {
+      "lat": 37.78759,
+      "lon": -122.422615
+    },
+    "stress_score": 4.7,
+    "breakdown": {
+      "work_zone_score": 1.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.014,
+      "weather_score": 0.05,
+      "intersection_score": 1.0,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 3,
+      "active_planned_events": 0,
+      "traffic_segments": 50
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.355159+00:00"
+  },
+  {
+    "hex_id": "8828308281fffff",
+    "center": {
+      "lat": 37.773515,
+      "lon": -122.418271
+    },
+    "stress_score": 4.68,
+    "breakdown": {
+      "work_zone_score": 1.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0086,
+      "weather_score": 0.05,
+      "intersection_score": 1.0,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 11,
+      "active_planned_events": 0,
+      "traffic_segments": 84
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.354832+00:00"
   },
   {
     "hex_id": "88283082e7fffff",
@@ -141,7 +141,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183169+00:00"
+    "computed_at": "2026-08-12T11:37:36.355357+00:00"
   },
   {
     "hex_id": "88283082b7fffff",
@@ -153,7 +153,7 @@
     "breakdown": {
       "work_zone_score": 0.8502,
       "incident_score": 0.0,
-      "congestion_score": 0.009,
+      "congestion_score": 0.0083,
       "weather_score": 0.05,
       "intersection_score": 1.0,
       "planned_event_score": 0.0
@@ -165,7 +165,7 @@
       "traffic_segments": 40
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182915+00:00"
+    "computed_at": "2026-08-12T11:37:36.355142+00:00"
   },
   {
     "hex_id": "882830950bfffff",
@@ -177,7 +177,7 @@
     "breakdown": {
       "work_zone_score": 1.0,
       "incident_score": 0.0,
-      "congestion_score": 0.3333,
+      "congestion_score": 0.3367,
       "weather_score": 0.05,
       "intersection_score": 0.525,
       "planned_event_score": 0.0
@@ -189,7 +189,7 @@
       "traffic_segments": 3
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184109+00:00"
+    "computed_at": "2026-08-12T11:37:36.356112+00:00"
   },
   {
     "hex_id": "8828308289fffff",
@@ -197,11 +197,11 @@
       "lat": 37.765279,
       "lon": -122.421296
     },
-    "stress_score": 3.91,
+    "stress_score": 3.92,
     "breakdown": {
       "work_zone_score": 0.6562,
       "incident_score": 0.0,
-      "congestion_score": 0.0108,
+      "congestion_score": 0.0133,
       "weather_score": 0.05,
       "intersection_score": 0.9775,
       "planned_event_score": 0.0
@@ -213,7 +213,7 @@
       "traffic_segments": 36
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182633+00:00"
+    "computed_at": "2026-08-12T11:37:36.354931+00:00"
   },
   {
     "hex_id": "88283082b3fffff",
@@ -221,11 +221,11 @@
       "lat": 37.801662,
       "lon": -122.42696
     },
-    "stress_score": 3.85,
+    "stress_score": 3.86,
     "breakdown": {
       "work_zone_score": 0.6017,
       "incident_score": 0.0,
-      "congestion_score": 0.0107,
+      "congestion_score": 0.0143,
       "weather_score": 0.05,
       "intersection_score": 1.0,
       "planned_event_score": 0.0
@@ -237,7 +237,7 @@
       "traffic_segments": 28
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182880+00:00"
+    "computed_at": "2026-08-12T11:37:36.355114+00:00"
   },
   {
     "hex_id": "88283082bdfffff",
@@ -245,11 +245,11 @@
       "lat": 37.789985,
       "lon": -122.412219
     },
-    "stress_score": 3.84,
+    "stress_score": 3.86,
     "breakdown": {
       "work_zone_score": 0.5949,
       "incident_score": 0.0,
-      "congestion_score": 0.0125,
+      "congestion_score": 0.0222,
       "weather_score": 0.05,
       "intersection_score": 1.0,
       "planned_event_score": 0.0
@@ -261,7 +261,7 @@
       "traffic_segments": 36
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182961+00:00"
+    "computed_at": "2026-08-12T11:37:36.355176+00:00"
   },
   {
     "hex_id": "88283082edfffff",
@@ -285,7 +285,7 @@
       "traffic_segments": 4
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183369+00:00"
+    "computed_at": "2026-08-12T11:37:36.355527+00:00"
   },
   {
     "hex_id": "8828309563fffff",
@@ -297,7 +297,7 @@
     "breakdown": {
       "work_zone_score": 1.0,
       "incident_score": 0.0,
-      "congestion_score": 0.5473,
+      "congestion_score": 0.5455,
       "weather_score": 0.05,
       "intersection_score": 0.11,
       "planned_event_score": 0.0
@@ -309,7 +309,7 @@
       "traffic_segments": 11
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184459+00:00"
+    "computed_at": "2026-08-12T11:37:36.356426+00:00"
   },
   {
     "hex_id": "88283095c1fffff",
@@ -321,7 +321,7 @@
     "breakdown": {
       "work_zone_score": 0.9305,
       "incident_score": 0.0,
-      "congestion_score": 0.007,
+      "congestion_score": 0.005,
       "weather_score": 0.05,
       "intersection_score": 0.705,
       "planned_event_score": 0.0
@@ -333,31 +333,7 @@
       "traffic_segments": 10
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184730+00:00"
-  },
-  {
-    "hex_id": "882830828dfffff",
-    "center": {
-      "lat": 37.767674,
-      "lon": -122.410902
-    },
-    "stress_score": 3.57,
-    "breakdown": {
-      "work_zone_score": 0.5205,
-      "incident_score": 0.0,
-      "congestion_score": 0.0393,
-      "weather_score": 0.05,
-      "intersection_score": 0.9275,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 1,
-      "active_planned_events": 0,
-      "traffic_segments": 60
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182679+00:00"
+    "computed_at": "2026-08-12T11:37:36.356655+00:00"
   },
   {
     "hex_id": "88283082ebfffff",
@@ -369,7 +345,7 @@
     "breakdown": {
       "work_zone_score": 1.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0072,
+      "congestion_score": 0.0089,
       "weather_score": 0.05,
       "intersection_score": 0.5525,
       "planned_event_score": 0.0
@@ -381,31 +357,7 @@
       "traffic_segments": 18
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183341+00:00"
-  },
-  {
-    "hex_id": "88283082b1fffff",
-    "center": {
-      "lat": 37.795824,
-      "lon": -122.419589
-    },
-    "stress_score": 3.49,
-    "breakdown": {
-      "work_zone_score": 0.4215,
-      "incident_score": 0.0,
-      "congestion_score": 0.0161,
-      "weather_score": 0.05,
-      "intersection_score": 1.0,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 1,
-      "active_planned_events": 0,
-      "traffic_segments": 18
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182865+00:00"
+    "computed_at": "2026-08-12T11:37:36.355501+00:00"
   },
   {
     "hex_id": "8828308295fffff",
@@ -413,11 +365,11 @@
       "lat": 37.785194,
       "lon": -122.43301
     },
-    "stress_score": 3.48,
+    "stress_score": 3.55,
     "breakdown": {
       "work_zone_score": 0.4261,
       "incident_score": 0.0,
-      "congestion_score": 0.0083,
+      "congestion_score": 0.0372,
       "weather_score": 0.05,
       "intersection_score": 1.0,
       "planned_event_score": 0.0
@@ -429,31 +381,55 @@
       "traffic_segments": 18
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182720+00:00"
+    "computed_at": "2026-08-12T11:37:36.354985+00:00"
   },
   {
-    "hex_id": "8828309551fffff",
+    "hex_id": "882830828dfffff",
     "center": {
-      "lat": 37.702824,
-      "lon": -122.463228
+      "lat": 37.767674,
+      "lon": -122.410902
     },
-    "stress_score": 3.43,
+    "stress_score": 3.54,
     "breakdown": {
-      "work_zone_score": 1.0,
+      "work_zone_score": 0.5205,
       "incident_score": 0.0,
-      "congestion_score": 0.0325,
+      "congestion_score": 0.0283,
       "weather_score": 0.05,
-      "intersection_score": 0.4775,
+      "intersection_score": 0.9275,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
-      "active_work_zones": 2,
+      "active_work_zones": 1,
       "active_planned_events": 0,
-      "traffic_segments": 12
+      "traffic_segments": 60
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184390+00:00"
+    "computed_at": "2026-08-12T11:37:36.354953+00:00"
+  },
+  {
+    "hex_id": "88283082b1fffff",
+    "center": {
+      "lat": 37.795824,
+      "lon": -122.419589
+    },
+    "stress_score": 3.46,
+    "breakdown": {
+      "work_zone_score": 0.4215,
+      "incident_score": 0.0,
+      "congestion_score": 0.0056,
+      "weather_score": 0.05,
+      "intersection_score": 1.0,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 1,
+      "active_planned_events": 0,
+      "traffic_segments": 18
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.355102+00:00"
   },
   {
     "hex_id": "88283082b5fffff",
@@ -461,11 +437,11 @@
       "lat": 37.798219,
       "lon": -122.409192
     },
-    "stress_score": 3.42,
+    "stress_score": 3.41,
     "breakdown": {
       "work_zone_score": 0.3949,
       "incident_score": 0.0,
-      "congestion_score": 0.0129,
+      "congestion_score": 0.009,
       "weather_score": 0.05,
       "intersection_score": 1.0,
       "planned_event_score": 0.0
@@ -477,7 +453,31 @@
       "traffic_segments": 21
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182894+00:00"
+    "computed_at": "2026-08-12T11:37:36.355126+00:00"
+  },
+  {
+    "hex_id": "8828309551fffff",
+    "center": {
+      "lat": 37.702824,
+      "lon": -122.463228
+    },
+    "stress_score": 3.4,
+    "breakdown": {
+      "work_zone_score": 1.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0175,
+      "weather_score": 0.05,
+      "intersection_score": 0.4775,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 2,
+      "active_planned_events": 0,
+      "traffic_segments": 12
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356366+00:00"
   },
   {
     "hex_id": "88283082d3fffff",
@@ -489,7 +489,7 @@
     "breakdown": {
       "work_zone_score": 0.8572,
       "incident_score": 0.0,
-      "congestion_score": 0.0121,
+      "congestion_score": 0.0117,
       "weather_score": 0.05,
       "intersection_score": 0.575,
       "planned_event_score": 0.0
@@ -501,7 +501,7 @@
       "traffic_segments": 24
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183060+00:00"
+    "computed_at": "2026-08-12T11:37:36.355272+00:00"
   },
   {
     "hex_id": "88283082d1fffff",
@@ -513,7 +513,7 @@
     "breakdown": {
       "work_zone_score": 0.8048,
       "incident_score": 0.0,
-      "congestion_score": 0.0109,
+      "congestion_score": 0.0118,
       "weather_score": 0.05,
       "intersection_score": 0.6175,
       "planned_event_score": 0.0
@@ -525,7 +525,7 @@
       "traffic_segments": 11
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183045+00:00"
+    "computed_at": "2026-08-12T11:37:36.355255+00:00"
   },
   {
     "hex_id": "8828308257fffff",
@@ -533,11 +533,11 @@
       "lat": 37.727826,
       "lon": -122.387487
     },
-    "stress_score": 3.3,
+    "stress_score": 3.31,
     "breakdown": {
       "work_zone_score": 0.8232,
       "incident_score": 0.0,
-      "congestion_score": 0.005,
+      "congestion_score": 0.01,
       "weather_score": 0.05,
       "intersection_score": 0.6,
       "planned_event_score": 0.0
@@ -549,7 +549,7 @@
       "traffic_segments": 6
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182384+00:00"
+    "computed_at": "2026-08-12T11:37:36.354727+00:00"
   },
   {
     "hex_id": "882830825bfffff",
@@ -557,11 +557,11 @@
       "lat": 37.717196,
       "lon": -122.400905
     },
-    "stress_score": 3.13,
+    "stress_score": 3.12,
     "breakdown": {
       "work_zone_score": 1.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0094,
+      "congestion_score": 0.0056,
       "weather_score": 0.05,
       "intersection_score": 0.3775,
       "planned_event_score": 0.0
@@ -573,7 +573,7 @@
       "traffic_segments": 18
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182426+00:00"
+    "computed_at": "2026-08-12T11:37:36.354763+00:00"
   },
   {
     "hex_id": "8828309503fffff",
@@ -581,11 +581,11 @@
       "lat": 37.721699,
       "lon": -122.446803
     },
-    "stress_score": 3.08,
+    "stress_score": 3.1,
     "breakdown": {
       "work_zone_score": 0.4937,
       "incident_score": 0.0,
-      "congestion_score": 0.0296,
+      "congestion_score": 0.0367,
       "weather_score": 0.05,
       "intersection_score": 0.765,
       "planned_event_score": 0.0
@@ -597,7 +597,7 @@
       "traffic_segments": 24
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183951+00:00"
+    "computed_at": "2026-08-12T11:37:36.356011+00:00"
   },
   {
     "hex_id": "88283082d5fffff",
@@ -621,7 +621,7 @@
       "traffic_segments": 17
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183072+00:00"
+    "computed_at": "2026-08-12T11:37:36.355283+00:00"
   },
   {
     "hex_id": "8828309511fffff",
@@ -645,7 +645,7 @@
       "traffic_segments": 1
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184143+00:00"
+    "computed_at": "2026-08-12T11:37:36.356143+00:00"
   },
   {
     "hex_id": "88283082cbfffff",
@@ -653,11 +653,11 @@
       "lat": 37.748807,
       "lon": -122.427345
     },
-    "stress_score": 2.8,
+    "stress_score": 2.82,
     "breakdown": {
       "work_zone_score": 0.4015,
       "incident_score": 0.0,
-      "congestion_score": 0.0171,
+      "congestion_score": 0.0275,
       "weather_score": 0.05,
       "intersection_score": 0.74,
       "planned_event_score": 0.0
@@ -669,79 +669,7 @@
       "traffic_segments": 24
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183023+00:00"
-  },
-  {
-    "hex_id": "8828308293fffff",
-    "center": {
-      "lat": 37.788634,
-      "lon": -122.450775
-    },
-    "stress_score": 2.67,
-    "breakdown": {
-      "work_zone_score": 0.6102,
-      "incident_score": 0.0,
-      "congestion_score": 0.013,
-      "weather_score": 0.05,
-      "intersection_score": 0.5175,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 1,
-      "active_planned_events": 0,
-      "traffic_segments": 10
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182704+00:00"
-  },
-  {
-    "hex_id": "882830953dfffff",
-    "center": {
-      "lat": 37.732333,
-      "lon": -122.433392
-    },
-    "stress_score": 2.66,
-    "breakdown": {
-      "work_zone_score": 0.3275,
-      "incident_score": 0.0,
-      "congestion_score": 0.0415,
-      "weather_score": 0.05,
-      "intersection_score": 0.7225,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 1,
-      "active_planned_events": 0,
-      "traffic_segments": 41
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184315+00:00"
-  },
-  {
-    "hex_id": "88283082c1fffff",
-    "center": {
-      "lat": 37.751202,
-      "lon": -122.416953
-    },
-    "stress_score": 2.63,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0264,
-      "weather_score": 0.05,
-      "intersection_score": 1.0,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 25
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182973+00:00"
+    "computed_at": "2026-08-12T11:37:36.355233+00:00"
   },
   {
     "hex_id": "88283082a1fffff",
@@ -749,11 +677,11 @@
       "lat": 37.786539,
       "lon": -122.394451
     },
-    "stress_score": 2.62,
+    "stress_score": 2.68,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0245,
+      "congestion_score": 0.0492,
       "weather_score": 0.05,
       "intersection_score": 1.0,
       "planned_event_score": 0.0
@@ -765,151 +693,31 @@
       "traffic_segments": 62
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182771+00:00"
+    "computed_at": "2026-08-12T11:37:36.355025+00:00"
   },
   {
-    "hex_id": "88283082e9fffff",
+    "hex_id": "8828308293fffff",
     "center": {
-      "lat": 37.75599,
-      "lon": -122.396166
+      "lat": 37.788634,
+      "lon": -122.450775
     },
-    "stress_score": 2.61,
+    "stress_score": 2.67,
     "breakdown": {
-      "work_zone_score": 1.0,
+      "work_zone_score": 0.6102,
       "incident_score": 0.0,
-      "congestion_score": 0.0273,
+      "congestion_score": 0.014,
       "weather_score": 0.05,
-      "intersection_score": 0.1525,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 3,
-      "active_planned_events": 0,
-      "traffic_segments": 11
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183191+00:00"
-  },
-  {
-    "hex_id": "8828308287fffff",
-    "center": {
-      "lat": 37.78175,
-      "lon": -122.415245
-    },
-    "stress_score": 2.6,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0153,
-      "weather_score": 0.05,
-      "intersection_score": 1.0,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 47
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182611+00:00"
-  },
-  {
-    "hex_id": "882830828bfffff",
-    "center": {
-      "lat": 37.77112,
-      "lon": -122.428665
-    },
-    "stress_score": 2.6,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0142,
-      "weather_score": 0.05,
-      "intersection_score": 1.0,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 38
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182644+00:00"
-  },
-  {
-    "hex_id": "882830829dfffff",
-    "center": {
-      "lat": 37.776959,
-      "lon": -122.436035
-    },
-    "stress_score": 2.6,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0153,
-      "weather_score": 0.05,
-      "intersection_score": 1.0,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 34
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182756+00:00"
-  },
-  {
-    "hex_id": "8828308299fffff",
-    "center": {
-      "lat": 37.774562,
-      "lon": -122.446428
-    },
-    "stress_score": 2.59,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0115,
-      "weather_score": 0.05,
-      "intersection_score": 1.0,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 20
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182738+00:00"
-  },
-  {
-    "hex_id": "8828309519fffff",
-    "center": {
-      "lat": 37.716904,
-      "lon": -122.467574
-    },
-    "stress_score": 2.59,
-    "breakdown": {
-      "work_zone_score": 0.8376,
-      "incident_score": 0.0,
-      "congestion_score": 0.0117,
-      "weather_score": 0.05,
-      "intersection_score": 0.295,
+      "intersection_score": 0.5175,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 1,
       "active_planned_events": 0,
-      "traffic_segments": 6
+      "traffic_segments": 10
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184180+00:00"
+    "computed_at": "2026-08-12T11:37:36.354972+00:00"
   },
   {
     "hex_id": "88283082a9fffff",
@@ -917,11 +725,11 @@
       "lat": 37.778304,
       "lon": -122.397479
     },
-    "stress_score": 2.58,
+    "stress_score": 2.65,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0095,
+      "congestion_score": 0.0376,
       "weather_score": 0.05,
       "intersection_score": 1.0,
       "planned_event_score": 0.0
@@ -933,7 +741,103 @@
       "traffic_segments": 37
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182830+00:00"
+    "computed_at": "2026-08-12T11:37:36.355074+00:00"
+  },
+  {
+    "hex_id": "882830953dfffff",
+    "center": {
+      "lat": 37.732333,
+      "lon": -122.433392
+    },
+    "stress_score": 2.64,
+    "breakdown": {
+      "work_zone_score": 0.3275,
+      "incident_score": 0.0,
+      "congestion_score": 0.0334,
+      "weather_score": 0.05,
+      "intersection_score": 0.7225,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 1,
+      "active_planned_events": 0,
+      "traffic_segments": 41
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356303+00:00"
+  },
+  {
+    "hex_id": "8828308299fffff",
+    "center": {
+      "lat": 37.774562,
+      "lon": -122.446428
+    },
+    "stress_score": 2.62,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0225,
+      "weather_score": 0.05,
+      "intersection_score": 1.0,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 20
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.354999+00:00"
+  },
+  {
+    "hex_id": "882830828bfffff",
+    "center": {
+      "lat": 37.77112,
+      "lon": -122.428665
+    },
+    "stress_score": 2.61,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0205,
+      "weather_score": 0.05,
+      "intersection_score": 1.0,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 38
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.354940+00:00"
+  },
+  {
+    "hex_id": "88283082e9fffff",
+    "center": {
+      "lat": 37.75599,
+      "lon": -122.396166
+    },
+    "stress_score": 2.6,
+    "breakdown": {
+      "work_zone_score": 1.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0236,
+      "weather_score": 0.05,
+      "intersection_score": 0.1525,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 3,
+      "active_planned_events": 0,
+      "traffic_segments": 11
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.355378+00:00"
   },
   {
     "hex_id": "8828308291fffff",
@@ -941,11 +845,11 @@
       "lat": 37.782797,
       "lon": -122.443404
     },
-    "stress_score": 2.54,
+    "stress_score": 2.59,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0088,
+      "congestion_score": 0.026,
       "weather_score": 0.05,
       "intersection_score": 0.985,
       "planned_event_score": 0.0
@@ -957,7 +861,79 @@
       "traffic_segments": 25
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182690+00:00"
+    "computed_at": "2026-08-12T11:37:36.354962+00:00"
+  },
+  {
+    "hex_id": "882830829dfffff",
+    "center": {
+      "lat": 37.776959,
+      "lon": -122.436035
+    },
+    "stress_score": 2.59,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0132,
+      "weather_score": 0.05,
+      "intersection_score": 1.0,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 34
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.355015+00:00"
+  },
+  {
+    "hex_id": "88283082c1fffff",
+    "center": {
+      "lat": 37.751202,
+      "lon": -122.416953
+    },
+    "stress_score": 2.59,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0132,
+      "weather_score": 0.05,
+      "intersection_score": 1.0,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 25
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.355189+00:00"
+  },
+  {
+    "hex_id": "8828308287fffff",
+    "center": {
+      "lat": 37.78175,
+      "lon": -122.415245
+    },
+    "stress_score": 2.58,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0064,
+      "weather_score": 0.05,
+      "intersection_score": 1.0,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 47
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.354913+00:00"
   },
   {
     "hex_id": "88283082abfffff",
@@ -965,11 +941,11 @@
       "lat": 37.784145,
       "lon": -122.404849
     },
-    "stress_score": 2.54,
+    "stress_score": 2.57,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0117,
+      "congestion_score": 0.0237,
       "weather_score": 0.05,
       "intersection_score": 0.98,
       "planned_event_score": 0.0
@@ -981,7 +957,31 @@
       "traffic_segments": 46
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182841+00:00"
+    "computed_at": "2026-08-12T11:37:36.355083+00:00"
+  },
+  {
+    "hex_id": "8828309519fffff",
+    "center": {
+      "lat": 37.716904,
+      "lon": -122.467574
+    },
+    "stress_score": 2.56,
+    "breakdown": {
+      "work_zone_score": 0.8376,
+      "incident_score": 0.0,
+      "congestion_score": 0.0,
+      "weather_score": 0.05,
+      "intersection_score": 0.295,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 1,
+      "active_planned_events": 0,
+      "traffic_segments": 6
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356180+00:00"
   },
   {
     "hex_id": "88283082e1fffff",
@@ -989,11 +989,11 @@
       "lat": 37.764226,
       "lon": -122.393138
     },
-    "stress_score": 2.48,
+    "stress_score": 2.49,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0097,
+      "congestion_score": 0.0113,
       "weather_score": 0.05,
       "intersection_score": 0.96,
       "planned_event_score": 0.0
@@ -1005,7 +1005,7 @@
       "traffic_segments": 39
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183128+00:00"
+    "computed_at": "2026-08-12T11:37:36.355319+00:00"
   },
   {
     "hex_id": "88283095b5fffff",
@@ -1013,11 +1013,11 @@
       "lat": 37.781437,
       "lon": -122.48195
     },
-    "stress_score": 2.41,
+    "stress_score": 2.47,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.008,
+      "congestion_score": 0.032,
       "weather_score": 0.05,
       "intersection_score": 0.9325,
       "planned_event_score": 0.0
@@ -1029,7 +1029,7 @@
       "traffic_segments": 10
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184685+00:00"
+    "computed_at": "2026-08-12T11:37:36.356614+00:00"
   },
   {
     "hex_id": "8828308211fffff",
@@ -1037,11 +1037,11 @@
       "lat": 37.741909,
       "lon": -122.391826
     },
-    "stress_score": 2.32,
+    "stress_score": 2.31,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0143,
+      "congestion_score": 0.01,
       "weather_score": 0.05,
       "intersection_score": 0.89,
       "planned_event_score": 0.0
@@ -1053,7 +1053,7 @@
       "traffic_segments": 7
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182154+00:00"
+    "computed_at": "2026-08-12T11:37:36.354518+00:00"
   },
   {
     "hex_id": "88283082c3fffff",
@@ -1061,11 +1061,11 @@
       "lat": 37.757043,
       "lon": -122.424321
     },
-    "stress_score": 2.29,
+    "stress_score": 2.27,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.01,
+      "congestion_score": 0.0,
       "weather_score": 0.05,
       "intersection_score": 0.8825,
       "planned_event_score": 0.0
@@ -1077,55 +1077,7 @@
       "traffic_segments": 1
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182982+00:00"
-  },
-  {
-    "hex_id": "882830876dfffff",
-    "center": {
-      "lat": 37.799266,
-      "lon": -122.437357
-    },
-    "stress_score": 2.25,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0159,
-      "weather_score": 0.05,
-      "intersection_score": 0.86,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 17
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183739+00:00"
-  },
-  {
-    "hex_id": "8828308219fffff",
-    "center": {
-      "lat": 37.733672,
-      "lon": -122.394853
-    },
-    "stress_score": 2.23,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0085,
-      "weather_score": 0.05,
-      "intersection_score": 0.86,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 13
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182192+00:00"
+    "computed_at": "2026-08-12T11:37:36.355195+00:00"
   },
   {
     "hex_id": "8828308749fffff",
@@ -1133,11 +1085,11 @@
       "lat": 37.783837,
       "lon": -122.471559
     },
-    "stress_score": 2.22,
+    "stress_score": 2.26,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.006,
+      "congestion_score": 0.0217,
       "weather_score": 0.05,
       "intersection_score": 0.8575,
       "planned_event_score": 0.0
@@ -1149,31 +1101,55 @@
       "traffic_segments": 30
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183626+00:00"
+    "computed_at": "2026-08-12T11:37:36.355746+00:00"
   },
   {
-    "hex_id": "8828309501fffff",
+    "hex_id": "882830876dfffff",
     "center": {
-      "lat": 37.715857,
-      "lon": -122.439437
+      "lat": 37.799266,
+      "lon": -122.437357
     },
-    "stress_score": 2.22,
+    "stress_score": 2.25,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.045,
+      "congestion_score": 0.0141,
       "weather_score": 0.05,
-      "intersection_score": 0.8175,
+      "intersection_score": 0.86,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 12
+      "traffic_segments": 17
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183938+00:00"
+    "computed_at": "2026-08-12T11:37:36.355842+00:00"
+  },
+  {
+    "hex_id": "8828308219fffff",
+    "center": {
+      "lat": 37.733672,
+      "lon": -122.394853
+    },
+    "stress_score": 2.24,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0123,
+      "weather_score": 0.05,
+      "intersection_score": 0.86,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 13
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.354548+00:00"
   },
   {
     "hex_id": "882830829bfffff",
@@ -1181,11 +1157,11 @@
       "lat": 37.780399,
       "lon": -122.453797
     },
-    "stress_score": 2.2,
+    "stress_score": 2.18,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0338,
+      "congestion_score": 0.0238,
       "weather_score": 0.05,
       "intersection_score": 0.8225,
       "planned_event_score": 0.0
@@ -1197,7 +1173,31 @@
       "traffic_segments": 13
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182746+00:00"
+    "computed_at": "2026-08-12T11:37:36.355007+00:00"
+  },
+  {
+    "hex_id": "88283095ebfffff",
+    "center": {
+      "lat": 37.745057,
+      "lon": -122.476269
+    },
+    "stress_score": 2.17,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0433,
+      "weather_score": 0.05,
+      "intersection_score": 0.8025,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 9
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356769+00:00"
   },
   {
     "hex_id": "8828308217fffff",
@@ -1205,11 +1205,11 @@
       "lat": 37.750146,
       "lon": -122.388798
     },
-    "stress_score": 2.19,
+    "stress_score": 2.16,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0252,
+      "congestion_score": 0.0122,
       "weather_score": 0.05,
       "intersection_score": 0.8275,
       "planned_event_score": 0.0
@@ -1221,19 +1221,19 @@
       "traffic_segments": 27
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182182+00:00"
+    "computed_at": "2026-08-12T11:37:36.354541+00:00"
   },
   {
-    "hex_id": "88283095ebfffff",
+    "hex_id": "88283082a7fffff",
     "center": {
-      "lat": 37.745057,
-      "lon": -122.476269
+      "lat": 37.794773,
+      "lon": -122.391422
     },
-    "stress_score": 2.13,
+    "stress_score": 2.14,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0256,
+      "congestion_score": 0.03,
       "weather_score": 0.05,
       "intersection_score": 0.8025,
       "planned_event_score": 0.0
@@ -1242,24 +1242,24 @@
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 9
+      "traffic_segments": 19
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184869+00:00"
+    "computed_at": "2026-08-12T11:37:36.355066+00:00"
   },
   {
-    "hex_id": "8828309507fffff",
+    "hex_id": "8828309501fffff",
     "center": {
-      "lat": 37.724095,
-      "lon": -122.436415
+      "lat": 37.715857,
+      "lon": -122.439437
     },
-    "stress_score": 2.1,
+    "stress_score": 2.11,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0167,
+      "congestion_score": 0.0025,
       "weather_score": 0.05,
-      "intersection_score": 0.8,
+      "intersection_score": 0.8175,
       "planned_event_score": 0.0
     },
     "counts": {
@@ -1269,31 +1269,7 @@
       "traffic_segments": 12
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183975+00:00"
-  },
-  {
-    "hex_id": "8828309513fffff",
-    "center": {
-      "lat": 37.730981,
-      "lon": -122.471921
-    },
-    "stress_score": 2.1,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0141,
-      "weather_score": 0.05,
-      "intersection_score": 0.8,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 17
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184152+00:00"
+    "computed_at": "2026-08-12T11:37:36.355997+00:00"
   },
   {
     "hex_id": "8828309583fffff",
@@ -1301,11 +1277,11 @@
       "lat": 37.762565,
       "lon": -122.498375
     },
-    "stress_score": 2.1,
+    "stress_score": 2.09,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0094,
+      "congestion_score": 0.0081,
       "weather_score": 0.05,
       "intersection_score": 0.805,
       "planned_event_score": 0.0
@@ -1317,31 +1293,55 @@
       "traffic_segments": 16
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184513+00:00"
+    "computed_at": "2026-08-12T11:37:36.356471+00:00"
   },
   {
-    "hex_id": "88283082a7fffff",
+    "hex_id": "8828309507fffff",
     "center": {
-      "lat": 37.794773,
-      "lon": -122.391422
+      "lat": 37.724095,
+      "lon": -122.436415
     },
     "stress_score": 2.08,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0047,
+      "congestion_score": 0.0067,
       "weather_score": 0.05,
-      "intersection_score": 0.8025,
+      "intersection_score": 0.8,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 19
+      "traffic_segments": 12
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182819+00:00"
+    "computed_at": "2026-08-12T11:37:36.356030+00:00"
+  },
+  {
+    "hex_id": "8828309513fffff",
+    "center": {
+      "lat": 37.730981,
+      "lon": -122.471921
+    },
+    "stress_score": 2.08,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0065,
+      "weather_score": 0.05,
+      "intersection_score": 0.8,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 17
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356152+00:00"
   },
   {
     "hex_id": "88283082e3fffff",
@@ -1353,7 +1353,7 @@
     "breakdown": {
       "work_zone_score": 0.3471,
       "incident_score": 0.0,
-      "congestion_score": 0.0111,
+      "congestion_score": 0.0104,
       "weather_score": 0.05,
       "intersection_score": 0.4825,
       "planned_event_score": 0.0
@@ -1365,151 +1365,7 @@
       "traffic_segments": 27
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183143+00:00"
-  },
-  {
-    "hex_id": "8828309557fffff",
-    "center": {
-      "lat": 37.711063,
-      "lon": -122.460209
-    },
-    "stress_score": 2.01,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0232,
-      "weather_score": 0.05,
-      "intersection_score": 0.7575,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 28
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184415+00:00"
-  },
-  {
-    "hex_id": "88283082c7fffff",
-    "center": {
-      "lat": 37.759438,
-      "lon": -122.413928
-    },
-    "stress_score": 2.0,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0533,
-      "weather_score": 0.05,
-      "intersection_score": 0.7225,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 3
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182999+00:00"
-  },
-  {
-    "hex_id": "88283082bbfffff",
-    "center": {
-      "lat": 37.793428,
-      "lon": -122.429986
-    },
-    "stress_score": 1.99,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.02,
-      "weather_score": 0.05,
-      "intersection_score": 0.7525,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 13
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182947+00:00"
-  },
-  {
-    "hex_id": "88283080c9fffff",
-    "center": {
-      "lat": 37.800614,
-      "lon": -122.398793
-    },
-    "stress_score": 1.98,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0175,
-      "weather_score": 0.05,
-      "intersection_score": 0.75,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 12
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181946+00:00"
-  },
-  {
-    "hex_id": "8828308253fffff",
-    "center": {
-      "lat": 37.725434,
-      "lon": -122.397879
-    },
-    "stress_score": 1.97,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0079,
-      "weather_score": 0.05,
-      "intersection_score": 0.755,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 19
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182335+00:00"
-  },
-  {
-    "hex_id": "88283082c5fffff",
-    "center": {
-      "lat": 37.753596,
-      "lon": -122.40656
-    },
-    "stress_score": 1.88,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0142,
-      "weather_score": 0.05,
-      "intersection_score": 0.715,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 24
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182992+00:00"
+    "computed_at": "2026-08-12T11:37:36.355333+00:00"
   },
   {
     "hex_id": "8828309585fffff",
@@ -1517,11 +1373,11 @@
       "lat": 37.75913,
       "lon": -122.480619
     },
-    "stress_score": 1.88,
+    "stress_score": 1.99,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0062,
+      "congestion_score": 0.0538,
       "weather_score": 0.05,
       "intersection_score": 0.72,
       "planned_event_score": 0.0
@@ -1533,7 +1389,151 @@
       "traffic_segments": 13
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184521+00:00"
+    "computed_at": "2026-08-12T11:37:36.356478+00:00"
+  },
+  {
+    "hex_id": "88283082bbfffff",
+    "center": {
+      "lat": 37.793428,
+      "lon": -122.429986
+    },
+    "stress_score": 1.98,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0138,
+      "weather_score": 0.05,
+      "intersection_score": 0.7525,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 13
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.355166+00:00"
+  },
+  {
+    "hex_id": "88283082c5fffff",
+    "center": {
+      "lat": 37.753596,
+      "lon": -122.40656
+    },
+    "stress_score": 1.98,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0521,
+      "weather_score": 0.05,
+      "intersection_score": 0.715,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 24
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.355204+00:00"
+  },
+  {
+    "hex_id": "8828309557fffff",
+    "center": {
+      "lat": 37.711063,
+      "lon": -122.460209
+    },
+    "stress_score": 1.98,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0125,
+      "weather_score": 0.05,
+      "intersection_score": 0.7575,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 28
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356387+00:00"
+  },
+  {
+    "hex_id": "88283080c9fffff",
+    "center": {
+      "lat": 37.800614,
+      "lon": -122.398793
+    },
+    "stress_score": 1.97,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0133,
+      "weather_score": 0.05,
+      "intersection_score": 0.75,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 12
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.354382+00:00"
+  },
+  {
+    "hex_id": "8828308253fffff",
+    "center": {
+      "lat": 37.725434,
+      "lon": -122.397879
+    },
+    "stress_score": 1.96,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0042,
+      "weather_score": 0.05,
+      "intersection_score": 0.755,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 19
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.354688+00:00"
+  },
+  {
+    "hex_id": "88283082c7fffff",
+    "center": {
+      "lat": 37.759438,
+      "lon": -122.413928
+    },
+    "stress_score": 1.88,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0067,
+      "weather_score": 0.05,
+      "intersection_score": 0.7225,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 3
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.355210+00:00"
   },
   {
     "hex_id": "88283095adfffff",
@@ -1541,11 +1541,11 @@
       "lat": 37.763928,
       "lon": -122.459841
     },
-    "stress_score": 1.84,
+    "stress_score": 1.88,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0115,
+      "congestion_score": 0.0275,
       "weather_score": 0.05,
       "intersection_score": 0.7,
       "planned_event_score": 0.0
@@ -1557,7 +1557,7 @@
       "traffic_segments": 20
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184663+00:00"
+    "computed_at": "2026-08-12T11:37:36.356586+00:00"
   },
   {
     "hex_id": "88283095c3fffff",
@@ -1565,11 +1565,11 @@
       "lat": 37.740257,
       "lon": -122.497041
     },
-    "stress_score": 1.84,
+    "stress_score": 1.86,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0078,
+      "congestion_score": 0.0189,
       "weather_score": 0.05,
       "intersection_score": 0.7025,
       "planned_event_score": 0.0
@@ -1581,7 +1581,7 @@
       "traffic_segments": 9
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184738+00:00"
+    "computed_at": "2026-08-12T11:37:36.356661+00:00"
   },
   {
     "hex_id": "88283095a7fffff",
@@ -1605,7 +1605,7 @@
       "traffic_segments": 6
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184637+00:00"
+    "computed_at": "2026-08-12T11:37:36.356563+00:00"
   },
   {
     "hex_id": "88283095b1fffff",
@@ -1617,7 +1617,7 @@
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0109,
+      "congestion_score": 0.0127,
       "weather_score": 0.05,
       "intersection_score": 0.6675,
       "planned_event_score": 0.0
@@ -1629,7 +1629,7 @@
       "traffic_segments": 11
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184671+00:00"
+    "computed_at": "2026-08-12T11:37:36.356593+00:00"
   },
   {
     "hex_id": "88283082c9fffff",
@@ -1637,11 +1637,11 @@
       "lat": 37.742965,
       "lon": -122.419978
     },
-    "stress_score": 1.7,
+    "stress_score": 1.73,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0033,
+      "congestion_score": 0.0161,
       "weather_score": 0.05,
       "intersection_score": 0.6525,
       "planned_event_score": 0.0
@@ -1653,79 +1653,7 @@
       "traffic_segments": 18
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183007+00:00"
-  },
-  {
-    "hex_id": "88283082d7fffff",
-    "center": {
-      "lat": 37.768723,
-      "lon": -122.439058
-    },
-    "stress_score": 1.66,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0205,
-      "weather_score": 0.05,
-      "intersection_score": 0.62,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 22
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183082+00:00"
-  },
-  {
-    "hex_id": "882830951bfffff",
-    "center": {
-      "lat": 37.722744,
-      "lon": -122.47494
-    },
-    "stress_score": 1.66,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0089,
-      "weather_score": 0.05,
-      "intersection_score": 0.6325,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 9
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184190+00:00"
-  },
-  {
-    "hex_id": "882830821dfffff",
-    "center": {
-      "lat": 37.736064,
-      "lon": -122.384459
-    },
-    "stress_score": 1.65,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0,
-      "weather_score": 0.05,
-      "intersection_score": 0.6375,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 4
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182209+00:00"
+    "computed_at": "2026-08-12T11:37:36.355219+00:00"
   },
   {
     "hex_id": "8828308769fffff",
@@ -1733,11 +1661,11 @@
       "lat": 37.796868,
       "lon": -122.447752
     },
-    "stress_score": 1.65,
+    "stress_score": 1.68,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0195,
+      "congestion_score": 0.0295,
       "weather_score": 0.05,
       "intersection_score": 0.6175,
       "planned_event_score": 0.0
@@ -1749,7 +1677,79 @@
       "traffic_segments": 20
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183722+00:00"
+    "computed_at": "2026-08-12T11:37:36.355825+00:00"
+  },
+  {
+    "hex_id": "882830951bfffff",
+    "center": {
+      "lat": 37.722744,
+      "lon": -122.47494
+    },
+    "stress_score": 1.68,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0156,
+      "weather_score": 0.05,
+      "intersection_score": 0.6325,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 9
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356188+00:00"
+  },
+  {
+    "hex_id": "882830821dfffff",
+    "center": {
+      "lat": 37.736064,
+      "lon": -122.384459
+    },
+    "stress_score": 1.67,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0075,
+      "weather_score": 0.05,
+      "intersection_score": 0.6375,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 4
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.354562+00:00"
+  },
+  {
+    "hex_id": "88283082d7fffff",
+    "center": {
+      "lat": 37.768723,
+      "lon": -122.439058
+    },
+    "stress_score": 1.65,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0155,
+      "weather_score": 0.05,
+      "intersection_score": 0.62,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 22
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.355291+00:00"
   },
   {
     "hex_id": "88283080cbfffff",
@@ -1761,7 +1761,7 @@
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.01,
+      "congestion_score": 0.0117,
       "weather_score": 0.05,
       "intersection_score": 0.62,
       "planned_event_score": 0.0
@@ -1773,31 +1773,7 @@
       "traffic_segments": 18
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181957+00:00"
-  },
-  {
-    "hex_id": "88283095a3fffff",
-    "center": {
-      "lat": 37.775602,
-      "lon": -122.474579
-    },
-    "stress_score": 1.59,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0139,
-      "weather_score": 0.05,
-      "intersection_score": 0.6,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 18
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184622+00:00"
+    "computed_at": "2026-08-12T11:37:36.354391+00:00"
   },
   {
     "hex_id": "88283095e9fffff",
@@ -1805,11 +1781,11 @@
       "lat": 37.739219,
       "lon": -122.468902
     },
-    "stress_score": 1.59,
+    "stress_score": 1.63,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0281,
+      "congestion_score": 0.0413,
       "weather_score": 0.05,
       "intersection_score": 0.585,
       "planned_event_score": 0.0
@@ -1821,7 +1797,31 @@
       "traffic_segments": 16
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184862+00:00"
+    "computed_at": "2026-08-12T11:37:36.356763+00:00"
+  },
+  {
+    "hex_id": "88283095a3fffff",
+    "center": {
+      "lat": 37.775602,
+      "lon": -122.474579
+    },
+    "stress_score": 1.6,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0172,
+      "weather_score": 0.05,
+      "intersection_score": 0.6,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 18
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356549+00:00"
   },
   {
     "hex_id": "8828309581fffff",
@@ -1845,31 +1845,7 @@
       "traffic_segments": 4
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184505+00:00"
-  },
-  {
-    "hex_id": "8828308297fffff",
-    "center": {
-      "lat": 37.791031,
-      "lon": -122.440381
-    },
-    "stress_score": 1.54,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0127,
-      "weather_score": 0.05,
-      "intersection_score": 0.5775,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 15
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182729+00:00"
+    "computed_at": "2026-08-12T11:37:36.356463+00:00"
   },
   {
     "hex_id": "88283095a5fffff",
@@ -1877,11 +1853,11 @@
       "lat": 37.772164,
       "lon": -122.456819
     },
-    "stress_score": 1.51,
+    "stress_score": 1.55,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0076,
+      "congestion_score": 0.0247,
       "weather_score": 0.05,
       "intersection_score": 0.5725,
       "planned_event_score": 0.0
@@ -1893,7 +1869,7 @@
       "traffic_segments": 17
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184630+00:00"
+    "computed_at": "2026-08-12T11:37:36.356557+00:00"
   },
   {
     "hex_id": "88283082adfffff",
@@ -1901,11 +1877,11 @@
       "lat": 37.780697,
       "lon": -122.387081
     },
-    "stress_score": 1.47,
+    "stress_score": 1.54,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0235,
+      "congestion_score": 0.0505,
       "weather_score": 0.05,
       "intersection_score": 0.54,
       "planned_event_score": 0.0
@@ -1917,79 +1893,31 @@
       "traffic_segments": 20
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182849+00:00"
+    "computed_at": "2026-08-12T11:37:36.355089+00:00"
   },
   {
-    "hex_id": "882830821bfffff",
+    "hex_id": "8828308297fffff",
     "center": {
-      "lat": 37.739516,
-      "lon": -122.402219
+      "lat": 37.791031,
+      "lon": -122.440381
     },
-    "stress_score": 1.45,
+    "stress_score": 1.53,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0344,
+      "congestion_score": 0.0093,
       "weather_score": 0.05,
-      "intersection_score": 0.52,
+      "intersection_score": 0.5775,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 16
+      "traffic_segments": 15
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182201+00:00"
-  },
-  {
-    "hex_id": "882830876bfffff",
-    "center": {
-      "lat": 37.802704,
-      "lon": -122.455123
-    },
-    "stress_score": 1.45,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0052,
-      "weather_score": 0.05,
-      "intersection_score": 0.55,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 23
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183731+00:00"
-  },
-  {
-    "hex_id": "8828309515fffff",
-    "center": {
-      "lat": 37.72754,
-      "lon": -122.454169
-    },
-    "stress_score": 1.45,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0153,
-      "weather_score": 0.05,
-      "intersection_score": 0.5425,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 17
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184161+00:00"
+    "computed_at": "2026-08-12T11:37:36.354991+00:00"
   },
   {
     "hex_id": "88283095e5fffff",
@@ -1997,11 +1925,11 @@
       "lat": 37.749854,
       "lon": -122.455494
     },
-    "stress_score": 1.45,
+    "stress_score": 1.51,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0014,
+      "congestion_score": 0.0257,
       "weather_score": 0.05,
       "intersection_score": 0.555,
       "planned_event_score": 0.0
@@ -2013,79 +1941,79 @@
       "traffic_segments": 7
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184847+00:00"
+    "computed_at": "2026-08-12T11:37:36.356750+00:00"
   },
   {
-    "hex_id": "8828309505fffff",
+    "hex_id": "882830821bfffff",
     "center": {
-      "lat": 37.718252,
-      "lon": -122.429049
+      "lat": 37.739516,
+      "lon": -122.402219
     },
-    "stress_score": 1.4,
-    "breakdown": {
-      "work_zone_score": 0.3338,
-      "incident_score": 0.0,
-      "congestion_score": 0.04,
-      "weather_score": 0.05,
-      "intersection_score": 0.2175,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 1,
-      "active_planned_events": 0,
-      "traffic_segments": 6
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183965+00:00"
-  },
-  {
-    "hex_id": "8828309589fffff",
-    "center": {
-      "lat": 37.748494,
-      "lon": -122.494023
-    },
-    "stress_score": 1.4,
+    "stress_score": 1.46,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.022,
+      "congestion_score": 0.0394,
       "weather_score": 0.05,
-      "intersection_score": 0.5125,
+      "intersection_score": 0.52,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 5
+      "traffic_segments": 16
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184536+00:00"
+    "computed_at": "2026-08-12T11:37:36.354556+00:00"
   },
   {
-    "hex_id": "882830825dfffff",
+    "hex_id": "882830876bfffff",
     "center": {
-      "lat": 37.713741,
-      "lon": -122.383149
+      "lat": 37.802704,
+      "lon": -122.455123
     },
-    "stress_score": 1.36,
+    "stress_score": 1.45,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.5025,
+      "congestion_score": 0.0078,
       "weather_score": 0.05,
-      "intersection_score": 0.0175,
+      "intersection_score": 0.55,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 12
+      "traffic_segments": 23
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182435+00:00"
+    "computed_at": "2026-08-12T11:37:36.355834+00:00"
+  },
+  {
+    "hex_id": "8828309515fffff",
+    "center": {
+      "lat": 37.72754,
+      "lon": -122.454169
+    },
+    "stress_score": 1.45,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0118,
+      "weather_score": 0.05,
+      "intersection_score": 0.5425,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 17
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356161+00:00"
   },
   {
     "hex_id": "8828309539fffff",
@@ -2093,11 +2021,11 @@
       "lat": 37.729937,
       "lon": -122.443781
     },
-    "stress_score": 1.34,
+    "stress_score": 1.38,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0113,
+      "congestion_score": 0.028,
       "weather_score": 0.05,
       "intersection_score": 0.5,
       "planned_event_score": 0.0
@@ -2109,141 +2037,21 @@
       "traffic_segments": 15
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184295+00:00"
+    "computed_at": "2026-08-12T11:37:36.356284+00:00"
   },
   {
-    "hex_id": "88283095c5fffff",
+    "hex_id": "8828309589fffff",
     "center": {
-      "lat": 37.73682,
-      "lon": -122.479288
+      "lat": 37.748494,
+      "lon": -122.494023
     },
-    "stress_score": 1.32,
+    "stress_score": 1.37,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0182,
+      "congestion_score": 0.012,
       "weather_score": 0.05,
-      "intersection_score": 0.485,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 11
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184746+00:00"
-  },
-  {
-    "hex_id": "8828309553fffff",
-    "center": {
-      "lat": 37.708665,
-      "lon": -122.470593
-    },
-    "stress_score": 1.27,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0329,
-      "weather_score": 0.05,
-      "intersection_score": 0.45,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 17
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184400+00:00"
-  },
-  {
-    "hex_id": "8828308215fffff",
-    "center": {
-      "lat": 37.744301,
-      "lon": -122.381431
-    },
-    "stress_score": 1.25,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.02,
-      "weather_score": 0.05,
-      "intersection_score": 0.455,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 1
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182171+00:00"
-  },
-  {
-    "hex_id": "88283095abfffff",
-    "center": {
-      "lat": 37.767366,
-      "lon": -122.477599
-    },
-    "stress_score": 1.25,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0493,
-      "weather_score": 0.05,
-      "intersection_score": 0.4275,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 27
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184655+00:00"
-  },
-  {
-    "hex_id": "8828309533fffff",
-    "center": {
-      "lat": 37.744014,
-      "lon": -122.448126
-    },
-    "stress_score": 1.24,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0207,
-      "weather_score": 0.05,
-      "intersection_score": 0.45,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 14
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184273+00:00"
-  },
-  {
-    "hex_id": "88283095bbfffff",
-    "center": {
-      "lat": 37.776634,
-      "lon": -122.502727
-    },
-    "stress_score": 1.21,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.02,
-      "weather_score": 0.05,
-      "intersection_score": 0.44,
+      "intersection_score": 0.5125,
       "planned_event_score": 0.0
     },
     "counts": {
@@ -2253,21 +2061,21 @@
       "traffic_segments": 5
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184709+00:00"
+    "computed_at": "2026-08-12T11:37:36.356491+00:00"
   },
   {
-    "hex_id": "88283095a9fffff",
+    "hex_id": "882830825dfffff",
     "center": {
-      "lat": 37.76153,
-      "lon": -122.47023
+      "lat": 37.713741,
+      "lon": -122.383149
     },
-    "stress_score": 1.2,
+    "stress_score": 1.36,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0075,
+      "congestion_score": 0.5033,
       "weather_score": 0.05,
-      "intersection_score": 0.4475,
+      "intersection_score": 0.0175,
       "planned_event_score": 0.0
     },
     "counts": {
@@ -2277,31 +2085,31 @@
       "traffic_segments": 12
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184645+00:00"
+    "computed_at": "2026-08-12T11:37:36.354770+00:00"
   },
   {
-    "hex_id": "88283095cdfffff",
+    "hex_id": "8828309505fffff",
     "center": {
-      "lat": 37.728582,
-      "lon": -122.482307
+      "lat": 37.718252,
+      "lon": -122.429049
     },
-    "stress_score": 1.16,
+    "stress_score": 1.34,
     "breakdown": {
-      "work_zone_score": 0.0,
+      "work_zone_score": 0.3338,
       "incident_score": 0.0,
-      "congestion_score": 0.0033,
+      "congestion_score": 0.015,
       "weather_score": 0.05,
-      "intersection_score": 0.435,
+      "intersection_score": 0.2175,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
-      "active_work_zones": 0,
+      "active_work_zones": 1,
       "active_planned_events": 0,
       "traffic_segments": 6
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184775+00:00"
+    "computed_at": "2026-08-12T11:37:36.356023+00:00"
   },
   {
     "hex_id": "88283082cdfffff",
@@ -2309,11 +2117,11 @@
       "lat": 37.74536,
       "lon": -122.409586
     },
-    "stress_score": 1.12,
+    "stress_score": 1.29,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0053,
+      "congestion_score": 0.0727,
       "weather_score": 0.05,
       "intersection_score": 0.4175,
       "planned_event_score": 0.0
@@ -2325,31 +2133,151 @@
       "traffic_segments": 15
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183031+00:00"
+    "computed_at": "2026-08-12T11:37:36.355240+00:00"
   },
   {
-    "hex_id": "88283095bdfffff",
+    "hex_id": "88283095c5fffff",
     "center": {
-      "lat": 37.773202,
-      "lon": -122.484969
+      "lat": 37.73682,
+      "lon": -122.479288
     },
-    "stress_score": 1.1,
+    "stress_score": 1.29,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0046,
+      "congestion_score": 0.0064,
       "weather_score": 0.05,
-      "intersection_score": 0.41,
+      "intersection_score": 0.485,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 13
+      "traffic_segments": 11
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184716+00:00"
+    "computed_at": "2026-08-12T11:37:36.356668+00:00"
+  },
+  {
+    "hex_id": "88283095abfffff",
+    "center": {
+      "lat": 37.767366,
+      "lon": -122.477599
+    },
+    "stress_score": 1.26,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0541,
+      "weather_score": 0.05,
+      "intersection_score": 0.4275,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 27
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356577+00:00"
+  },
+  {
+    "hex_id": "88283095bbfffff",
+    "center": {
+      "lat": 37.776634,
+      "lon": -122.502727
+    },
+    "stress_score": 1.23,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.026,
+      "weather_score": 0.05,
+      "intersection_score": 0.44,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 5
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356634+00:00"
+  },
+  {
+    "hex_id": "8828309533fffff",
+    "center": {
+      "lat": 37.744014,
+      "lon": -122.448126
+    },
+    "stress_score": 1.21,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0114,
+      "weather_score": 0.05,
+      "intersection_score": 0.45,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 14
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356257+00:00"
+  },
+  {
+    "hex_id": "8828308215fffff",
+    "center": {
+      "lat": 37.744301,
+      "lon": -122.381431
+    },
+    "stress_score": 1.2,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0,
+      "weather_score": 0.05,
+      "intersection_score": 0.455,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 1
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.354532+00:00"
+  },
+  {
+    "hex_id": "8828309553fffff",
+    "center": {
+      "lat": 37.708665,
+      "lon": -122.470593
+    },
+    "stress_score": 1.2,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0076,
+      "weather_score": 0.05,
+      "intersection_score": 0.45,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 17
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356373+00:00"
   },
   {
     "hex_id": "8828309565fffff",
@@ -2357,11 +2285,11 @@
       "lat": 37.708957,
       "lon": -122.403931
     },
-    "stress_score": 1.09,
+    "stress_score": 1.19,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0188,
+      "congestion_score": 0.0559,
       "weather_score": 0.05,
       "intersection_score": 0.395,
       "planned_event_score": 0.0
@@ -2373,7 +2301,55 @@
       "traffic_segments": 17
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184467+00:00"
+    "computed_at": "2026-08-12T11:37:36.356433+00:00"
+  },
+  {
+    "hex_id": "88283095a9fffff",
+    "center": {
+      "lat": 37.76153,
+      "lon": -122.47023
+    },
+    "stress_score": 1.19,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0058,
+      "weather_score": 0.05,
+      "intersection_score": 0.4475,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 12
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356569+00:00"
+  },
+  {
+    "hex_id": "88283095cdfffff",
+    "center": {
+      "lat": 37.728582,
+      "lon": -122.482307
+    },
+    "stress_score": 1.17,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.01,
+      "weather_score": 0.05,
+      "intersection_score": 0.435,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 6
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356693+00:00"
   },
   {
     "hex_id": "8828309425fffff",
@@ -2381,11 +2357,11 @@
       "lat": 37.714505,
       "lon": -122.477958
     },
-    "stress_score": 1.07,
+    "stress_score": 1.14,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.005,
+      "congestion_score": 0.0325,
       "weather_score": 0.05,
       "intersection_score": 0.3975,
       "planned_event_score": 0.0
@@ -2397,7 +2373,31 @@
       "traffic_segments": 4
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183842+00:00"
+    "computed_at": "2026-08-12T11:37:36.355921+00:00"
+  },
+  {
+    "hex_id": "88283095bdfffff",
+    "center": {
+      "lat": 37.773202,
+      "lon": -122.484969
+    },
+    "stress_score": 1.09,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0023,
+      "weather_score": 0.05,
+      "intersection_score": 0.41,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 13
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356640+00:00"
   },
   {
     "hex_id": "88283095c7fffff",
@@ -2409,7 +2409,7 @@
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.015,
+      "congestion_score": 0.014,
       "weather_score": 0.05,
       "intersection_score": 0.385,
       "planned_event_score": 0.0
@@ -2421,31 +2421,7 @@
       "traffic_segments": 10
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184753+00:00"
-  },
-  {
-    "hex_id": "882830874dfffff",
-    "center": {
-      "lat": 37.786236,
-      "lon": -122.461167
-    },
-    "stress_score": 1.05,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.015,
-      "weather_score": 0.05,
-      "intersection_score": 0.38,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 8
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183642+00:00"
+    "computed_at": "2026-08-12T11:37:36.356675+00:00"
   },
   {
     "hex_id": "88283095edfffff",
@@ -2453,11 +2429,11 @@
       "lat": 37.741617,
       "lon": -122.458515
     },
-    "stress_score": 1.05,
+    "stress_score": 1.04,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.01,
+      "congestion_score": 0.0067,
       "weather_score": 0.05,
       "intersection_score": 0.385,
       "planned_event_score": 0.0
@@ -2469,55 +2445,31 @@
       "traffic_segments": 6
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184878+00:00"
+    "computed_at": "2026-08-12T11:37:36.356776+00:00"
   },
   {
-    "hex_id": "8828308213fffff",
+    "hex_id": "882830874dfffff",
     "center": {
-      "lat": 37.747753,
-      "lon": -122.399193
+      "lat": 37.786236,
+      "lon": -122.461167
     },
-    "stress_score": 1.01,
+    "stress_score": 1.03,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0737,
+      "congestion_score": 0.0063,
       "weather_score": 0.05,
-      "intersection_score": 0.3075,
+      "intersection_score": 0.38,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 16
+      "traffic_segments": 8
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182164+00:00"
-  },
-  {
-    "hex_id": "8828309525fffff",
-    "center": {
-      "lat": 37.731279,
-      "lon": -122.405245
-    },
-    "stress_score": 0.99,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0219,
-      "weather_score": 0.05,
-      "intersection_score": 0.35,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 16
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184224+00:00"
+    "computed_at": "2026-08-12T11:37:36.355759+00:00"
   },
   {
     "hex_id": "8828308761fffff",
@@ -2525,11 +2477,11 @@
       "lat": 37.805102,
       "lon": -122.444728
     },
-    "stress_score": 0.98,
+    "stress_score": 0.97,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0086,
+      "congestion_score": 0.0071,
       "weather_score": 0.05,
       "intersection_score": 0.3575,
       "planned_event_score": 0.0
@@ -2541,7 +2493,7 @@
       "traffic_segments": 7
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183694+00:00"
+    "computed_at": "2026-08-12T11:37:36.355798+00:00"
   },
   {
     "hex_id": "8828309587fffff",
@@ -2553,7 +2505,7 @@
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0022,
+      "congestion_score": 0.0033,
       "weather_score": 0.05,
       "intersection_score": 0.3525,
       "planned_event_score": 0.0
@@ -2565,55 +2517,31 @@
       "traffic_segments": 9
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184529+00:00"
+    "computed_at": "2026-08-12T11:37:36.356485+00:00"
   },
   {
-    "hex_id": "882830959dfffff",
+    "hex_id": "8828309525fffff",
     "center": {
-      "lat": 37.760163,
-      "lon": -122.50876
+      "lat": 37.731279,
+      "lon": -122.405245
     },
     "stress_score": 0.94,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.136,
+      "congestion_score": 0.0031,
       "weather_score": 0.05,
-      "intersection_score": 0.2175,
+      "intersection_score": 0.35,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 10
+      "traffic_segments": 16
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184607+00:00"
-  },
-  {
-    "hex_id": "88283095cbfffff",
-    "center": {
-      "lat": 37.732019,
-      "lon": -122.500057
-    },
-    "stress_score": 0.92,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0112,
-      "weather_score": 0.05,
-      "intersection_score": 0.3325,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 8
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184768+00:00"
+    "computed_at": "2026-08-12T11:37:36.356215+00:00"
   },
   {
     "hex_id": "88283095b9fffff",
@@ -2621,11 +2549,11 @@
       "lat": 37.770801,
       "lon": -122.495357
     },
-    "stress_score": 0.91,
+    "stress_score": 0.92,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.12,
+      "congestion_score": 0.1233,
       "weather_score": 0.05,
       "intersection_score": 0.22,
       "planned_event_score": 0.0
@@ -2637,7 +2565,55 @@
       "traffic_segments": 9
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184702+00:00"
+    "computed_at": "2026-08-12T11:37:36.356627+00:00"
+  },
+  {
+    "hex_id": "8828308213fffff",
+    "center": {
+      "lat": 37.747753,
+      "lon": -122.399193
+    },
+    "stress_score": 0.91,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0312,
+      "weather_score": 0.05,
+      "intersection_score": 0.3075,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 16
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.354526+00:00"
+  },
+  {
+    "hex_id": "88283095cbfffff",
+    "center": {
+      "lat": 37.732019,
+      "lon": -122.500057
+    },
+    "stress_score": 0.9,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.005,
+      "weather_score": 0.05,
+      "intersection_score": 0.3325,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 8
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356687+00:00"
   },
   {
     "hex_id": "8828309427fffff",
@@ -2645,11 +2621,11 @@
       "lat": 37.720344,
       "lon": -122.485324
     },
-    "stress_score": 0.88,
+    "stress_score": 0.89,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0157,
+      "congestion_score": 0.0214,
       "weather_score": 0.05,
       "intersection_score": 0.3125,
       "planned_event_score": 0.0
@@ -2661,31 +2637,55 @@
       "traffic_segments": 7
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183849+00:00"
+    "computed_at": "2026-08-12T11:37:36.355928+00:00"
   },
   {
-    "hex_id": "88283095ddfffff",
+    "hex_id": "882830959dfffff",
     "center": {
-      "lat": 37.737855,
-      "lon": -122.507424
+      "lat": 37.760163,
+      "lon": -122.50876
     },
-    "stress_score": 0.85,
+    "stress_score": 0.89,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0187,
+      "congestion_score": 0.114,
       "weather_score": 0.05,
-      "intersection_score": 0.2975,
+      "intersection_score": 0.2175,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 8
+      "traffic_segments": 10
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184824+00:00"
+    "computed_at": "2026-08-12T11:37:36.356535+00:00"
+  },
+  {
+    "hex_id": "8828309527fffff",
+    "center": {
+      "lat": 37.737122,
+      "lon": -122.412611
+    },
+    "stress_score": 0.85,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0344,
+      "weather_score": 0.05,
+      "intersection_score": 0.28,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 18
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356223+00:00"
   },
   {
     "hex_id": "88283095e3fffff",
@@ -2709,31 +2709,7 @@
       "traffic_segments": 4
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184839+00:00"
-  },
-  {
-    "hex_id": "8828309527fffff",
-    "center": {
-      "lat": 37.737122,
-      "lon": -122.412611
-    },
-    "stress_score": 0.83,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0267,
-      "weather_score": 0.05,
-      "intersection_score": 0.28,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 18
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184232+00:00"
+    "computed_at": "2026-08-12T11:37:36.356743+00:00"
   },
   {
     "hex_id": "882830958dfffff",
@@ -2757,55 +2733,31 @@
       "traffic_segments": 14
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184560+00:00"
+    "computed_at": "2026-08-12T11:37:36.356505+00:00"
   },
   {
-    "hex_id": "8828309435fffff",
+    "hex_id": "88283095ddfffff",
     "center": {
-      "lat": 37.723782,
-      "lon": -122.503073
+      "lat": 37.737855,
+      "lon": -122.507424
     },
-    "stress_score": 0.76,
+    "stress_score": 0.82,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.206,
+      "congestion_score": 0.0075,
       "weather_score": 0.05,
-      "intersection_score": 0.0725,
+      "intersection_score": 0.2975,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 5
+      "traffic_segments": 8
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183889+00:00"
-  },
-  {
-    "hex_id": "8828309523fffff",
-    "center": {
-      "lat": 37.734728,
-      "lon": -122.423002
-    },
-    "stress_score": 0.75,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.029,
-      "weather_score": 0.05,
-      "intersection_score": 0.2475,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 10
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184216+00:00"
+    "computed_at": "2026-08-12T11:37:36.356730+00:00"
   },
   {
     "hex_id": "8828308251fffff",
@@ -2813,11 +2765,11 @@
       "lat": 37.719588,
       "lon": -122.390514
     },
-    "stress_score": 0.74,
+    "stress_score": 0.77,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.008,
+      "congestion_score": 0.02,
       "weather_score": 0.05,
       "intersection_score": 0.2625,
       "planned_event_score": 0.0
@@ -2829,31 +2781,55 @@
       "traffic_segments": 10
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182326+00:00"
+    "computed_at": "2026-08-12T11:37:36.354679+00:00"
   },
   {
-    "hex_id": "88283082a5fffff",
+    "hex_id": "8828309523fffff",
     "center": {
-      "lat": 37.788932,
-      "lon": -122.384052
+      "lat": 37.734728,
+      "lon": -122.423002
     },
-    "stress_score": 0.74,
+    "stress_score": 0.76,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0556,
+      "congestion_score": 0.032,
       "weather_score": 0.05,
-      "intersection_score": 0.215,
+      "intersection_score": 0.2475,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 9
+      "traffic_segments": 10
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182810+00:00"
+    "computed_at": "2026-08-12T11:37:36.356207+00:00"
+  },
+  {
+    "hex_id": "8828309435fffff",
+    "center": {
+      "lat": 37.723782,
+      "lon": -122.503073
+    },
+    "stress_score": 0.74,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.2,
+      "weather_score": 0.05,
+      "intersection_score": 0.0725,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 5
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.355959+00:00"
   },
   {
     "hex_id": "88283095a1fffff",
@@ -2877,7 +2853,7 @@
       "traffic_segments": 2
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184614+00:00"
+    "computed_at": "2026-08-12T11:37:36.356541+00:00"
   },
   {
     "hex_id": "8828309467fffff",
@@ -2885,11 +2861,11 @@
       "lat": 37.698027,
       "lon": -122.483993
     },
-    "stress_score": 0.67,
+    "stress_score": 0.68,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0,
+      "congestion_score": 0.004,
       "weather_score": 0.05,
       "intersection_score": 0.2425,
       "planned_event_score": 0.0
@@ -2901,7 +2877,7 @@
       "traffic_segments": 5
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183929+00:00"
+    "computed_at": "2026-08-12T11:37:36.355988+00:00"
   },
   {
     "hex_id": "882830953bfffff",
@@ -2925,7 +2901,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184301+00:00"
+    "computed_at": "2026-08-12T11:37:36.356289+00:00"
   },
   {
     "hex_id": "88283080e1fffff",
@@ -2949,31 +2925,31 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182018+00:00"
+    "computed_at": "2026-08-12T11:37:36.354435+00:00"
   },
   {
-    "hex_id": "882830950dfffff",
+    "hex_id": "88283082a5fffff",
     "center": {
-      "lat": 37.710013,
-      "lon": -122.432072
+      "lat": 37.788932,
+      "lon": -122.384052
     },
-    "stress_score": 0.61,
+    "stress_score": 0.64,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.035,
+      "congestion_score": 0.0156,
       "weather_score": 0.05,
-      "intersection_score": 0.185,
+      "intersection_score": 0.215,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 2
+      "traffic_segments": 9
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184120+00:00"
+    "computed_at": "2026-08-12T11:37:36.355059+00:00"
   },
   {
     "hex_id": "8828309597fffff",
@@ -2981,11 +2957,11 @@
       "lat": 37.774232,
       "lon": -122.513114
     },
-    "stress_score": 0.61,
+    "stress_score": 0.63,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0071,
+      "congestion_score": 0.0157,
       "weather_score": 0.05,
       "intersection_score": 0.2125,
       "planned_event_score": 0.0
@@ -2997,7 +2973,31 @@
       "traffic_segments": 7
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184595+00:00"
+    "computed_at": "2026-08-12T11:37:36.356525+00:00"
+  },
+  {
+    "hex_id": "88283095e1fffff",
+    "center": {
+      "lat": 37.747456,
+      "lon": -122.465882
+    },
+    "stress_score": 0.61,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0183,
+      "weather_score": 0.05,
+      "intersection_score": 0.2,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 12
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356737+00:00"
   },
   {
     "hex_id": "88283095b7fffff",
@@ -3021,31 +3021,7 @@
       "traffic_segments": 15
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184694+00:00"
-  },
-  {
-    "hex_id": "88283095e1fffff",
-    "center": {
-      "lat": 37.747456,
-      "lon": -122.465882
-    },
-    "stress_score": 0.57,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0058,
-      "weather_score": 0.05,
-      "intersection_score": 0.2,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 12
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184833+00:00"
+    "computed_at": "2026-08-12T11:37:36.356621+00:00"
   },
   {
     "hex_id": "88283095e7fffff",
@@ -3057,7 +3033,7 @@
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0038,
+      "congestion_score": 0.0031,
       "weather_score": 0.05,
       "intersection_score": 0.2,
       "planned_event_score": 0.0
@@ -3069,7 +3045,7 @@
       "traffic_segments": 13
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184854+00:00"
+    "computed_at": "2026-08-12T11:37:36.356756+00:00"
   },
   {
     "hex_id": "8828308765fffff",
@@ -3081,7 +3057,7 @@
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.01,
+      "congestion_score": 0.0082,
       "weather_score": 0.05,
       "intersection_score": 0.1875,
       "planned_event_score": 0.0
@@ -3093,31 +3069,7 @@
       "traffic_segments": 11
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183708+00:00"
-  },
-  {
-    "hex_id": "88283082d9fffff",
-    "center": {
-      "lat": 37.752251,
-      "lon": -122.445104
-    },
-    "stress_score": 0.54,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.045,
-      "weather_score": 0.05,
-      "intersection_score": 0.1475,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 4
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183098+00:00"
+    "computed_at": "2026-08-12T11:37:36.355810+00:00"
   },
   {
     "hex_id": "882830942dfffff",
@@ -3141,31 +3093,7 @@
       "traffic_segments": 1
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183869+00:00"
-  },
-  {
-    "hex_id": "8828309521fffff",
-    "center": {
-      "lat": 37.728885,
-      "lon": -122.415636
-    },
-    "stress_score": 0.54,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0173,
-      "weather_score": 0.05,
-      "intersection_score": 0.175,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 11
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184207+00:00"
+    "computed_at": "2026-08-12T11:37:36.355943+00:00"
   },
   {
     "hex_id": "882830958bfffff",
@@ -3189,55 +3117,79 @@
       "traffic_segments": 5
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184552+00:00"
+    "computed_at": "2026-08-12T11:37:36.356498+00:00"
   },
   {
-    "hex_id": "882830956dfffff",
+    "hex_id": "882830950dfffff",
     "center": {
-      "lat": 37.700718,
-      "lon": -122.406955
+      "lat": 37.710013,
+      "lon": -122.432072
     },
     "stress_score": 0.52,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0325,
+      "congestion_score": 0.0,
       "weather_score": 0.05,
-      "intersection_score": 0.1525,
+      "intersection_score": 0.185,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 4
+      "traffic_segments": 2
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184498+00:00"
+    "computed_at": "2026-08-12T11:37:36.356119+00:00"
   },
   {
-    "hex_id": "8828309595fffff",
+    "hex_id": "8828309521fffff",
     "center": {
-      "lat": 37.768399,
-      "lon": -122.505744
+      "lat": 37.728885,
+      "lon": -122.415636
     },
-    "stress_score": 0.51,
+    "stress_score": 0.52,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.02,
+      "congestion_score": 0.0109,
       "weather_score": 0.05,
-      "intersection_score": 0.16,
+      "intersection_score": 0.175,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 7
+      "traffic_segments": 11
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184587+00:00"
+    "computed_at": "2026-08-12T11:37:36.356200+00:00"
+  },
+  {
+    "hex_id": "8828308259fffff",
+    "center": {
+      "lat": 37.711349,
+      "lon": -122.39354
+    },
+    "stress_score": 0.5,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0211,
+      "weather_score": 0.05,
+      "intersection_score": 0.155,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 9
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.354735+00:00"
   },
   {
     "hex_id": "88283082ddfffff",
@@ -3261,7 +3213,7 @@
       "traffic_segments": 4
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183117+00:00"
+    "computed_at": "2026-08-12T11:37:36.355311+00:00"
   },
   {
     "hex_id": "8828309517fffff",
@@ -3269,11 +3221,11 @@
       "lat": 37.73338,
       "lon": -122.461535
     },
-    "stress_score": 0.49,
+    "stress_score": 0.5,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0048,
+      "congestion_score": 0.0095,
       "weather_score": 0.05,
       "intersection_score": 0.1675,
       "planned_event_score": 0.0
@@ -3285,7 +3237,31 @@
       "traffic_segments": 21
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184170+00:00"
+    "computed_at": "2026-08-12T11:37:36.356170+00:00"
+  },
+  {
+    "hex_id": "8828309595fffff",
+    "center": {
+      "lat": 37.768399,
+      "lon": -122.505744
+    },
+    "stress_score": 0.49,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0114,
+      "weather_score": 0.05,
+      "intersection_score": 0.16,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 7
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356520+00:00"
   },
   {
     "hex_id": "8828308747fffff",
@@ -3309,7 +3285,7 @@
       "traffic_segments": 9
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183616+00:00"
+    "computed_at": "2026-08-12T11:37:36.355736+00:00"
   },
   {
     "hex_id": "8828309555fffff",
@@ -3333,79 +3309,31 @@
       "traffic_segments": 4
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184407+00:00"
+    "computed_at": "2026-08-12T11:37:36.356380+00:00"
   },
   {
-    "hex_id": "88283090b1fffff",
+    "hex_id": "882830956dfffff",
     "center": {
-      "lat": 37.697263,
-      "lon": -122.389203
+      "lat": 37.700718,
+      "lon": -122.406955
     },
     "stress_score": 0.46,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.16,
+      "congestion_score": 0.0075,
       "weather_score": 0.05,
-      "intersection_score": 0.0,
+      "intersection_score": 0.1525,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 1
+      "traffic_segments": 4
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183756+00:00"
-  },
-  {
-    "hex_id": "8828308017fffff",
-    "center": {
-      "lat": 37.807792,
-      "lon": -122.36759
-    },
-    "stress_score": 0.45,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.2459,
-      "congestion_score": 0.0167,
-      "weather_score": 0.05,
-      "intersection_score": 0.02,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 1,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 3
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181784+00:00"
-  },
-  {
-    "hex_id": "8828308259fffff",
-    "center": {
-      "lat": 37.711349,
-      "lon": -122.39354
-    },
-    "stress_score": 0.45,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0011,
-      "weather_score": 0.05,
-      "intersection_score": 0.155,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 9
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182394+00:00"
+    "computed_at": "2026-08-12T11:37:36.356456+00:00"
   },
   {
     "hex_id": "8828309561fffff",
@@ -3429,31 +3357,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184437+00:00"
-  },
-  {
-    "hex_id": "88283080ddfffff",
-    "center": {
-      "lat": 37.812292,
-      "lon": -122.413536
-    },
-    "stress_score": 0.44,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.032,
-      "weather_score": 0.05,
-      "intersection_score": 0.12,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 5
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182012+00:00"
+    "computed_at": "2026-08-12T11:37:36.356403+00:00"
   },
   {
     "hex_id": "882830820bfffff",
@@ -3477,7 +3381,31 @@
       "traffic_segments": 1
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182140+00:00"
+    "computed_at": "2026-08-12T11:37:36.354506+00:00"
+  },
+  {
+    "hex_id": "88283082d9fffff",
+    "center": {
+      "lat": 37.752251,
+      "lon": -122.445104
+    },
+    "stress_score": 0.44,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.005,
+      "weather_score": 0.05,
+      "intersection_score": 0.1475,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 4
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.355297+00:00"
   },
   {
     "hex_id": "8828309531fffff",
@@ -3489,7 +3417,7 @@
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0033,
+      "congestion_score": 0.0042,
       "weather_score": 0.05,
       "intersection_score": 0.1475,
       "planned_event_score": 0.0
@@ -3501,55 +3429,7 @@
       "traffic_segments": 12
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184264+00:00"
-  },
-  {
-    "hex_id": "882830955bfffff",
-    "center": {
-      "lat": 37.700426,
-      "lon": -122.473611
-    },
-    "stress_score": 0.41,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0,
-      "weather_score": 0.05,
-      "intersection_score": 0.14,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 7
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184423+00:00"
-  },
-  {
-    "hex_id": "882830951dfffff",
-    "center": {
-      "lat": 37.719302,
-      "lon": -122.457189
-    },
-    "stress_score": 0.4,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0271,
-      "weather_score": 0.05,
-      "intersection_score": 0.1075,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 7
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184199+00:00"
+    "computed_at": "2026-08-12T11:37:36.356250+00:00"
   },
   {
     "hex_id": "882830866dfffff",
@@ -3557,11 +3437,11 @@
       "lat": 37.782467,
       "lon": -122.510097
     },
-    "stress_score": 0.39,
+    "stress_score": 0.43,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0,
+      "congestion_score": 0.018,
       "weather_score": 0.05,
       "intersection_score": 0.13,
       "planned_event_score": 0.0
@@ -3573,7 +3453,79 @@
       "traffic_segments": 5
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183451+00:00"
+    "computed_at": "2026-08-12T11:37:36.355593+00:00"
+  },
+  {
+    "hex_id": "882830955bfffff",
+    "center": {
+      "lat": 37.700426,
+      "lon": -122.473611
+    },
+    "stress_score": 0.42,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0057,
+      "weather_score": 0.05,
+      "intersection_score": 0.14,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 7
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356393+00:00"
+  },
+  {
+    "hex_id": "8828308017fffff",
+    "center": {
+      "lat": 37.807792,
+      "lon": -122.36759
+    },
+    "stress_score": 0.41,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.2459,
+      "congestion_score": 0.0,
+      "weather_score": 0.05,
+      "intersection_score": 0.02,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 1,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 3
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.354253+00:00"
+  },
+  {
+    "hex_id": "882830951dfffff",
+    "center": {
+      "lat": 37.719302,
+      "lon": -122.457189
+    },
+    "stress_score": 0.4,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0286,
+      "weather_score": 0.05,
+      "intersection_score": 0.1075,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 7
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356194+00:00"
   },
   {
     "hex_id": "8828309421fffff",
@@ -3597,7 +3549,7 @@
       "traffic_segments": 4
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183828+00:00"
+    "computed_at": "2026-08-12T11:37:36.355909+00:00"
   },
   {
     "hex_id": "8828308709fffff",
@@ -3621,31 +3573,31 @@
       "traffic_segments": 10
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183485+00:00"
+    "computed_at": "2026-08-12T11:37:36.355631+00:00"
   },
   {
-    "hex_id": "8828309567fffff",
+    "hex_id": "88283080ddfffff",
     "center": {
-      "lat": 37.714802,
-      "lon": -122.411295
+      "lat": 37.812292,
+      "lon": -122.413536
     },
-    "stress_score": 0.37,
+    "stress_score": 0.36,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0173,
+      "congestion_score": 0.0,
       "weather_score": 0.05,
-      "intersection_score": 0.1075,
+      "intersection_score": 0.12,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 11
+      "traffic_segments": 5
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184474+00:00"
+    "computed_at": "2026-08-12T11:37:36.354430+00:00"
   },
   {
     "hex_id": "8828309423fffff",
@@ -3669,31 +3621,31 @@
       "traffic_segments": 3
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183835+00:00"
+    "computed_at": "2026-08-12T11:37:36.355915+00:00"
   },
   {
-    "hex_id": "882830952bfffff",
+    "hex_id": "8828309567fffff",
     "center": {
-      "lat": 37.72649,
-      "lon": -122.426026
+      "lat": 37.714802,
+      "lon": -122.411295
     },
     "stress_score": 0.36,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.0089,
+      "congestion_score": 0.0127,
       "weather_score": 0.05,
-      "intersection_score": 0.11,
+      "intersection_score": 0.1075,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 9
+      "traffic_segments": 11
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184247+00:00"
+    "computed_at": "2026-08-12T11:37:36.356439+00:00"
   },
   {
     "hex_id": "882830874bfffff",
@@ -3717,7 +3669,31 @@
       "traffic_segments": 2
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183635+00:00"
+    "computed_at": "2026-08-12T11:37:36.355752+00:00"
+  },
+  {
+    "hex_id": "882830952bfffff",
+    "center": {
+      "lat": 37.72649,
+      "lon": -122.426026
+    },
+    "stress_score": 0.35,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0078,
+      "weather_score": 0.05,
+      "intersection_score": 0.11,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 9
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356235+00:00"
   },
   {
     "hex_id": "8828309535fffff",
@@ -3741,7 +3717,31 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184280+00:00"
+    "computed_at": "2026-08-12T11:37:36.356261+00:00"
+  },
+  {
+    "hex_id": "8828309537fffff",
+    "center": {
+      "lat": 37.746411,
+      "lon": -122.437736
+    },
+    "stress_score": 0.32,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.02,
+      "weather_score": 0.05,
+      "intersection_score": 0.0825,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 3
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356276+00:00"
   },
   {
     "hex_id": "88283095d5fffff",
@@ -3765,7 +3765,7 @@
       "traffic_segments": 1
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184795+00:00"
+    "computed_at": "2026-08-12T11:37:36.356707+00:00"
   },
   {
     "hex_id": "88283082dbfffff",
@@ -3789,31 +3789,7 @@
       "traffic_segments": 10
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183108+00:00"
-  },
-  {
-    "hex_id": "8828309537fffff",
-    "center": {
-      "lat": 37.746411,
-      "lon": -122.437736
-    },
-    "stress_score": 0.29,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.01,
-      "weather_score": 0.05,
-      "intersection_score": 0.0825,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 3
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184287+00:00"
+    "computed_at": "2026-08-12T11:37:36.355305+00:00"
   },
   {
     "hex_id": "88283082e5fffff",
@@ -3837,7 +3813,31 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183149+00:00"
+    "computed_at": "2026-08-12T11:37:36.355338+00:00"
+  },
+  {
+    "hex_id": "8828308203fffff",
+    "center": {
+      "lat": 37.738455,
+      "lon": -122.374064
+    },
+    "stress_score": 0.27,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0518,
+      "weather_score": 0.05,
+      "intersection_score": 0.0325,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 11
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.354487+00:00"
   },
   {
     "hex_id": "882830952dfffff",
@@ -3861,13 +3861,13 @@
       "traffic_segments": 6
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184256+00:00"
+    "computed_at": "2026-08-12T11:37:36.356242+00:00"
   },
   {
-    "hex_id": "88283090b3fffff",
+    "hex_id": "88283095c9fffff",
     "center": {
-      "lat": 37.70311,
-      "lon": -122.396566
+      "lat": 37.726182,
+      "lon": -122.49269
     },
     "stress_score": 0.26,
     "breakdown": {
@@ -3882,10 +3882,10 @@
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 9
+      "traffic_segments": 4
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183766+00:00"
+    "computed_at": "2026-08-12T11:37:36.356681+00:00"
   },
   {
     "hex_id": "88283080e3fffff",
@@ -3909,7 +3909,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182024+00:00"
+    "computed_at": "2026-08-12T11:37:36.354440+00:00"
   },
   {
     "hex_id": "8828308745fffff",
@@ -3933,7 +3933,7 @@
       "traffic_segments": 4
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183606+00:00"
+    "computed_at": "2026-08-12T11:37:36.355728+00:00"
   },
   {
     "hex_id": "88283080e7fffff",
@@ -3957,7 +3957,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182037+00:00"
+    "computed_at": "2026-08-12T11:37:36.354451+00:00"
   },
   {
     "hex_id": "88283080d9fffff",
@@ -3981,7 +3981,7 @@
       "traffic_segments": 4
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181999+00:00"
+    "computed_at": "2026-08-12T11:37:36.354420+00:00"
   },
   {
     "hex_id": "88283080e9fffff",
@@ -4005,7 +4005,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182043+00:00"
+    "computed_at": "2026-08-12T11:37:36.354456+00:00"
   },
   {
     "hex_id": "88283080edfffff",
@@ -4029,7 +4029,31 @@
       "traffic_segments": 1
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182056+00:00"
+    "computed_at": "2026-08-12T11:37:36.354465+00:00"
+  },
+  {
+    "hex_id": "88283090b3fffff",
+    "center": {
+      "lat": 37.70311,
+      "lon": -122.396566
+    },
+    "stress_score": 0.19,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0333,
+      "weather_score": 0.05,
+      "intersection_score": 0.02,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 9
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.355861+00:00"
   },
   {
     "hex_id": "88283095d7fffff",
@@ -4053,31 +4077,7 @@
       "traffic_segments": 2
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184804+00:00"
-  },
-  {
-    "hex_id": "8828308203fffff",
-    "center": {
-      "lat": 37.738455,
-      "lon": -122.374064
-    },
-    "stress_score": 0.17,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0118,
-      "weather_score": 0.05,
-      "intersection_score": 0.0325,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 11
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182102+00:00"
+    "computed_at": "2026-08-12T11:37:36.356713+00:00"
   },
   {
     "hex_id": "8828309429fffff",
@@ -4101,7 +4101,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183857+00:00"
+    "computed_at": "2026-08-12T11:37:36.355933+00:00"
   },
   {
     "hex_id": "88283095b3fffff",
@@ -4125,31 +4125,31 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184676+00:00"
+    "computed_at": "2026-08-12T11:37:36.356605+00:00"
   },
   {
-    "hex_id": "8828309463fffff",
+    "hex_id": "8828309529fffff",
     "center": {
-      "lat": 37.695628,
-      "lon": -122.494374
+      "lat": 37.720647,
+      "lon": -122.418661
     },
     "stress_score": 0.15,
     "breakdown": {
       "work_zone_score": 0.0,
       "incident_score": 0.0,
-      "congestion_score": 0.035,
+      "congestion_score": 0.005,
       "weather_score": 0.05,
-      "intersection_score": 0.0,
+      "intersection_score": 0.0325,
       "planned_event_score": 0.0
     },
     "counts": {
       "active_incidents": 0,
       "active_work_zones": 0,
       "active_planned_events": 0,
-      "traffic_segments": 2
+      "traffic_segments": 4
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183921+00:00"
+    "computed_at": "2026-08-12T11:37:36.356229+00:00"
   },
   {
     "hex_id": "8828308743fffff",
@@ -4173,55 +4173,7 @@
       "traffic_segments": 2
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183599+00:00"
-  },
-  {
-    "hex_id": "8828309529fffff",
-    "center": {
-      "lat": 37.720647,
-      "lon": -122.418661
-    },
-    "stress_score": 0.14,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0,
-      "weather_score": 0.05,
-      "intersection_score": 0.0325,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 4
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184239+00:00"
-  },
-  {
-    "hex_id": "88283095c9fffff",
-    "center": {
-      "lat": 37.726182,
-      "lon": -122.49269
-    },
-    "stress_score": 0.13,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.0075,
-      "weather_score": 0.05,
-      "intersection_score": 0.02,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 4
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184760+00:00"
+    "computed_at": "2026-08-12T11:37:36.355722+00:00"
   },
   {
     "hex_id": "882830823bfffff",
@@ -4245,7 +4197,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182267+00:00"
+    "computed_at": "2026-08-12T11:37:36.354635+00:00"
   },
   {
     "hex_id": "882830956bfffff",
@@ -4269,7 +4221,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184490+00:00"
+    "computed_at": "2026-08-12T11:37:36.356450+00:00"
   },
   {
     "hex_id": "8828309509fffff",
@@ -4293,7 +4245,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183982+00:00"
+    "computed_at": "2026-08-12T11:37:36.356034+00:00"
   },
   {
     "hex_id": "8828308209fffff",
@@ -4317,7 +4269,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182131+00:00"
+    "computed_at": "2026-08-12T11:37:36.354500+00:00"
   },
   {
     "hex_id": "8828308741fffff",
@@ -4341,31 +4293,7 @@
       "traffic_segments": 1
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183592+00:00"
-  },
-  {
-    "hex_id": "882830955dfffff",
-    "center": {
-      "lat": 37.696982,
-      "lon": -122.455864
-    },
-    "stress_score": 0.09,
-    "breakdown": {
-      "work_zone_score": 0.0,
-      "incident_score": 0.0,
-      "congestion_score": 0.01,
-      "weather_score": 0.05,
-      "intersection_score": 0.0,
-      "planned_event_score": 0.0
-    },
-    "counts": {
-      "active_incidents": 0,
-      "active_work_zones": 0,
-      "active_planned_events": 0,
-      "traffic_segments": 1
-    },
-    "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184431+00:00"
+    "computed_at": "2026-08-12T11:37:36.355716+00:00"
   },
   {
     "hex_id": "88283080e5fffff",
@@ -4389,7 +4317,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182030+00:00"
+    "computed_at": "2026-08-12T11:37:36.354444+00:00"
   },
   {
     "hex_id": "8828308713fffff",
@@ -4413,7 +4341,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183510+00:00"
+    "computed_at": "2026-08-12T11:37:36.355651+00:00"
   },
   {
     "hex_id": "8828309569fffff",
@@ -4437,7 +4365,7 @@
       "traffic_segments": 2
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184483+00:00"
+    "computed_at": "2026-08-12T11:37:36.356445+00:00"
   },
   {
     "hex_id": "882830805bfffff",
@@ -4461,7 +4389,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181877+00:00"
+    "computed_at": "2026-08-12T11:37:36.354328+00:00"
   },
   {
     "hex_id": "8828308201fffff",
@@ -4485,7 +4413,7 @@
       "traffic_segments": 1
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182076+00:00"
+    "computed_at": "2026-08-12T11:37:36.354480+00:00"
   },
   {
     "hex_id": "8828308255fffff",
@@ -4509,7 +4437,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182342+00:00"
+    "computed_at": "2026-08-12T11:37:36.354696+00:00"
   },
   {
     "hex_id": "882830844dfffff",
@@ -4533,7 +4461,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183381+00:00"
+    "computed_at": "2026-08-12T11:37:36.355537+00:00"
   },
   {
     "hex_id": "882830870bfffff",
@@ -4557,7 +4485,7 @@
       "traffic_segments": 1
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183493+00:00"
+    "computed_at": "2026-08-12T11:37:36.355637+00:00"
   },
   {
     "hex_id": "8828308715fffff",
@@ -4581,7 +4509,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183516+00:00"
+    "computed_at": "2026-08-12T11:37:36.355657+00:00"
   },
   {
     "hex_id": "8828308001fffff",
@@ -4605,7 +4533,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181701+00:00"
+    "computed_at": "2026-08-12T11:37:36.354184+00:00"
   },
   {
     "hex_id": "8828308003fffff",
@@ -4629,7 +4557,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181728+00:00"
+    "computed_at": "2026-08-12T11:37:36.354209+00:00"
   },
   {
     "hex_id": "8828308009fffff",
@@ -4653,7 +4581,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181737+00:00"
+    "computed_at": "2026-08-12T11:37:36.354216+00:00"
   },
   {
     "hex_id": "882830800bfffff",
@@ -4677,7 +4605,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181745+00:00"
+    "computed_at": "2026-08-12T11:37:36.354222+00:00"
   },
   {
     "hex_id": "8828308011fffff",
@@ -4701,7 +4629,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181752+00:00"
+    "computed_at": "2026-08-12T11:37:36.354227+00:00"
   },
   {
     "hex_id": "8828308013fffff",
@@ -4725,7 +4653,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181760+00:00"
+    "computed_at": "2026-08-12T11:37:36.354232+00:00"
   },
   {
     "hex_id": "8828308015fffff",
@@ -4749,7 +4677,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181766+00:00"
+    "computed_at": "2026-08-12T11:37:36.354237+00:00"
   },
   {
     "hex_id": "8828308019fffff",
@@ -4773,7 +4701,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181790+00:00"
+    "computed_at": "2026-08-12T11:37:36.354258+00:00"
   },
   {
     "hex_id": "882830801bfffff",
@@ -4797,7 +4725,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181796+00:00"
+    "computed_at": "2026-08-12T11:37:36.354263+00:00"
   },
   {
     "hex_id": "882830801dfffff",
@@ -4821,7 +4749,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181801+00:00"
+    "computed_at": "2026-08-12T11:37:36.354268+00:00"
   },
   {
     "hex_id": "8828308031fffff",
@@ -4845,7 +4773,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181808+00:00"
+    "computed_at": "2026-08-12T11:37:36.354273+00:00"
   },
   {
     "hex_id": "8828308033fffff",
@@ -4869,7 +4797,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181814+00:00"
+    "computed_at": "2026-08-12T11:37:36.354278+00:00"
   },
   {
     "hex_id": "8828308039fffff",
@@ -4893,7 +4821,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181819+00:00"
+    "computed_at": "2026-08-12T11:37:36.354283+00:00"
   },
   {
     "hex_id": "882830803bfffff",
@@ -4917,7 +4845,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181825+00:00"
+    "computed_at": "2026-08-12T11:37:36.354287+00:00"
   },
   {
     "hex_id": "8828308043fffff",
@@ -4941,7 +4869,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181831+00:00"
+    "computed_at": "2026-08-12T11:37:36.354292+00:00"
   },
   {
     "hex_id": "8828308049fffff",
@@ -4965,7 +4893,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181837+00:00"
+    "computed_at": "2026-08-12T11:37:36.354296+00:00"
   },
   {
     "hex_id": "882830804bfffff",
@@ -4989,7 +4917,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181843+00:00"
+    "computed_at": "2026-08-12T11:37:36.354301+00:00"
   },
   {
     "hex_id": "8828308051fffff",
@@ -5013,7 +4941,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181849+00:00"
+    "computed_at": "2026-08-12T11:37:36.354305+00:00"
   },
   {
     "hex_id": "8828308053fffff",
@@ -5037,7 +4965,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181854+00:00"
+    "computed_at": "2026-08-12T11:37:36.354309+00:00"
   },
   {
     "hex_id": "8828308055fffff",
@@ -5061,7 +4989,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181860+00:00"
+    "computed_at": "2026-08-12T11:37:36.354314+00:00"
   },
   {
     "hex_id": "8828308057fffff",
@@ -5085,7 +5013,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181865+00:00"
+    "computed_at": "2026-08-12T11:37:36.354318+00:00"
   },
   {
     "hex_id": "8828308059fffff",
@@ -5109,7 +5037,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181871+00:00"
+    "computed_at": "2026-08-12T11:37:36.354323+00:00"
   },
   {
     "hex_id": "882830805dfffff",
@@ -5133,7 +5061,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181883+00:00"
+    "computed_at": "2026-08-12T11:37:36.354332+00:00"
   },
   {
     "hex_id": "8828308081fffff",
@@ -5157,7 +5085,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181888+00:00"
+    "computed_at": "2026-08-12T11:37:36.354337+00:00"
   },
   {
     "hex_id": "8828308089fffff",
@@ -5181,7 +5109,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181895+00:00"
+    "computed_at": "2026-08-12T11:37:36.354341+00:00"
   },
   {
     "hex_id": "882830808bfffff",
@@ -5205,7 +5133,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181902+00:00"
+    "computed_at": "2026-08-12T11:37:36.354346+00:00"
   },
   {
     "hex_id": "882830808dfffff",
@@ -5229,7 +5157,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181908+00:00"
+    "computed_at": "2026-08-12T11:37:36.354351+00:00"
   },
   {
     "hex_id": "8828308099fffff",
@@ -5253,7 +5181,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181914+00:00"
+    "computed_at": "2026-08-12T11:37:36.354355+00:00"
   },
   {
     "hex_id": "88283080c1fffff",
@@ -5277,7 +5205,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181919+00:00"
+    "computed_at": "2026-08-12T11:37:36.354359+00:00"
   },
   {
     "hex_id": "88283080c3fffff",
@@ -5301,7 +5229,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181925+00:00"
+    "computed_at": "2026-08-12T11:37:36.354364+00:00"
   },
   {
     "hex_id": "88283080c5fffff",
@@ -5325,7 +5253,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181930+00:00"
+    "computed_at": "2026-08-12T11:37:36.354368+00:00"
   },
   {
     "hex_id": "88283080c7fffff",
@@ -5349,7 +5277,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181936+00:00"
+    "computed_at": "2026-08-12T11:37:36.354373+00:00"
   },
   {
     "hex_id": "88283080cdfffff",
@@ -5373,7 +5301,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181963+00:00"
+    "computed_at": "2026-08-12T11:37:36.354396+00:00"
   },
   {
     "hex_id": "88283080d1fffff",
@@ -5397,7 +5325,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181969+00:00"
+    "computed_at": "2026-08-12T11:37:36.354400+00:00"
   },
   {
     "hex_id": "88283080d3fffff",
@@ -5421,7 +5349,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181975+00:00"
+    "computed_at": "2026-08-12T11:37:36.354404+00:00"
   },
   {
     "hex_id": "88283080d5fffff",
@@ -5445,7 +5373,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181984+00:00"
+    "computed_at": "2026-08-12T11:37:36.354409+00:00"
   },
   {
     "hex_id": "88283080d7fffff",
@@ -5469,7 +5397,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.181990+00:00"
+    "computed_at": "2026-08-12T11:37:36.354413+00:00"
   },
   {
     "hex_id": "88283080dbfffff",
@@ -5493,7 +5421,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182004+00:00"
+    "computed_at": "2026-08-12T11:37:36.354424+00:00"
   },
   {
     "hex_id": "88283080ebfffff",
@@ -5517,7 +5445,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182049+00:00"
+    "computed_at": "2026-08-12T11:37:36.354460+00:00"
   },
   {
     "hex_id": "88283081d9fffff",
@@ -5541,7 +5469,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182062+00:00"
+    "computed_at": "2026-08-12T11:37:36.354470+00:00"
   },
   {
     "hex_id": "88283081dbfffff",
@@ -5565,7 +5493,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182069+00:00"
+    "computed_at": "2026-08-12T11:37:36.354474+00:00"
   },
   {
     "hex_id": "8828308205fffff",
@@ -5589,7 +5517,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182115+00:00"
+    "computed_at": "2026-08-12T11:37:36.354491+00:00"
   },
   {
     "hex_id": "8828308207fffff",
@@ -5613,7 +5541,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182125+00:00"
+    "computed_at": "2026-08-12T11:37:36.354496+00:00"
   },
   {
     "hex_id": "882830820dfffff",
@@ -5637,7 +5565,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182145+00:00"
+    "computed_at": "2026-08-12T11:37:36.354510+00:00"
   },
   {
     "hex_id": "8828308223fffff",
@@ -5661,7 +5589,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182214+00:00"
+    "computed_at": "2026-08-12T11:37:36.354566+00:00"
   },
   {
     "hex_id": "8828308229fffff",
@@ -5685,7 +5613,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182220+00:00"
+    "computed_at": "2026-08-12T11:37:36.354571+00:00"
   },
   {
     "hex_id": "882830822bfffff",
@@ -5709,7 +5637,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182226+00:00"
+    "computed_at": "2026-08-12T11:37:36.354575+00:00"
   },
   {
     "hex_id": "8828308231fffff",
@@ -5733,7 +5661,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182234+00:00"
+    "computed_at": "2026-08-12T11:37:36.354579+00:00"
   },
   {
     "hex_id": "8828308233fffff",
@@ -5757,7 +5685,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182239+00:00"
+    "computed_at": "2026-08-12T11:37:36.354583+00:00"
   },
   {
     "hex_id": "8828308235fffff",
@@ -5781,7 +5709,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182245+00:00"
+    "computed_at": "2026-08-12T11:37:36.354588+00:00"
   },
   {
     "hex_id": "8828308237fffff",
@@ -5805,7 +5733,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182255+00:00"
+    "computed_at": "2026-08-12T11:37:36.354592+00:00"
   },
   {
     "hex_id": "8828308239fffff",
@@ -5829,7 +5757,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182261+00:00"
+    "computed_at": "2026-08-12T11:37:36.354596+00:00"
   },
   {
     "hex_id": "882830823dfffff",
@@ -5853,7 +5781,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182273+00:00"
+    "computed_at": "2026-08-12T11:37:36.354640+00:00"
   },
   {
     "hex_id": "8828308241fffff",
@@ -5877,7 +5805,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182279+00:00"
+    "computed_at": "2026-08-12T11:37:36.354646+00:00"
   },
   {
     "hex_id": "8828308243fffff",
@@ -5901,7 +5829,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182285+00:00"
+    "computed_at": "2026-08-12T11:37:36.354651+00:00"
   },
   {
     "hex_id": "8828308245fffff",
@@ -5925,7 +5853,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182291+00:00"
+    "computed_at": "2026-08-12T11:37:36.354655+00:00"
   },
   {
     "hex_id": "8828308247fffff",
@@ -5949,7 +5877,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182296+00:00"
+    "computed_at": "2026-08-12T11:37:36.354659+00:00"
   },
   {
     "hex_id": "8828308249fffff",
@@ -5973,7 +5901,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182302+00:00"
+    "computed_at": "2026-08-12T11:37:36.354663+00:00"
   },
   {
     "hex_id": "882830824bfffff",
@@ -5997,7 +5925,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182309+00:00"
+    "computed_at": "2026-08-12T11:37:36.354668+00:00"
   },
   {
     "hex_id": "882830824dfffff",
@@ -6021,7 +5949,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182317+00:00"
+    "computed_at": "2026-08-12T11:37:36.354672+00:00"
   },
   {
     "hex_id": "8828308263fffff",
@@ -6045,7 +5973,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182442+00:00"
+    "computed_at": "2026-08-12T11:37:36.354775+00:00"
   },
   {
     "hex_id": "8828308269fffff",
@@ -6069,7 +5997,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182447+00:00"
+    "computed_at": "2026-08-12T11:37:36.354779+00:00"
   },
   {
     "hex_id": "882830826bfffff",
@@ -6093,7 +6021,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.182455+00:00"
+    "computed_at": "2026-08-12T11:37:36.354785+00:00"
   },
   {
     "hex_id": "8828308449fffff",
@@ -6117,7 +6045,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183375+00:00"
+    "computed_at": "2026-08-12T11:37:36.355532+00:00"
   },
   {
     "hex_id": "8828308621fffff",
@@ -6141,7 +6069,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183387+00:00"
+    "computed_at": "2026-08-12T11:37:36.355542+00:00"
   },
   {
     "hex_id": "8828308625fffff",
@@ -6165,7 +6093,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183395+00:00"
+    "computed_at": "2026-08-12T11:37:36.355548+00:00"
   },
   {
     "hex_id": "8828308627fffff",
@@ -6189,7 +6117,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183401+00:00"
+    "computed_at": "2026-08-12T11:37:36.355553+00:00"
   },
   {
     "hex_id": "8828308629fffff",
@@ -6213,7 +6141,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183407+00:00"
+    "computed_at": "2026-08-12T11:37:36.355557+00:00"
   },
   {
     "hex_id": "882830862dfffff",
@@ -6237,7 +6165,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183413+00:00"
+    "computed_at": "2026-08-12T11:37:36.355563+00:00"
   },
   {
     "hex_id": "8828308661fffff",
@@ -6261,7 +6189,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183420+00:00"
+    "computed_at": "2026-08-12T11:37:36.355568+00:00"
   },
   {
     "hex_id": "8828308663fffff",
@@ -6285,7 +6213,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183427+00:00"
+    "computed_at": "2026-08-12T11:37:36.355572+00:00"
   },
   {
     "hex_id": "8828308665fffff",
@@ -6309,7 +6237,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183433+00:00"
+    "computed_at": "2026-08-12T11:37:36.355577+00:00"
   },
   {
     "hex_id": "8828308667fffff",
@@ -6333,7 +6261,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183438+00:00"
+    "computed_at": "2026-08-12T11:37:36.355581+00:00"
   },
   {
     "hex_id": "8828308669fffff",
@@ -6357,7 +6285,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183444+00:00"
+    "computed_at": "2026-08-12T11:37:36.355586+00:00"
   },
   {
     "hex_id": "8828308701fffff",
@@ -6381,7 +6309,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183457+00:00"
+    "computed_at": "2026-08-12T11:37:36.355607+00:00"
   },
   {
     "hex_id": "8828308703fffff",
@@ -6405,7 +6333,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183462+00:00"
+    "computed_at": "2026-08-12T11:37:36.355613+00:00"
   },
   {
     "hex_id": "8828308705fffff",
@@ -6429,7 +6357,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183468+00:00"
+    "computed_at": "2026-08-12T11:37:36.355618+00:00"
   },
   {
     "hex_id": "8828308707fffff",
@@ -6453,7 +6381,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183476+00:00"
+    "computed_at": "2026-08-12T11:37:36.355623+00:00"
   },
   {
     "hex_id": "882830870dfffff",
@@ -6477,7 +6405,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183499+00:00"
+    "computed_at": "2026-08-12T11:37:36.355641+00:00"
   },
   {
     "hex_id": "8828308711fffff",
@@ -6501,7 +6429,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183504+00:00"
+    "computed_at": "2026-08-12T11:37:36.355646+00:00"
   },
   {
     "hex_id": "8828308717fffff",
@@ -6525,7 +6453,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183523+00:00"
+    "computed_at": "2026-08-12T11:37:36.355662+00:00"
   },
   {
     "hex_id": "8828308719fffff",
@@ -6549,7 +6477,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183529+00:00"
+    "computed_at": "2026-08-12T11:37:36.355666+00:00"
   },
   {
     "hex_id": "882830871bfffff",
@@ -6573,7 +6501,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183535+00:00"
+    "computed_at": "2026-08-12T11:37:36.355671+00:00"
   },
   {
     "hex_id": "882830871dfffff",
@@ -6597,7 +6525,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183540+00:00"
+    "computed_at": "2026-08-12T11:37:36.355675+00:00"
   },
   {
     "hex_id": "8828308721fffff",
@@ -6621,7 +6549,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183546+00:00"
+    "computed_at": "2026-08-12T11:37:36.355681+00:00"
   },
   {
     "hex_id": "8828308725fffff",
@@ -6645,7 +6573,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183553+00:00"
+    "computed_at": "2026-08-12T11:37:36.355685+00:00"
   },
   {
     "hex_id": "8828308729fffff",
@@ -6669,7 +6597,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183560+00:00"
+    "computed_at": "2026-08-12T11:37:36.355690+00:00"
   },
   {
     "hex_id": "882830872bfffff",
@@ -6693,7 +6621,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183566+00:00"
+    "computed_at": "2026-08-12T11:37:36.355696+00:00"
   },
   {
     "hex_id": "882830872dfffff",
@@ -6717,7 +6645,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183573+00:00"
+    "computed_at": "2026-08-12T11:37:36.355700+00:00"
   },
   {
     "hex_id": "8828308739fffff",
@@ -6741,7 +6669,7 @@
       "traffic_segments": 1
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183579+00:00"
+    "computed_at": "2026-08-12T11:37:36.355705+00:00"
   },
   {
     "hex_id": "882830873dfffff",
@@ -6765,7 +6693,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183585+00:00"
+    "computed_at": "2026-08-12T11:37:36.355709+00:00"
   },
   {
     "hex_id": "8828308751fffff",
@@ -6789,7 +6717,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183648+00:00"
+    "computed_at": "2026-08-12T11:37:36.355764+00:00"
   },
   {
     "hex_id": "8828308753fffff",
@@ -6813,7 +6741,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183655+00:00"
+    "computed_at": "2026-08-12T11:37:36.355768+00:00"
   },
   {
     "hex_id": "8828308755fffff",
@@ -6837,7 +6765,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183661+00:00"
+    "computed_at": "2026-08-12T11:37:36.355772+00:00"
   },
   {
     "hex_id": "8828308757fffff",
@@ -6861,7 +6789,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183667+00:00"
+    "computed_at": "2026-08-12T11:37:36.355777+00:00"
   },
   {
     "hex_id": "8828308759fffff",
@@ -6885,7 +6813,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183673+00:00"
+    "computed_at": "2026-08-12T11:37:36.355781+00:00"
   },
   {
     "hex_id": "882830875bfffff",
@@ -6909,7 +6837,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183679+00:00"
+    "computed_at": "2026-08-12T11:37:36.355786+00:00"
   },
   {
     "hex_id": "882830875dfffff",
@@ -6933,7 +6861,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183686+00:00"
+    "computed_at": "2026-08-12T11:37:36.355791+00:00"
   },
   {
     "hex_id": "8828308763fffff",
@@ -6957,7 +6885,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183700+00:00"
+    "computed_at": "2026-08-12T11:37:36.355803+00:00"
   },
   {
     "hex_id": "8828308767fffff",
@@ -6981,7 +6909,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183714+00:00"
+    "computed_at": "2026-08-12T11:37:36.355815+00:00"
   },
   {
     "hex_id": "88283090a7fffff",
@@ -7005,7 +6933,31 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183749+00:00"
+    "computed_at": "2026-08-12T11:37:36.355847+00:00"
+  },
+  {
+    "hex_id": "88283090b1fffff",
+    "center": {
+      "lat": 37.697263,
+      "lon": -122.389203
+    },
+    "stress_score": 0.06,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0,
+      "weather_score": 0.05,
+      "intersection_score": 0.0,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 1
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.355853+00:00"
   },
   {
     "hex_id": "88283090b5fffff",
@@ -7029,7 +6981,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183772+00:00"
+    "computed_at": "2026-08-12T11:37:36.355866+00:00"
   },
   {
     "hex_id": "88283090b7fffff",
@@ -7053,7 +7005,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183777+00:00"
+    "computed_at": "2026-08-12T11:37:36.355871+00:00"
   },
   {
     "hex_id": "8828309193fffff",
@@ -7077,7 +7029,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183782+00:00"
+    "computed_at": "2026-08-12T11:37:36.355876+00:00"
   },
   {
     "hex_id": "882830919bfffff",
@@ -7101,7 +7053,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183788+00:00"
+    "computed_at": "2026-08-12T11:37:36.355881+00:00"
   },
   {
     "hex_id": "8828309401fffff",
@@ -7125,7 +7077,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183793+00:00"
+    "computed_at": "2026-08-12T11:37:36.355885+00:00"
   },
   {
     "hex_id": "8828309403fffff",
@@ -7149,7 +7101,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183798+00:00"
+    "computed_at": "2026-08-12T11:37:36.355889+00:00"
   },
   {
     "hex_id": "8828309405fffff",
@@ -7173,7 +7125,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183804+00:00"
+    "computed_at": "2026-08-12T11:37:36.355894+00:00"
   },
   {
     "hex_id": "8828309407fffff",
@@ -7197,7 +7149,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183809+00:00"
+    "computed_at": "2026-08-12T11:37:36.355898+00:00"
   },
   {
     "hex_id": "882830940bfffff",
@@ -7221,7 +7173,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183815+00:00"
+    "computed_at": "2026-08-12T11:37:36.355903+00:00"
   },
   {
     "hex_id": "882830942bfffff",
@@ -7245,7 +7197,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183862+00:00"
+    "computed_at": "2026-08-12T11:37:36.355938+00:00"
   },
   {
     "hex_id": "8828309431fffff",
@@ -7269,7 +7221,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183875+00:00"
+    "computed_at": "2026-08-12T11:37:36.355948+00:00"
   },
   {
     "hex_id": "8828309433fffff",
@@ -7293,7 +7245,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183880+00:00"
+    "computed_at": "2026-08-12T11:37:36.355953+00:00"
   },
   {
     "hex_id": "8828309437fffff",
@@ -7317,7 +7269,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183895+00:00"
+    "computed_at": "2026-08-12T11:37:36.355964+00:00"
   },
   {
     "hex_id": "8828309439fffff",
@@ -7341,7 +7293,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183900+00:00"
+    "computed_at": "2026-08-12T11:37:36.355968+00:00"
   },
   {
     "hex_id": "882830943bfffff",
@@ -7365,7 +7317,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183906+00:00"
+    "computed_at": "2026-08-12T11:37:36.355973+00:00"
   },
   {
     "hex_id": "882830943dfffff",
@@ -7389,7 +7341,31 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.183912+00:00"
+    "computed_at": "2026-08-12T11:37:36.355977+00:00"
+  },
+  {
+    "hex_id": "8828309463fffff",
+    "center": {
+      "lat": 37.695628,
+      "lon": -122.494374
+    },
+    "stress_score": 0.06,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0,
+      "weather_score": 0.05,
+      "intersection_score": 0.0,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 2
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.355982+00:00"
   },
   {
     "hex_id": "8828309543fffff",
@@ -7413,7 +7389,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184321+00:00"
+    "computed_at": "2026-08-12T11:37:36.356307+00:00"
   },
   {
     "hex_id": "8828309545fffff",
@@ -7437,7 +7413,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184326+00:00"
+    "computed_at": "2026-08-12T11:37:36.356313+00:00"
   },
   {
     "hex_id": "8828309547fffff",
@@ -7461,7 +7437,31 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184332+00:00"
+    "computed_at": "2026-08-12T11:37:36.356317+00:00"
+  },
+  {
+    "hex_id": "882830955dfffff",
+    "center": {
+      "lat": 37.696982,
+      "lon": -122.455864
+    },
+    "stress_score": 0.06,
+    "breakdown": {
+      "work_zone_score": 0.0,
+      "incident_score": 0.0,
+      "congestion_score": 0.0,
+      "weather_score": 0.05,
+      "intersection_score": 0.0,
+      "planned_event_score": 0.0
+    },
+    "counts": {
+      "active_incidents": 0,
+      "active_work_zones": 0,
+      "active_planned_events": 0,
+      "traffic_segments": 1
+    },
+    "weather_condition": "unknown",
+    "computed_at": "2026-08-12T11:37:36.356399+00:00"
   },
   {
     "hex_id": "8828309591fffff",
@@ -7485,7 +7485,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184570+00:00"
+    "computed_at": "2026-08-12T11:37:36.356509+00:00"
   },
   {
     "hex_id": "8828309593fffff",
@@ -7509,7 +7509,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184578+00:00"
+    "computed_at": "2026-08-12T11:37:36.356513+00:00"
   },
   {
     "hex_id": "8828309599fffff",
@@ -7533,7 +7533,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184600+00:00"
+    "computed_at": "2026-08-12T11:37:36.356530+00:00"
   },
   {
     "hex_id": "88283095d1fffff",
@@ -7557,7 +7557,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184780+00:00"
+    "computed_at": "2026-08-12T11:37:36.356697+00:00"
   },
   {
     "hex_id": "88283095d3fffff",
@@ -7581,7 +7581,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184788+00:00"
+    "computed_at": "2026-08-12T11:37:36.356702+00:00"
   },
   {
     "hex_id": "88283095d9fffff",
@@ -7605,7 +7605,7 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184809+00:00"
+    "computed_at": "2026-08-12T11:37:36.356718+00:00"
   },
   {
     "hex_id": "88283095dbfffff",
@@ -7629,6 +7629,6 @@
       "traffic_segments": 0
     },
     "weather_condition": "unknown",
-    "computed_at": "2026-08-12T10:02:08.184817+00:00"
+    "computed_at": "2026-08-12T11:37:36.356723+00:00"
   }
 ]
